@@ -2,77 +2,46 @@ name: 🚀 Deploy FIME COMPANY to cPanel
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: 📥 Checkout code
-      uses: actions/checkout@v4
-      
-    - name: 🚀 Deploy to cPanel via FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.3.3
-      with:
-        server: fimecompany.com
-        username: fimecomp
-        password: ${{ secrets.CPANEL_PASSWORD }}
-        local-dir: ./public_html/
-        server-dir: /public_html/
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/node_modules/**
-          **/*.ps1
-          **/*.bat
-          **/*.md
-          **/INSTRUCCIONES-*
-          **/README*
-          
-    - name: ✅ Deployment complete
-      run: |
-        echo "🎉 FIME COMPANY deployed successfully!"
-        echo "🌐 Live at: https://fimecompany.com"
-        echo "📅 Deployed on: $(date)"
-        echo ""
-        echo "✅ Archivos actualizados:"
-        echo "   - index.html (con Google AdSense)"
-        echo "   - ferreteria/index.html"
-        echo "   - fimetech/index.html"
-        echo "   - fimekids/index.html"
-        echo "   - Todos los productos de FimeTech"
-        echo ""
-        echo "💰 Google AdSense activo en todas las páginas"
-        node-version: '18'
-        
-    - name: Install dependencies
-      run: |
-        npm install
-        
-    - name: Build project
-      run: |
-        npm run build
-        
-    - name: Deploy to cPanel
-      uses: appleboy/ssh-action@v0.1.5
-      with:
-        host: ${{ secrets.CPANEL_HOST }}
-        username: ${{ secrets.CPANEL_USER }}
-        key: ${{ secrets.CPANEL_SSH_KEY }}
-        script: |
-          cd /public_html/fimecompany/
-          git pull origin main
-          chmod -R 755 wp-content/
-          chmod 644 wp-config.php
-          
-    - name: Clear cache
-      uses: appleboy/ssh-action@v0.1.5
-      with:
-        host: ${{ secrets.CPANEL_HOST }}
-        username: ${{ secrets.CPANEL_USER }}
-        key: ${{ secrets.CPANEL_SSH_KEY }}
-        script: |
-          cd /public_html/fimecompany/
-          wp cache flush
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🚀 Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.3
+        with:
+          server: fimecompany.com
+          username: fimecomp
+          password: ${{ secrets.CPANEL_PASSWORD }}
+          local-dir: ./public_html/
+          server-dir: /
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/*.ps1
+            **/*.bat
+            **/*.md
+            **/INSTRUCCIONES-*
+            **/README*
+
+      - name: ✅ Deployment complete
+        run: |
+          echo "🎉 FIME COMPANY deployed successfully!"
+          echo "🌐 Live at: https://fimecompany.com"
+          echo "📅 Deployed on: $(date)"
+          echo ""
+          echo "✅ Archivos actualizados:"
+          echo "   - index.html (con Google AdSense)"
+          echo "   - ferreteria/index.html"
+          echo "   - fimetech/index.html"
+          echo "   - fimekids/index.html"
+          echo "   - Todos los productos de FimeTech"
+          echo ""
+          echo "💰 Google AdSense activo en todas las páginas"

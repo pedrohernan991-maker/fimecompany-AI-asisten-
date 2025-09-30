@@ -1,300 +1,72 @@
 ﻿# 🏢 FIME COMPANY - Portal Corporativo
 
-## 🚀 Sistema Profesional Automatizado
+## 📋 Descripción
+Portal corporativo de FIME COMPANY con todas las divisiones y servicios especializados.
 
-### **Tecnologías:**
-- ⚡ **Frontend:** HTML5, CSS3, JavaScript ES6+
-- 🎨 **Design:** Responsive, Mobile-First
-- 🔄 **DevOps:** GitHub Actions, Cursor IDE
-- 🌐 **Hosting:** cPanel (fimecompany.com)
-- 🛡️ **Security:** SSH Keys, API Tokens
-
-### **Estructura del Proyecto:**
+## 🏗️ Estructura del Proyecto
 
 ```
-c panel/
-├── index.html              # Portal principal
-├── styles.css              # Estilos globales
-├── ferreteria/             # División Ferretería
-│   ├── index.html
-│   ├── index.php
-│   └── categorias.json
-├── fimetech/               # División Tecnología
-│   ├── index.html
-│   ├── products.json
-│   └── cart.js
-├── fimekids/               # División Infantil
-│   ├── index.html
-│   ├── juegos.html
-│   ├── ia.html
-│   └── contacto.html
-└── [otras divisiones]/
+fimecompany-AI-asisten-/
+├── public_html/              # Archivos para cPanel
+│   ├── index.html           # Página principal
+│   ├── ferreteria/          # División Ferretería
+│   ├── fimetech/           # División FimeTech
+│   ├── fimekids/           # División FimeKids
+│   ├── industria/          # División Industria
+│   └── styles.css          # Estilos unificados
+├── .github/workflows/       # GitHub Actions
+│   └── deploy.yml          # Despliegue automático
+└── [otros archivos...]
 ```
 
-### **🎯 Divisiones FIME COMPANY:**
+## 🚀 Despliegue Automático
 
-1. **🔧 Ferretería Industrial Metálica del Este**
-   - Catálogo completo de productos
-   - Sistema de categorías
-   - Carrito de compras
+El repositorio está configurado con GitHub Actions para despliegue automático a cPanel:
 
-2. **💻 FimeTech**
-   - Tecnología de vanguardia
-   - ChatGPT, iPhone 15 Pro, RTX 4090
-   - E-commerce integrado
+- **Trigger**: Push a `main` o `master`
+- **Método**: FTP Deploy Action
+- **Destino**: `fimecompany.com/public_html/`
 
-3. **👶 FimeKids**
-   - Juegos educativos
-   - IA para niños
-   - Contenido infantil
+## 📱 Divisiones
 
-4. **🏗️ Constructora Metálica**
-5. **⚡ Energía Limpia**
-6. **📝 Imprex Laser**
-7. **💰 Inversiones FIMEFORMOSA**
+### 🔧 Ferretería Industrial Metálica del Este
+- **Teléfono**: 829-440-9136
+- **Especialidad**: Materiales de construcción metálica
+- **URL**: `/ferreteria/`
 
-### **🚀 Deployment Automático:**
+### 💻 FimeTech
+- **Especialidad**: Tecnología de vanguardia
+- **URL**: `/fimetech/`
 
-```yaml
-# GitHub Actions Workflow
-✅ Push a GitHub → Deploy automático a cPanel
-✅ SSL automático
-✅ Backup incremental
-✅ Zero downtime deployment
-```
+### 👶 FimeKids
+- **Especialidad**: Soluciones infantiles
+- **URL**: `/fimekids/`
 
-### **👥 Team:**
-- **CEO:** Pedro Nicolás Hernández Lizardo
-- **Tech Lead:** Cursor AI Assistant
-- **DevOps:** GitHub Actions
+### 🏭 Industria
+- **Especialidad**: Soluciones industriales
+- **URL**: `/industria/`
 
-### **🌐 Live Site:**
-**https://fimecompany.com**
+## 👨‍💼 CEO
+**Pedro Nicolás Hernández Lizardo**
+
+## 💰 Monetización
+- Google AdSense activo en todas las páginas
+- ID: `ca-pub-7619200532568255`
+
+## 🔧 Configuración
+
+### Secrets de GitHub (requeridos):
+- `CPANEL_PASSWORD`: Contraseña de cPanel
+
+### Flujo de Trabajo:
+1. Editar archivos en Cursor
+2. Commit y Push a GitHub
+3. GitHub Actions despliega automáticamente a cPanel
+
+## 📞 Contacto
+- **Email**: info@fimecompany.com
+- **Ferretería**: 829-440-9136
+- **Web**: https://fimecompany.com
 
 ---
-
-## 📋 **Development Workflow:**
-
-1. **Desarrollo en Cursor**
-2. **Git commit + push**
-3. **GitHub Actions deploy**
-4. **Live en fimecompany.com**
-
-**¡Workflow profesional en 4 pasos!** ⚡
-
----
-
-**© 2024 FIME COMPANY - Automatización Profesional**
-## Archivos principales
-- index.html - PÃ¡gina principal
-- products.json - Base de datos de productos
-- cart.js - Sistema de carrito de compras
-- chatgpt.html - PÃ¡gina de ChatGPT 4.0
-- iphone15pro.html - PÃ¡gina de iPhone 15 Pro
-- rtx4090.html - PÃ¡gina de RTX 4090
-
-## Archivos adicionales
-- config.json - ConfiguraciÃ³n del sistema
-- styles-additional.css - Estilos adicionales
-- utils.js - Funciones de utilidad
-- users.json - Datos de usuarios
-- system.log - Logs del sistema
-
-## Funcionalidades
-- âœ… BÃºsqueda en tiempo real
-- âœ… Carrito de compras
-- âœ… Sistema de reviews
-- âœ… Chat con IA
-- âœ… DiseÃ±o responsive
-- âœ… SEO optimizado
-
-## InstalaciÃ³n
-1. Subir todos los archivos al servidor
-2. Configurar permisos de escritura
-3. Verificar conexiÃ³n a base de datos
-4. Probar funcionalidades
-
-## Soporte
-Contacto: admin@fimecompany.com
-Desarrollado por: FIME COMPANY
-
-# FimeTech - Portal de TecnologÃ­a
-
-
-
-## DescripciÃ³n
-
-Portal de tecnologÃ­a de FIME COMPANY con funcionalidades avanzadas de e-commerce y IA.
-
-
-
-## Archivos principales
-
-- index.html - PÃ¡gina principal
-
-- products.json - Base de datos de productos
-
-- cart.js - Sistema de carrito de compras
-
-- chatgpt.html - PÃ¡gina de ChatGPT 4.0
-
-- iphone15pro.html - PÃ¡gina de iPhone 15 Pro
-
-- rtx4090.html - PÃ¡gina de RTX 4090
-
-
-
-## Archivos adicionales
-
-- config.json - ConfiguraciÃ³n del sistema
-
-- styles-additional.css - Estilos adicionales
-
-- utils.js - Funciones de utilidad
-
-- users.json - Datos de usuarios
-
-- system.log - Logs del sistema
-
-
-
-## Funcionalidades
-
-- âœ… BÃºsqueda en tiempo real
-
-- âœ… Carrito de compras
-
-- âœ… Sistema de reviews
-
-- âœ… Chat con IA
-
-- âœ… DiseÃ±o responsive
-
-- âœ… SEO optimizado
-
-
-
-## InstalaciÃ³n
-
-1. Subir todos los archivos al servidor
-
-2. Configurar permisos de escritura
-
-3. Verificar conexiÃ³n a base de datos
-
-4. Probar funcionalidades
-
-
-
-## Soporte
-
-Contacto: admin@fimecompany.com
-
-Desarrollado por: FIME COMPANY
-
-
-## Funcionalidades
-
-- âœ… BÃºsqueda en tiempo real
-
-- âœ… Carrito de compras
-
-- âœ… Sistema de reviews
-
-- âœ… Chat con IA
-
-- âœ… DiseÃ±o responsive
-
-- âœ… SEO optimizado
-
-
-
-## InstalaciÃ³n
-
-1. Subir todos los archivos al servidor
-
-2. Configurar permisos de escritura
-
-3. Verificar conexiÃ³n a base de datos
-
-4. Probar funcionalidades
-
-
-
-## Soporte
-
-Contacto: admin@fimecompany.com
-
-Desarrollado por: FIME COMPANY
-
-
-
-## Funcionalidades
-
-- âœ… BÃºsqueda en tiempo real
-
-- âœ… Carrito de compras
-
-- âœ… Sistema de reviews
-
-- âœ… Chat con IA
-
-- âœ… DiseÃ±o responsive
-
-- âœ… SEO optimizado
-
-
-
-## InstalaciÃ³n
-
-1. Subir todos los archivos al servidor
-
-2. Configurar permisos de escritura
-
-3. Verificar conexiÃ³n a base de datos
-
-4. Probar funcionalidades
-
-
-
-## Soporte
-
-Contacto: admin@fimecompany.com
-
-Desarrollado por: FIME COMPANY
-
-
-## Funcionalidades
-
-- âœ… BÃºsqueda en tiempo real
-
-- âœ… Carrito de compras
-
-- âœ… Sistema de reviews
-
-- âœ… Chat con IA
-
-- âœ… DiseÃ±o responsive
-
-- âœ… SEO optimizado
-
-
-
-## InstalaciÃ³n
-
-1. Subir todos los archivos al servidor
-
-2. Configurar permisos de escritura
-
-3. Verificar conexiÃ³n a base de datos
-
-4. Probar funcionalidades
-
-
-
-## Soporte
-
-Contacto: admin@fimecompany.com
-
-Desarrollado por: FIME COMPANY
-
+© 2024 FIME COMPANY. Todos los derechos reservados.
