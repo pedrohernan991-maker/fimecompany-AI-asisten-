@@ -1,0 +1,241 @@
+===============================================================================
+GUIA COMPLETA - SUBIDA A CPANEL FIME COMPANY
+===============================================================================
+
+✅ SINCRONIZACION COMPLETADA: 47 archivos listos en public_html
+
+===============================================================================
+OPCION 1: FILEZILLA (MAS FACIL Y RECOMENDADA)
+===============================================================================
+
+PASOS:
+1. Descarga FileZilla si no lo tienes: https://filezilla-project.org/
+2. Abre FileZilla
+3. Configuracion de conexion:
+   
+   Host:       ftp.fimecompany.com
+   Usuario:    fimecomp
+   Contraseña: [Tu contraseña de cPanel]
+   Puerto:     21
+
+4. Haz clic en "Conexion rapida"
+5. En el lado DERECHO (servidor), navega a: /public_html
+6. En el lado IZQUIERDO (local), navega a:
+   C:\Users\PC\Documents\GitHub\fimecompany-AI-asisten-\public_html
+7. Selecciona TODO en el lado izquierdo y arrastra al derecho
+8. Espera a que termine la subida
+
+TIEMPO ESTIMADO: 5-10 minutos
+
+===============================================================================
+OPCION 2: CPANEL FILE MANAGER (DIRECTO EN NAVEGADOR)
+===============================================================================
+
+PASOS:
+1. Ve a: https://fimecompany.com:2083
+   (o desde tu panel de hosting busca "cPanel")
+
+2. Login con tus credenciales de cPanel
+
+3. Busca "File Manager" (Administrador de archivos) y abrelo
+
+4. Navega a la carpeta: public_html
+
+5. Haz clic en "Upload" (Subir archivos)
+
+6. Arrastra y suelta TODOS los archivos desde:
+   C:\Users\PC\Documents\GitHub\fimecompany-AI-asisten-\public_html
+
+   IMPORTANTE: Sube tanto archivos como carpetas:
+   - index.html
+   - styles.css
+   - categorias.json
+   - ferreteria/ (carpeta completa)
+   - fimekids/ (carpeta completa)
+   - fimetech/ (carpeta completa)
+   - industria/ (carpeta completa)
+
+7. Espera a que termine la subida
+
+TIEMPO ESTIMADO: 10-15 minutos
+
+===============================================================================
+OPCION 3: GITHUB + DEPLOYMENT AUTOMATICO (AVANZADO)
+===============================================================================
+
+Esta opcion configura deployment automatico: cada vez que hagas cambios
+y los subas a GitHub, se desplegaran automaticamente a cPanel.
+
+PASOS:
+
+1. SUBIR A GITHUB:
+   - Abre GitHub Desktop
+   - Haz commit de todos los cambios
+   - Push a origin/main
+
+2. CONFIGURAR GITHUB ACTIONS:
+   a. Ve a tu repositorio en GitHub
+   b. Crea la carpeta: .github/workflows/
+   c. Crea el archivo: deploy.yml
+   d. Copia este contenido:
+
+---BEGIN deploy.yml---
+name: Deploy to cPanel
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: ftp.fimecompany.com
+        username: fimecomp
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./public_html/
+        server-dir: /public_html/
+---END deploy.yml---
+
+3. AGREGAR SECRETS EN GITHUB:
+   a. Ve a: Settings > Secrets and variables > Actions
+   b. Haz clic en "New repository secret"
+   c. Nombre: FTP_PASSWORD
+   d. Valor: [Tu contraseña de cPanel]
+   e. Guarda
+
+4. Ahora cada push desplegara automaticamente
+
+TIEMPO ESTIMADO: 20 minutos (configuracion inicial)
+BENEFICIO: Deployment automatico en el futuro
+
+===============================================================================
+OPCION 4: WINSCP (ALTERNATIVA A FILEZILLA)
+===============================================================================
+
+PASOS:
+1. Descarga WinSCP: https://winscp.net/
+2. Abre WinSCP
+3. Nueva conexion:
+   
+   Protocolo:  SFTP (o FTP)
+   Host:       fimecompany.com
+   Usuario:    fimecomp
+   Contraseña: [Tu contraseña de cPanel]
+   Puerto:     22 (SFTP) o 21 (FTP)
+
+4. Conecta
+5. Navega en servidor a: /public_html
+6. Sincroniza la carpeta local completa
+
+TIEMPO ESTIMADO: 5-10 minutos
+
+===============================================================================
+INFORMACION DE CONEXION FTP/SFTP
+===============================================================================
+
+Host FTP:      ftp.fimecompany.com
+Host SFTP:     fimecompany.com
+Usuario:       fimecomp
+Contraseña:    [Tu contraseña de cPanel]
+Puerto FTP:    21
+Puerto SFTP:   22
+Carpeta:       /public_html
+
+===============================================================================
+ESTRUCTURA QUE DEBES SUBIR
+===============================================================================
+
+public_html/
+├── index.html             (Portal principal)
+├── styles.css             (Estilos globales)
+├── categorias.json        (8 categorias, 40+ productos)
+│
+├── ferreteria/            (CARPETA COMPLETA)
+│   ├── index.html
+│   ├── configuracion.json
+│   ├── productos-metalicos.json
+│   └── buscar-ubicacion-mapa.html
+│
+├── fimekids/              (CARPETA COMPLETA)
+│   ├── index.html
+│   ├── juegos.html
+│   ├── ia.html
+│   └── contacto.html
+│
+├── fimetech/              (CARPETA COMPLETA)
+│   ├── index.html
+│   ├── products.json
+│   ├── cart.js
+│   ├── utils.js
+│   └── [otros archivos]
+│
+└── industria/             (CARPETA COMPLETA)
+    └── index.html
+
+TOTAL: 47 archivos
+
+===============================================================================
+URLS FINALES DESPUES DE SUBIR
+===============================================================================
+
+Portal Principal:  https://fimecompany.com/
+Ferreteria:        https://fimecompany.com/ferreteria/
+FIMEKIDS:          https://fimecompany.com/fimekids/
+FIMETECH:          https://fimecompany.com/fimetech/
+Industria:         https://fimecompany.com/industria/
+API Categorias:    https://fimecompany.com/categorias.json
+
+===============================================================================
+VERIFICACION DESPUES DE SUBIR
+===============================================================================
+
+1. Abre cada URL en tu navegador
+2. Verifica que carguen correctamente
+3. Prueba la navegacion entre divisiones
+4. Verifica categorias.json (debe mostrar JSON)
+5. Prueba en movil
+
+===============================================================================
+RECOMENDACION FINAL
+===============================================================================
+
+Para comenzar rapido: USA OPCION 1 (FileZilla)
+- Es la mas facil
+- Interface grafica clara
+- Puedes ver el progreso
+- Manejo de errores automatico
+
+Para el futuro: CONFIGURA OPCION 3 (GitHub Actions)
+- Deployment automatico
+- No necesitas subir manualmente
+- Ideal para actualizaciones frecuentes
+
+===============================================================================
+SOPORTE
+===============================================================================
+
+Si tienes problemas:
+1. Verifica usuario y contraseña
+2. Asegurate de estar en /public_html
+3. Verifica permisos de archivos (644 para archivos, 755 para carpetas)
+4. Contacta a tu proveedor de hosting si persisten problemas
+
+===============================================================================
+ARCHIVOS DE AYUDA CREADOS
+===============================================================================
+
+✓ SINCRONIZAR-SIMPLE.ps1              - Sincronizacion local
+✓ CONEXION-GITHUB-SIMPLE.ps1          - Script GitHub
+✓ SUBIR-A-CPANEL-AUTOMATICO.ps1       - Script interactivo
+✓ RESUMEN-FINAL-SINCRONIZACION.txt    - Resumen completo
+✓ GUIA-SUBIDA-CPANEL-FINAL.txt        - Esta guia
+
+===============================================================================
+¡TODO LISTO! ELIGE TU OPCION Y SUBE A PRODUCCION
+===============================================================================

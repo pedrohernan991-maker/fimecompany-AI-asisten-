@@ -1,0 +1,175 @@
+===============================================================================
+VERIFICAR DEPLOYMENT - FIME COMPANY
+===============================================================================
+
+DESPUES DE HACER PUSH EN GITHUB DESKTOP:
+
+===============================================================================
+PASO 1: MONITOREAR EN GITHUB ACTIONS
+===============================================================================
+
+URL: https://github.com/PedroNicolas2001/fimecompany-AI-asisten-/actions
+
+QUE VERAS:
+
+🟡 AMARILLO (En progreso):
+   - "Deploy to cPanel via FTP" corriendo
+   - Tiempo estimado: 2-5 minutos
+   - Espera pacientemente
+
+🟢 VERDE (Completado):
+   - Deployment exitoso
+   - Sitio actualizado
+   - Listo para verificar
+
+🔴 ROJO (Error):
+   - Click en el workflow
+   - Ve los logs
+   - Probablemente falta agregar secret FTP_PASSWORD
+
+===============================================================================
+PASO 2: VERIFICAR SECRET FTP_PASSWORD
+===============================================================================
+
+Si el deployment falla, verifica el secret:
+
+1. Ve a: https://github.com/PedroNicolas2001/fimecompany-AI-asisten-/settings/secrets/actions
+
+2. Debe existir: FTP_PASSWORD
+
+3. Si no existe, agregalo:
+   Name:   FTP_PASSWORD
+   Secret: [Tu contraseña de cPanel]
+
+4. Despues, vuelve a ejecutar el workflow manualmente
+
+===============================================================================
+PASO 3: VERIFICAR SITIO WEB
+===============================================================================
+
+Una vez que veas el CHECK VERDE, verifica estas URLs:
+
+✓ PORTAL PRINCIPAL:
+  https://fimecompany.com/
+  - Debe cargar el portal con 7 divisiones
+  - CEO: Pedro Nicolás Hernández Lizardo
+
+✓ FERRETERIA:
+  https://fimecompany.com/ferreteria/
+  - Catálogo de productos metálicos
+  - Vigas, perfiles, láminas
+  - Contacto: 829-440-9136
+
+✓ FIMEKIDS:
+  https://fimecompany.com/fimekids/
+  - Contenido infantil
+  - Juegos educativos
+
+✓ FIMETECH:
+  https://fimecompany.com/fimetech/
+  - Productos tecnológicos
+  - Catálogo de gadgets
+
+✓ INDUSTRIA:
+  https://fimecompany.com/industria/
+  - Servicios industriales
+
+✓ API CATEGORIAS:
+  https://fimecompany.com/categorias.json
+  - Debe mostrar JSON con 8 categorías
+  - 40+ productos
+
+===============================================================================
+PASO 4: PRUEBAS DE FUNCIONAMIENTO
+===============================================================================
+
+1. NAVEGACION:
+   - Click en cada división desde el portal
+   - Verifica que los enlaces funcionen
+   - Vuelve al portal desde cada división
+
+2. RESPONSIVE:
+   - Abre en móvil o usa F12 > modo móvil
+   - Verifica que se vea bien
+   - Prueba navegación en móvil
+
+3. VELOCIDAD:
+   - Las páginas deben cargar rápido (< 3 segundos)
+   - No debe haber errores 404
+
+4. CONTENIDO:
+   - Verifica que todo el texto sea visible
+   - Imágenes deben cargar
+   - Botones deben funcionar
+
+===============================================================================
+PASO 5: PROBAR DEPLOYMENT CONTINUO
+===============================================================================
+
+Para verificar que el deployment automático funciona:
+
+1. Edita un archivo en Cursor (por ejemplo index.html)
+2. Cambia algo pequeño (un texto)
+3. GitHub Desktop: Commit + Push
+4. Ve a Actions y verifica que se ejecute automáticamente
+5. Espera 2-5 minutos
+6. Verifica que el cambio aparezca en el sitio
+
+===============================================================================
+TROUBLESHOOTING
+===============================================================================
+
+PROBLEMA 1: Workflow no se ejecuta
+SOLUCION: Verifica que hayas hecho push correctamente
+
+PROBLEMA 2: Workflow falla (rojo)
+SOLUCION: Verifica que FTP_PASSWORD esté configurado
+
+PROBLEMA 3: Sitio no se actualiza
+SOLUCION: Verifica la ruta en cPanel (/public_html/)
+
+PROBLEMA 4: Error 404 en divisiones
+SOLUCION: Verifica que las carpetas existan en cPanel
+
+PROBLEMA 5: Error de permisos
+SOLUCION: Archivos deben tener permiso 644, carpetas 755
+
+===============================================================================
+VERIFICACION COMPLETA
+===============================================================================
+
+TODO OK SI:
+
+✅ GitHub Actions muestra check verde
+✅ https://fimecompany.com/ carga correctamente
+✅ Todas las divisiones funcionan
+✅ categorias.json es accesible
+✅ Navegación entre páginas funciona
+✅ Sitio se ve bien en móvil
+
+===============================================================================
+PROXIMOS PASOS
+===============================================================================
+
+Una vez verificado todo:
+
+1. El deployment automático está activo
+2. Cada push actualiza el sitio automáticamente
+3. No necesitas hacer nada más manualmente
+4. Cursor mantiene todo sincronizado
+
+===============================================================================
+CONTACTOS Y URLS IMPORTANTES
+===============================================================================
+
+Sitio Web:     https://fimecompany.com/
+GitHub:        https://github.com/PedroNicolas2001/fimecompany-AI-asisten-
+Actions:       https://github.com/PedroNicolas2001/fimecompany-AI-asisten-/actions
+Secrets:       https://github.com/PedroNicolas2001/fimecompany-AI-asisten-/settings/secrets/actions
+
+Telefono:      829-440-9136
+Email:         ferreteriaindustrial@gmail.com
+
+===============================================================================
+¡DEPLOYMENT AUTOMATICO ACTIVO Y FUNCIONANDO!
+===============================================================================

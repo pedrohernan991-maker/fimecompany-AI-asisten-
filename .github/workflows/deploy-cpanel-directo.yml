@@ -1,0 +1,47 @@
+name: Deploy Directo a cPanel (Git Hook)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy-cpanel:
+    name: Deployment Automatico a cPanel
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout codigo
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    
+    - name: Deploy via Git a cPanel
+      env:
+        CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
+        CPANEL_USER: ${{ secrets.CPANEL_USER }}
+        CPANEL_REPO_PATH: ${{ secrets.CPANEL_REPO_PATH }}
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+      run: |
+        echo "Configurando deployment a cPanel..."
+        
+        # Configurar SSH
+        mkdir -p ~/.ssh
+        echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -H $CPANEL_HOST >> ~/.ssh/known_hosts
+        
+        # Configurar Git remoto para cPanel
+        git remote add cpanel ssh://${CPANEL_USER}@${CPANEL_HOST}${CPANEL_REPO_PATH}
+        
+        # Push directo a cPanel
+        git push cpanel main --force
+        
+        echo "Deployment completado!"
+    
+    - name: Verificar deployment
+      run: |
+        echo "Sitio actualizado en: https://fimecompany.com"
+        echo "Ferreteria: https://fimecompany.com/ferreteria/"
+        echo "FIMEKIDS: https://fimecompany.com/fimekids/"
+        echo "FIMETECH: https://fimecompany.com/fimetech/"

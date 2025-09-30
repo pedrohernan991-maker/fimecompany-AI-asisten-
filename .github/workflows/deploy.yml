@@ -1,47 +1,26 @@
-name: 🚀 Deploy FIME COMPANY to cPanel
+name: Deploy to cPanel via FTP
 
 on:
   push:
-    branches: [main, master]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
-  deploy:
+  web-deploy:
+    name: Deploy to cPanel
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: 📥 Checkout code
-        uses: actions/checkout@v4
-
-      - name: 🚀 Deploy to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.3
-        with:
-          server: fimecompany.com
-          username: fimecomp
-          password: ${{ secrets.CPANEL_PASSWORD }}
-          local-dir: ./public_html/
-          server-dir: /
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/*.ps1
-            **/*.bat
-            **/*.md
-            **/INSTRUCCIONES-*
-            **/README*
-
-      - name: ✅ Deployment complete
-        run: |
-          echo "🎉 FIME COMPANY deployed successfully!"
-          echo "🌐 Live at: https://fimecompany.com"
-          echo "📅 Deployed on: $(date)"
-          echo ""
-          echo "✅ Archivos actualizados:"
-          echo "   - index.html (con Google AdSense)"
-          echo "   - ferreteria/index.html"
-          echo "   - fimetech/index.html"
-          echo "   - fimekids/index.html"
-          echo "   - Todos los productos de FimeTech"
-          echo ""
-          echo "💰 Google AdSense activo en todas las páginas"
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Sync files to cPanel
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ftp.fimecompany.com
+        username: fimecomp
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./public_html/
+        server-dir: ./public_html/
+        dangerous-clean-slate: false
+        log-level: verbose

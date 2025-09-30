@@ -1,0 +1,72 @@
+====================================================
+INSTRUCCIONES PARA SUBIR FERRETERÍA A CPANEL
+====================================================
+
+ARCHIVOS LISTOS PARA SUBIR:
+✅ ferreteria\index.html (LIMPIADO Y CORREGIDO)
+✅ categorias.json (COMPLETO CON TODOS LOS PRODUCTOS)
+
+PASOS PARA SUBIR A CPANEL:
+
+1. ACCEDER A CPANEL
+   - Ve a tu cPanel de fimecompany.com
+   - Inicia sesión con tus credenciales
+
+2. ABRIR FILE MANAGER
+   - Busca "File Manager" en el cPanel
+   - Haz clic para abrirlo
+
+3. NAVEGAR A PUBLIC_HTML
+   - Ve a la carpeta "public_html"
+   - Esta es la carpeta raíz de tu sitio web
+
+4. CREAR CARPETA FERRETERIA
+   - Si no existe, crea una carpeta llamada "ferreteria"
+   - Haz clic derecho → "Create Folder" → "ferreteria"
+
+5. SUBIR ARCHIVOS
+
+   A) SUBIR index.html:
+      - Navega a la carpeta "ferreteria" que acabas de crear
+      - Haz clic en "Upload" o "Subir archivos"
+      - Selecciona: ferreteria\index.html
+      - Sube el archivo
+
+   B) SUBIR categorias.json:
+      - Regresa a la carpeta "public_html" (carpeta principal)
+      - Haz clic en "Upload" o "Subir archivos"
+      - Selecciona: categorias.json
+      - Sube el archivo
+
+6. VERIFICAR PERMISOS
+   - Asegúrate de que los archivos tengan permisos de lectura
+   - Los permisos deben ser 644 para archivos HTML/JSON
+
+7. PROBAR EL SITIO
+   - Ve a: https://fimecompany.com/ferreteria/
+   - Debe mostrar la página de ferretería completa
+   - Ve a: https://fimecompany.com/categorias.json
+   - Debe mostrar el JSON con los productos
+
+ESTRUCTURA FINAL EN SERVIDOR:
+public_html/
+├── ferreteria/
+│   └── index.html
+├── categorias.json
+└── [otros archivos del sitio]
+
+URLS FINALES:
+🌐 https://fimecompany.com/ferreteria/
+🌐 https://fimecompany.com/categorias.json
+
+CARACTERÍSTICAS DE LA FERRETERÍA:
+✅ Diseño profesional y moderno
+✅ Catálogo completo de productos metálicos
+✅ Categorías: Vigas, Perfiles, Láminas, Tornillería, Herramientas
+✅ Botón de compartir en redes sociales
+✅ Responsive (funciona en móviles)
+✅ Información de contacto: 829-440-9136
+✅ Email: ferreteriaindustrial@gmail.com
+
+¡LISTO PARA USAR!
+====================================================

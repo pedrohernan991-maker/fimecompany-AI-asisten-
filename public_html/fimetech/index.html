@@ -5,10 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7619200532568255"
-     crossorigin="anonymous"></script>
-    
     <!-- SEO OPTIMIZATION MEJORADO -->
     <title>🚀 FimeTech - Tecnología de Vanguardia 2024 | IA, ChatGPT, iPhone 15, RTX 4090</title>
     <meta name="description" content="⚡ Portal #1 de tecnología: ChatGPT 4.0, iPhone 15 Pro, NVIDIA RTX 4090, Tesla Cybertruck, Meta Quest 3. Reviews exclusivas, precios, comparaciones y más.">
@@ -1371,7 +1367,44 @@
     </script>
 </body>
 
-</html>    </script>
+</html>                closeShareModal();
+            }
+        });
+
+        // SERVICE WORKER REGISTRATION (for PWA capabilities)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // ANALYTICS (replace with your analytics code)
+        function trackEvent(category, action, label) {
+            // Google Analytics 4 or other analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', action, {
+                    event_category: category,
+                    event_label: label
+                });
+            }
+        }
+
+        // Track page views
+        trackEvent('Page', 'View', 'FimeTech Homepage');
+
+        // Track button clicks
+        document.querySelectorAll('.btn, .card-link, .topic-tag').forEach(button => {
+            button.addEventListener('click', function() {
+                trackEvent('Button', 'Click', this.textContent.trim());
+            });
+        });
+    </script>
 </body>
 
 </html>
