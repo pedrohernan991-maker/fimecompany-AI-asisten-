@@ -1,0 +1,196 @@
+{
+    "HTML5 Boilerplate": {
+        "prefix": "html5",
+        "body": [
+            "<!DOCTYPE html>",
+            "<html lang=\"es\">",
+            "<head>",
+            "    <meta charset=\"UTF-8\">",
+            "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+            "    <title>$1</title>",
+            "    <style>",
+            "        * {",
+            "            margin: 0;",
+            "            padding: 0;",
+            "            box-sizing: border-box;",
+            "        }",
+            "        ",
+            "        body {",
+            "            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;",
+            "            line-height: 1.6;",
+            "            color: #333;",
+            "        }",
+            "    </style>",
+            "</head>",
+            "<body>",
+            "    $2",
+            "</body>",
+            "</html>"
+        ],
+        "description": "HTML5 Boilerplate básico"
+    },
+    "CSS Grid Layout": {
+        "prefix": "grid",
+        "body": [
+            ".grid-container {",
+            "    display: grid;",
+            "    grid-template-columns: repeat(auto-fit, minmax($1, 1fr));",
+            "    gap: $2;",
+            "    padding: $3;",
+            "}"
+        ],
+        "description": "CSS Grid Layout"
+    },
+    "Flexbox Layout": {
+        "prefix": "flex",
+        "body": [
+            ".flex-container {",
+            "    display: flex;",
+            "    justify-content: $1;",
+            "    align-items: $2;",
+            "    flex-wrap: $3;",
+            "    gap: $4;",
+            "}"
+        ],
+        "description": "Flexbox Layout"
+    },
+    "JavaScript Function": {
+        "prefix": "func",
+        "body": [
+            "function $1($2) {",
+            "    $3",
+            "}"
+        ],
+        "description": "JavaScript Function"
+    },
+    "Arrow Function": {
+        "prefix": "arrow",
+        "body": [
+            "const $1 = ($2) => {",
+            "    $3",
+            "};"
+        ],
+        "description": "Arrow Function"
+    },
+    "Async Function": {
+        "prefix": "async",
+        "body": [
+            "async function $1($2) {",
+            "    try {",
+            "        $3",
+            "    } catch (error) {",
+            "        console.error('Error:', error);",
+            "    }",
+            "}"
+        ],
+        "description": "Async Function"
+    },
+    "Fetch API": {
+        "prefix": "fetch",
+        "body": [
+            "fetch('$1')",
+            "    .then(response => response.json())",
+            "    .then(data => {",
+            "        $2",
+            "    })",
+            "    .catch(error => {",
+            "        console.error('Error:', error);",
+            "    });"
+        ],
+        "description": "Fetch API"
+    },
+    "PowerShell Script": {
+        "prefix": "ps1",
+        "body": [
+            "# PowerShell Script",
+            "Write-Host \"$1\" -ForegroundColor Cyan",
+            "",
+            "# Configuración",
+            "$2",
+            "",
+            "# Función principal",
+            "function Main {",
+            "    $3",
+            "}",
+            "",
+            "# Ejecutar",
+            "Main"
+        ],
+        "description": "PowerShell Script Template"
+    },
+    "cPanel FTP Upload": {
+        "prefix": "ftp",
+        "body": [
+            "# FTP Upload Script",
+            "$ftpHost = \"$1\"",
+            "$ftpUser = \"$2\"",
+            "$ftpPass = \"$3\"",
+            "$localFile = \"$4\"",
+            "$remoteFile = \"$5\"",
+            "",
+            "try {",
+            "    $ftpRequest = [System.Net.FtpWebRequest]::Create(\"ftp://$ftpHost/$remoteFile\")",
+            "    $ftpRequest.Credentials = New-Object System.Net.NetworkCredential($ftpUser, $ftpPass)",
+            "    $ftpRequest.Method = [System.Net.WebRequestMethods+Ftp]::UploadFile",
+            "    $ftpRequest.UsePassive = $true",
+            "    ",
+            "    $requestStream = $ftpRequest.GetRequestStream()",
+            "    $fileContent = [System.IO.File]::ReadAllBytes($localFile)",
+            "    $requestStream.Write($fileContent, 0, $fileContent.Length)",
+            "    $requestStream.Close()",
+            "    ",
+            "    $response = $ftpRequest.GetResponse()",
+            "    Write-Host \"Archivo subido: $($response.StatusDescription)\" -ForegroundColor Green",
+            "    $response.Close()",
+            "}",
+            "catch {",
+            "    Write-Host \"Error: $($_.Exception.Message)\" -ForegroundColor Red",
+            "}"
+        ],
+        "description": "cPanel FTP Upload Script"
+    },
+    "Game Loop": {
+        "prefix": "game",
+        "body": [
+            "class Game {",
+            "    constructor() {",
+            "        this.canvas = document.getElementById('$1');",
+            "        this.ctx = this.canvas.getContext('2d');",
+            "        this.running = false;",
+            "        this.lastTime = 0;",
+            "    }",
+            "    ",
+            "    update(deltaTime) {",
+            "        $2",
+            "    }",
+            "    ",
+            "    render() {",
+            "        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);",
+            "        $3",
+            "    }",
+            "    ",
+            "    gameLoop(currentTime) {",
+            "        const deltaTime = currentTime - this.lastTime;",
+            "        this.lastTime = currentTime;",
+            "        ",
+            "        this.update(deltaTime);",
+            "        this.render();",
+            "        ",
+            "        if (this.running) {",
+            "            requestAnimationFrame((time) => this.gameLoop(time));",
+            "        }",
+            "    }",
+            "    ",
+            "    start() {",
+            "        this.running = true;",
+            "        this.gameLoop(0);",
+            "    }",
+            "    ",
+            "    stop() {",
+            "        this.running = false;",
+            "    }",
+            "}"
+        ],
+        "description": "Game Loop Template"
+    }
+}

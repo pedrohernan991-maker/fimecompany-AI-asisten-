@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FimeKids - Educacion Infantil Gratis con IA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: #ff6b6b;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .nav a:hover {
+            background: #ff6b6b;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .hero h2 {
+            color: #4ecdc4;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #555;
+        }
+
+        .free-badge {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 1rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .games-section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff6b6b;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transform-style: preserve-3d;
+            transform: translateZ(20px);
+        }
+
+        .game-card:hover {
+            transform: translateY(-15px) translateZ(40px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-color: #ff6b6b;
+        }
+
+        .game-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .game-card h3 {
+            color: #ff6b6b;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .game-card p {
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .play-button {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .ai-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .ai-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .ai-feature {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid #4ecdc4;
+        }
+
+        .ai-feature h4 {
+            color: #4ecdc4;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer h4 {
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav {
+                justify-content: center;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Estilos para el botón de compartir */
+        .share-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .share-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        .share-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+        }
+
+        .share-modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .share-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .share-option {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+        }
+
+        .share-option:hover {
+            background: #ff6b6b;
+            color: white;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- BOTÓN DE COMPARTIR -->
+    <button class="share-button" onclick="openShareModal()" title="Compartir página">📤</button>
+
+    <!-- MODAL DE COMPARTIR -->
+    <div id="shareModal" class="share-modal">
+        <div class="share-modal-content">
+            <h3>📤 Compartir FimeKids</h3>
+            <div class="share-options">
+                <a href="#" class="share-option" onclick="shareWhatsApp()">📱 WhatsApp</a>
+                <a href="#" class="share-option" onclick="shareFacebook()">📘 Facebook</a>
+                <a href="#" class="share-option" onclick="shareTwitter()">🐦 Twitter</a>
+                <a href="#" class="share-option" onclick="shareEmail()">📧 Email</a>
+                <a href="#" class="share-option" onclick="copyLink()">📋 Copiar</a>
+                <a href="#" class="share-option" onclick="shareTelegram()">✈️ Telegram</a>
+            </div>
+            <button onclick="closeShareModal()" style="background: #6c757d; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer;">Cerrar</button>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">🎨 FimeKids</a>
+                <nav class="nav">
+                    <a href="#inicio">Inicio</a>
+                    <a href="juegos.html">Juegos</a>
+                    <a href="ia.html">IA</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h1>🎨 FimeKids</h1>
+            <h2>Educacion Infantil Gratis con Inteligencia Artificial</h2>
+            <p>Aprende colores, numeros e idiomas de forma divertida! Nuestros juegos educativos estan disenados con IA
+                para adaptarse al ritmo de cada nino.</p>
+
+            <div class="free-badge">
+                🎉 100% GRATIS - Sin suscripciones
+            </div>
+
+            <p style="color: #4ecdc4; font-weight: bold; font-size: 1.1rem;">
+                Division de FIME COMPANY - CEO: Pedro Nicolas Hernandez Lizardo
+            </p>
+        </div>
+    </section>
+
+    <section id="juegos" class="games-section">
+        <div class="container">
+            <h2 class="section-title">🎮 Nuestros Juegos Educativos</h2>
+            <div class="games-grid">
+                <div class="game-card" onclick="jugarColores()">
+                    <span class="game-icon">🌈</span>
+                    <h3>Aprende Colores</h3>
+                    <p>Descubre los colores en español, inglés y francés con juegos interactivos y divertidos!</p>
+                    <button class="play-button">Jugar Ahora</button>
+                </div>
+
+                <div class="game-card" onclick="jugarNumeros()">
+                    <span class="game-icon">🔢</span>
+                    <h3>Cuenta Números</h3>
+                    <p>Aprende a contar del 1 al 20 en diferentes idiomas con animaciones coloridas!</p>
+                    <button class="play-button">Jugar Ahora</button>
+                </div>
+
+                <div class="game-card" onclick="jugarIdiomas()">
+                    <span class="game-icon">🌍</span>
+                    <h3>Idiomas del Mundo</h3>
+                    <p>Explora español, inglés y francés con palabras básicas y pronunciación!</p>
+                    <button class="play-button">Jugar Ahora</button>
+                </div>
+
+                <div class="game-card" onclick="jugarFormas()">
+                    <span class="game-icon">🔷</span>
+                    <h3>Formas y Figuras</h3>
+                    <p>Reconoce círculos, cuadrados, triángulos y más formas geométricas!</p>
+                    <button class="play-button">Jugar Ahora</button>
+                </div>
+
+                <div class="game-card" onclick="jugarAnimales()">
+                    <span class="game-icon">🐶</span>
+                    <h3>Animales Divertidos</h3>
+                    <p>Conoce los sonidos y nombres de animales en tres idiomas diferentes!</p>
+                    <button class="play-button">Jugar Ahora</button>
+                </div>
+
+                <div class="game-card" onclick="jugarIA()">
+                    <span class="game-icon">🤖</span>
+                    <h3>IA Personalizada</h3>
+                    <p>Juegos que se adaptan a tu nivel de aprendizaje con inteligencia artificial!</p>
+                    <button class="play-button">Jugar Ahora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ia" class="ai-section">
+        <div class="container">
+            <h2 class="section-title">🤖 Inteligencia Artificial Educativa</h2>
+            <p style="font-size: 1.2rem; color: #555; margin-bottom: 2rem;">
+                Nuestra IA analiza el progreso de cada niño y adapta los juegos para un aprendizaje óptimo.
+            </p>
+
+            <div class="ai-features">
+                <div class="ai-feature">
+                    <h4>🎯 Aprendizaje Personalizado</h4>
+                    <p>La IA ajusta la dificultad según el progreso individual de cada niño.</p>
+                </div>
+
+                <div class="ai-feature">
+                    <h4>📊 Análisis de Progreso</h4>
+                    <p>Reportes detallados para padres sobre el avance educativo.</p>
+                </div>
+
+                <div class="ai-feature">
+                    <h4>🎨 Contenido Adaptativo</h4>
+                    <p>Los juegos cambian según los intereses y fortalezas del niño.</p>
+                </div>
+
+                <div class="ai-feature">
+                    <h4>🌍 Multilingüe Inteligente</h4>
+                    <p>IA que enseña idiomas de forma natural y progresiva.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4>🎨 FimeKids</h4>
+                    <p>Educación infantil gratis con IA</p>
+                    <p>División de FIME COMPANY</p>
+                </div>
+                <div>
+                    <h4>👨‍💼 CEO</h4>
+                    <p>Pedro Nicolás Hernández Lizardo</p>
+                    <p>Grupo empresarial líder</p>
+                </div>
+                <div>
+                    <h4>🎮 Juegos Disponibles</h4>
+                    <p>• Colores • Números • Idiomas</p>
+                    <p>• Formas • Animales • IA Personalizada</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FIME COMPANY - FimeKids. Educación gratuita para todos los niños.</p>
+                <p>Desarrollado con ❤️ y Inteligencia Artificial</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funciones de los juegos
+        function jugarColores() {
+            alert('🎨 ¡Juego de Colores! Próximamente disponible. La IA está aprendiendo los colores favoritos de los niños!');
+        }
+
+        function jugarNumeros() {
+            alert('🔢 ¡Juego de Números! Próximamente disponible. La IA está contando hasta el infinito!');
+        }
+
+        function jugarIdiomas() {
+            alert('🌍 ¡Juego de Idiomas! Próximamente disponible. La IA está aprendiendo todos los idiomas del mundo!');
+        }
+
+        function jugarFormas() {
+            alert('🔷 ¡Juego de Formas! Próximamente disponible. La IA está dibujando formas perfectas!');
+        }
+
+        function jugarAnimales() {
+            alert('🐶 ¡Juego de Animales! Próximamente disponible. La IA está imitando todos los sonidos!');
+        }
+
+        function jugarIA() {
+            alert('🤖 ¡IA Personalizada! Próximamente disponible. La IA está preparando tu experiencia única!');
+        }
+
+        // Voz de bienvenida con navegación
+        function playWelcomeMessage() {
+            if ('speechSynthesis' in window) {
+                speechSynthesis.cancel();
+
+                const message = new SpeechSynthesisUtterance();
+                message.text = "Hola! Bienvenidos a FimeKids! Si desea visitar una de nuestras empresas, haga click en la misma. Puede visitar desde la pagina principal todas nuestras divisiones especializadas. Tenemos FimeTech para tecnologia, Ferreteria Industrial, CreaWeb para desarrollo, y muchas mas. Disfrute explorando!";
+                message.lang = 'es-ES';
+                message.rate = 1.1;
+                message.pitch = 1.3;
+                message.volume = 0.9;
+
+                const voices = speechSynthesis.getVoices();
+                const femaleVoice = voices.find(voice =>
+                    voice.lang.includes('es') &&
+                    (voice.name.toLowerCase().includes('female') ||
+                        voice.name.toLowerCase().includes('mujer') ||
+                        voice.name.toLowerCase().includes('maria'))
+                );
+
+                if (femaleVoice) {
+                    message.voice = femaleVoice;
+                }
+
+                speechSynthesis.speak(message);
+            }
+        }
+
+        // Efecto de partículas flotantes
+        function createFloatingParticles() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57'];
+
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'fixed';
+                particle.style.width = '10px';
+                particle.style.height = '10px';
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.borderRadius = '50%';
+                particle.style.pointerEvents = 'none';
+                particle.style.zIndex = '1';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animation = `float ${3 + Math.random() * 4}s ease-in-out infinite`;
+                particle.style.animationDelay = Math.random() * 2 + 's';
+
+                document.body.appendChild(particle);
+            }
+        }
+
+        // Inicializar efectos y voz
+        document.addEventListener('DOMContentLoaded', function () {
+            createFloatingParticles();
+
+            // Reproducir mensaje de bienvenida después de 2 segundos
+            setTimeout(() => {
+                playWelcomeMessage();
+            }, 2000);
+        });
+
+        // ========== FUNCIONES DE COMPARTIR ==========
+        
+        function openShareModal() {
+            document.getElementById('shareModal').style.display = 'block';
+        }
+
+        function closeShareModal() {
+            document.getElementById('shareModal').style.display = 'none';
+        }
+
+        function shareWhatsApp() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            window.open('https://wa.me/?text=' + encodeURIComponent('¡Mira FimeKids! Educación infantil gratis con IA: ') + title + ' ' + url, '_blank');
+            closeShareModal();
+        }
+
+        function shareFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, '_blank');
+            closeShareModal();
+        }
+
+        function shareTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            window.open('https://twitter.com/intent/tweet?text=' + title + '&url=' + url, '_blank');
+            closeShareModal();
+        }
+
+        function shareEmail() {
+            const url = window.location.href;
+            const title = document.title;
+            window.location.href = 'mailto:?subject=' + encodeURIComponent('Compartir: ' + title) + '&body=' + encodeURIComponent('¡Mira FimeKids! Educación infantil gratis con IA: ' + url);
+            closeShareModal();
+        }
+
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                alert('¡Link copiado al portapapeles!');
+            });
+            closeShareModal();
+        }
+
+        function shareTelegram() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            window.open('https://t.me/share/url?url=' + url + '&text=' + title, '_blank');
+            closeShareModal();
+        }
+
+        // Cerrar modal al hacer click fuera
+        document.getElementById('shareModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeShareModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

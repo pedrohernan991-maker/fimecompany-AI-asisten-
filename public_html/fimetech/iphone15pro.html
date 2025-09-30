@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 15 Pro - FimeTech | Review Completo y Especificaciones</title>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7619200532568255"
+     crossorigin="anonymous"></script>
+    <meta name="description" content="Review completo del iPhone 15 Pro. Especificaciones, precio, comparativa, cámara de 48MP, chip A17 Pro y todo lo que necesitas saber.">
+    <meta name="keywords" content="iPhone 15 Pro, Apple, smartphone, review, especificaciones, cámara, A17 Pro">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #007aff;
+            --secondary-color: #5856d6;
+            --accent-color: #ff3b30;
+            --dark-bg: #0f172a;
+            --dark-surface: #1e293b;
+            --dark-border: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --gradient-primary: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--dark-border);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .back-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .main-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .content-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .product-image {
+            background: var(--dark-surface);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--dark-border);
+        }
+
+        .phone-mockup {
+            width: 200px;
+            height: 400px;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border-radius: 30px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: var(--dark-bg);
+            border-radius: 20px;
+        }
+
+        .phone-mockup::after {
+            content: '📱';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4rem;
+            z-index: 1;
+        }
+
+        .product-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .product-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .spec-card {
+            background: var(--dark-surface);
+            border: 1px solid var(--dark-border);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .spec-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .spec-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .spec-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .spec-list {
+            list-style: none;
+        }
+
+        .spec-list li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .spec-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .comparison-table {
+            background: var(--dark-surface);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid var(--dark-border);
+            margin: 2rem 0;
+        }
+
+        .table-header {
+            background: var(--gradient-primary);
+            padding: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            border-bottom: 1px solid var(--dark-border);
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-cell {
+            padding: 1rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .table-cell:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+        }
+
+        .rating-text {
+            color: var(--text-secondary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.35);
+        }
+
+        .btn-secondary {
+            background: var(--dark-surface);
+            color: var(--text-primary);
+            border: 1px solid var(--dark-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark-border);
+            transform: translateY(-2px);
+        }
+
+        .review-section {
+            background: var(--dark-surface);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--dark-border);
+        }
+
+        .review-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--dark-border);
+        }
+
+        .review-item:last-child {
+            border-bottom: none;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .review-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .review-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .content-section {
+                padding: 3rem 1rem;
+            }
+
+            .product-showcase {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .table-row {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+
+            .table-cell {
+                text-align: left;
+                border-bottom: 1px solid var(--dark-border);
+            }
+
+            .table-cell:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <div style="width: 40px; height: 40px; background: var(--gradient-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">📱</div>
+                <span>FimeTech</span>
+            </a>
+            
+            <a href="index.html" class="back-btn">← Volver a FimeTech</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">iPhone 15 Pro</h1>
+                <p class="hero-subtitle">
+                    El smartphone más avanzado de Apple. Chip A17 Pro, cámara de 48MP, 
+                    titanio y USB-C. Descubre la revolución en tu bolsillo.
+                </p>
+            </div>
+        </section>
+
+        <!-- PRODUCT SHOWCASE -->
+        <section class="content-section">
+            <div class="product-showcase">
+                <div class="product-image">
+                    <div class="phone-mockup"></div>
+                </div>
+                
+                <div class="product-info">
+                    <h2>iPhone 15 Pro</h2>
+                    <div class="product-price">$999</div>
+                    <div class="rating">
+                        <div class="stars">★★★★★</div>
+                        <span class="rating-text">4.8/5 (2,847 reviews)</span>
+                    </div>
+                    <p class="product-description">
+                        El iPhone 15 Pro redefine lo que es posible en un smartphone. 
+                        Con el chip A17 Pro de 3nm, cámara principal de 48MP, 
+                        construcción en titanio y puerto USB-C, es la evolución perfecta.
+                    </p>
+                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                        <button class="btn btn-primary" onclick="addToCart('iphone-15-pro')">Comprar Ahora</button>
+                        <button class="btn btn-secondary">Comparar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPECIFICATIONS -->
+        <section class="content-section">
+            <h2 class="section-title">Especificaciones Técnicas</h2>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-icon">🧠</div>
+                    <h3 class="spec-title">Rendimiento</h3>
+                    <ul class="spec-list">
+                        <li>Chip A17 Pro de 3nm</li>
+                        <li>6 núcleos CPU (2 rendimiento + 4 eficiencia)</li>
+                        <li>6 núcleos GPU</li>
+                        <li>16 núcleos Neural Engine</li>
+                        <li>8GB RAM</li>
+                    </ul>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-icon">📷</div>
+                    <h3 class="spec-title">Cámara</h3>
+                    <ul class="spec-list">
+                        <li>Cámara principal 48MP f/1.78</li>
+                        <li>Teleobjetivo 12MP f/2.8 (3x zoom)</li>
+                        <li>Ultra gran angular 12MP f/2.2</li>
+                        <li>Modo Retrato con LiDAR</li>
+                        <li>Grabación 4K ProRes</li>
+                    </ul>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-icon">📱</div>
+                    <h3 class="spec-title">Pantalla</h3>
+                    <ul class="spec-list">
+                        <li>Super Retina XDR 6.1"</li>
+                        <li>Resolución 2556 x 1179</li>
+                        <li>460 ppp</li>
+                        <li>ProMotion 120Hz</li>
+                        <li>Always-On Display</li>
+                    </ul>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-icon">🔋</div>
+                    <h3 class="spec-title">Batería y Conectividad</h3>
+                    <ul class="spec-list">
+                        <li>Batería de 3274 mAh</li>
+                        <li>Carga inalámbrica MagSafe</li>
+                        <li>USB-C con Thunderbolt 3</li>
+                        <li>5G (sub-6GHz y mmWave)</li>
+                        <li>Wi-Fi 6E</li>
+                    </ul>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-icon">🏗️</div>
+                    <h3 class="spec-title">Diseño</h3>
+                    <ul class="spec-list">
+                        <li>Construcción en titanio</li>
+                        <li>Resistente al agua IP68</li>
+                        <li>187g de peso</li>
+                        <li>Colores: Natural, Azul, Blanco, Negro</li>
+                        <li>Botón de acción personalizable</li>
+                    </ul>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-icon">💾</div>
+                    <h3 class="spec-title">Almacenamiento</h3>
+                    <ul class="spec-list">
+                        <li>128GB - $999</li>
+                        <li>256GB - $1,099</li>
+                        <li>512GB - $1,299</li>
+                        <li>1TB - $1,499</li>
+                        <li>NVMe SSD ultrarrápido</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPARISON -->
+        <section class="content-section">
+            <h2 class="section-title">Comparativa de Modelos</h2>
+            
+            <div class="comparison-table">
+                <div class="table-header">iPhone 15 Pro vs iPhone 15 vs iPhone 14 Pro</div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Precio</div>
+                    <div class="table-cell">$999</div>
+                    <div class="table-cell">$799</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Chip</div>
+                    <div class="table-cell">A17 Pro</div>
+                    <div class="table-cell">A16 Bionic</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Cámara Principal</div>
+                    <div class="table-cell">48MP</div>
+                    <div class="table-cell">48MP</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Material</div>
+                    <div class="table-cell">Titanio</div>
+                    <div class="table-cell">Aluminio</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">Puerto</div>
+                    <div class="table-cell">USB-C</div>
+                    <div class="table-cell">USB-C</div>
+                </div>
+                
+                <div class="table-row">
+                    <div class="table-cell">ProMotion</div>
+                    <div class="table-cell">Sí</div>
+                    <div class="table-cell">No</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS -->
+        <section class="content-section">
+            <h2 class="section-title">Reviews de Usuarios</h2>
+            
+            <div class="review-section">
+                <div class="review-item">
+                    <div class="review-header">
+                        <span class="reviewer">María González</span>
+                        <span class="review-date">Hace 2 días</span>
+                    </div>
+                    <div class="rating">
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">
+                        "Increíble mejora respecto al iPhone 14 Pro. La cámara de 48MP 
+                        es espectacular, especialmente en condiciones de poca luz. 
+                        El titanio se siente premium y el USB-C es una bendición."
+                    </p>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-header">
+                        <span class="reviewer">Carlos Ruiz</span>
+                        <span class="review-date">Hace 1 semana</span>
+                    </div>
+                    <div class="rating">
+                        <div class="stars">★★★★☆</div>
+                    </div>
+                    <p class="review-text">
+                        "Excelente rendimiento con el A17 Pro. Los juegos se ven 
+                        increíbles y la batería dura todo el día. El único punto 
+                        negativo es el precio, pero vale la pena."
+                    </p>
+                </div>
+
+                <div class="review-item">
+                    <div class="review-header">
+                        <span class="reviewer">Ana Martínez</span>
+                        <span class="review-date">Hace 2 semanas</span>
+                    </div>
+                    <div class="rating">
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <p class="review-text">
+                        "La mejor cámara que he usado en un smartphone. Las fotos 
+                        en modo retrato son impresionantes y el video 4K ProRes 
+                        es de calidad profesional. Totalmente recomendado."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHERE TO BUY -->
+        <section class="content-section">
+            <h2 class="section-title">Dónde Comprar</h2>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-icon">🏪</div>
+                    <h3 class="spec-title">Apple Store</h3>
+                    <ul class="spec-list">
+                        <li>Precio oficial</li>
+                        <li>Garantía completa</li>
+                        <li>Personalización</li>
+                        <li>Entrega rápida</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Comprar en Apple</button>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-icon">🛒</div>
+                    <h3 class="spec-title">Amazon</h3>
+                    <ul class="spec-list">
+                        <li>Descuentos frecuentes</li>
+                        <li>Envío gratis</li>
+                        <li>Garantía extendida</li>
+                        <li>Reviews verificadas</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Ver en Amazon</button>
+                </div>
+
+                <div class="spec-card">
+                    <div class="spec-icon">📱</div>
+                    <h3 class="spec-title">Operadores</h3>
+                    <ul class="spec-list">
+                        <li>Planes de financiación</li>
+                        <li>Descuentos por contrato</li>
+                        <li>Cambio de operador</li>
+                        <li>Ofertas especiales</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Ver Ofertas</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- CARRITO DE COMPRAS -->
+    <script src="cart.js"></script>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Analytics
+        function trackEvent(category, action, label) {
+            console.log(`Analytics: ${category} - ${action} - ${label}`);
+        }
+
+        // Track page view
+        trackEvent('Page', 'View', 'iPhone 15 Pro');
+
+        // Track button clicks
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                trackEvent('Button', 'Click', this.textContent.trim());
+            });
+        });
+
+        // Add to cart functionality
+        function addToCart() {
+            alert('iPhone 15 Pro agregado al carrito!');
+            trackEvent('Ecommerce', 'AddToCart', 'iPhone 15 Pro');
+        }
+
+        // Update buy buttons
+        document.querySelectorAll('.btn-primary').forEach(button => {
+            if (button.textContent.includes('Comprar')) {
+                button.addEventListener('click', addToCart);
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

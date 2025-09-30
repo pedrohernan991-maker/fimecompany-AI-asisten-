@@ -1,0 +1,33 @@
+﻿{
+    "connectTimeout":  10000,
+    "username":  "cursor_user@fimecompany.com",
+    "syncMode":  "update",
+    "useTempFile":  false,
+    "protocol":  "ftp",
+    "ignore":  [
+                   ".vscode",
+                   ".git",
+                   ".DS_Store",
+                   "node_modules",
+                   "*.log",
+                   "*.md",
+                   "*.ps1",
+                   ".github",
+                   ".gitignore"
+               ],
+    "localPath":  "./public_html",
+    "openSsh":  false,
+    "password":  "QeWgB6DB~Lpt",
+    "downloadOnOpen":  false,
+    "uploadOnSave":  true,
+    "remotePath":  "/",
+    "port":  21,
+    "watcher":  {
+                    "autoUpload":  true,
+                    "files":  "./public_html/**/*",
+                    "autoDelete":  false
+                },
+    "host":  "ftp.fimecompany.com",
+    "name":  "fimecompany.com - FTP Correcto",
+    "interactiveAuth":  false
+}

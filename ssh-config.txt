@@ -1,0 +1,16 @@
++# Configuración SSH para FIME COMPANY cPanel
+
+Host: fimecompany.com
+Usuario: fimecompany
+Puerto: 22
+Ruta remota: /home/fimecompany/public_html
+
+# Clave SSH (generar con):
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/fimecompany_key -N ""
+
+# Conectar:ÑKS3Q55HHHMHUIK6MFC,C5'+
+ssh -i ~/.ssh/fimecompany_key fimecompany@fimecompany.com
+
+# Sincronizar archivos:
+rsync -avz --delete -e "ssh -i ~/.ssh/fimecompany_key" ./c\ panel/ fimecompany@fimecompany.com:/home/fimecompany/public_html/
+

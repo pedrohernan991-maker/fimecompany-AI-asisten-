@@ -1,0 +1,79 @@
+﻿# FIME COMPANY - Git Ignore
+# =========================
+
+# Archivos de configuración local
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+# Scripts de PowerShell temporales
+*.ps1~
+*.bat~
+
+# Archivos de backup
+backup_*
+*_backup
+*.backup
+
+# Archivos de sistema Windows
+desktop.ini
+*.lnk
+
+# Archivos temporales de Office
+~$*
+
+# Carpetas de cache
+cache/
+temp/
+tmp/
+
+# Archivos de configuración sensibles
+*.env
+config.local.*
+secrets.*
+
+# Archivos de desarrollo
+.vscode/settings.json
+.cursor/
+
+# Logs de deployment
+deployment.log
+upload.log
+
+.DS_Store
+Thumbs.db
+# Scripts de PowerShell temporales
+*.ps1~
+*.bat~
+
+# Archivos de backup
+backup_*
+*_backup
+*.backup
+
+# Archivos de sistema Windows
+desktop.ini
+*.lnk
+# Archivos temporales de Office
+~$*
+
+# Carpetas de cache
+cache/
+temp/
+tmp/
+
+# Archivos de configuración sensibles
+*.env
+config.local.*
+secrets.*
+
+# Archivos de desarrollo
+.vscode/settings.json
+.cursor/
+
+# Logs de deployment
+deployment.log
+upload.log
+
+.DS_Store
+Thumbs.db

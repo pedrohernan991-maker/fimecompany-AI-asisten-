@@ -1,0 +1,18 @@
+{
+    "site": {
+        "name": "FimeTech",
+        "version": "1.0.0",
+        "description": "Portal de tecnología de FIME COMPANY"
+    },
+    "features": {
+        "search": true,
+        "cart": true,
+        "reviews": true,
+        "ai_chat": true
+    },
+    "analytics": {
+        "google_analytics": "GA-XXXXXXXXX",
+        "facebook_pixel": "FB-XXXXXXXXX"
+    }
+}
+

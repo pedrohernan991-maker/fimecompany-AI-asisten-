@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferretería Industrial Metálica del Este - FIME COMPANY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a;
+            color: #eee;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #00e5e5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: #00e5e5;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #eee;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            color: #00e5e5;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #00e5e5;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            background: rgba(0, 229, 229, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border: 1px solid #00e5e5;
+        }
+
+        .contact-info h3 {
+            color: #00e5e5;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .catalog {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #00e5e5;
+            margin-bottom: 3rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .category {
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            border-color: #00e5e5;
+            box-shadow: 0 10px 25px rgba(0, 229, 229, 0.2);
+        }
+
+        .category h3 {
+            color: #00e5e5;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .product {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #444;
+            transition: all 0.3s ease;
+        }
+
+        .product:hover {
+            border-color: #00e5e5;
+            background: rgba(0, 229, 229, 0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(45deg, #333, #555);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00e5e5;
+            font-size: 2rem;
+        }
+
+        .product h4 {
+            color: #fff;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            color: #00e5e5;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 3rem 0 1rem;
+            border-top: 2px solid #00e5e5;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer h4 {
+            color: #00e5e5;
+            margin-bottom: 1rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav {
+                justify-content: center;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .products {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../" class="logo">🌐 FIME COMPANY</a>
+                <nav class="nav">
+                    <a href="../">Portal Principal</a>
+                    <a href="./" class="active">Ferretería Industrial</a>
+                    <a href="../constructora/">Constructora</a>
+                    <a href="../energia/">Energía</a>
+                    <a href="../fimekids/">FimeKids</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Ferretería Industrial Metálica del Este</h1>
+            <p>División principal de FIME COMPANY. Tu socio confiable en herramientas, materiales de construcción y
+                soluciones industriales.</p>
+
+            <div class="contact-info">
+                <h3>📞 Contacto Directo: 829-440-9136</h3>
+                <p>🏢 División de FIME COMPANY - CEO: Pedro Nicolás Hernández Lizardo</p>
+                <p>🚚 Entregas rápidas en toda la región - Calidad FIME garantizada</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog">
+        <div class="container">
+            <h2 class="section-title">Catálogo Completo de Productos</h2>
+
+            <div class="categories">
+                <div class="category">
+                    <h3>🔨 Herramientas Manuales</h3>
+                    <div class="products">
+                        <div class="product">
+                            <div class="product-image">🔨</div>
+                            <h4>Martillo de Carpintero</h4>
+                            <div class="product-price">RD$ 850</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">🪚</div>
+                            <h4>Sierra de Mano</h4>
+                            <div class="product-price">RD$ 1,200</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">🔧</div>
+                            <h4>Llave Inglesa</h4>
+                            <div class="product-price">RD$ 650</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">⚡</div>
+                            <h4>Destornillador Set</h4>
+                            <div class="product-price">RD$ 450</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>⚡ Herramientas Eléctricas</h3>
+                    <div class="products">
+                        <div class="product">
+                            <div class="product-image">🔌</div>
+                            <h4>Taladro Percutor</h4>
+                            <div class="product-price">RD$ 3,500</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">⚡</div>
+                            <h4>Amoladora Angular</h4>
+                            <div class="product-price">RD$ 2,800</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">🔌</div>
+                            <h4>Sierra Circular</h4>
+                            <div class="product-price">RD$ 4,200</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">⚡</div>
+                            <h4>Lijadora Orbital</h4>
+                            <div class="product-price">RD$ 2,100</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>🏗️ Materiales de Construcción</h3>
+                    <div class="products">
+                        <div class="product">
+                            <div class="product-image">🧱</div>
+                            <h4>Cemento Portland</h4>
+                            <div class="product-price">RD$ 420</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">🏗️</div>
+                            <h4>Varilla de Hierro</h4>
+                            <div class="product-price">RD$ 380</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">🧱</div>
+                            <h4>Bloque de Concreto</h4>
+                            <div class="product-price">RD$ 45</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">🏗️</div>
+                            <h4>Arena Lavada</h4>
+                            <div class="product-price">RD$ 1,800</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>🔩 Ferretería Industrial</h3>
+                    <div class="products">
+                        <div class="product">
+                            <div class="product-image">🔩</div>
+                            <h4>Tornillos Galvanizados</h4>
+                            <div class="product-price">RD$ 25</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">⚙️</div>
+                            <h4>Tuercas y Arandelas</h4>
+                            <div class="product-price">RD$ 15</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">🔗</div>
+                            <h4>Cadenas de Acero</h4>
+                            <div class="product-price">RD$ 180</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">🔒</div>
+                            <h4>Candados Industriales</h4>
+                            <div class="product-price">RD$ 320</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>🎨 Pinturas y Acabados</h3>
+                    <div class="products">
+                        <div class="product">
+                            <div class="product-image">🎨</div>
+                            <h4>Pintura Látex</h4>
+                            <div class="product-price">RD$ 1,450</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">🖌️</div>
+                            <h4>Brocha Profesional</h4>
+                            <div class="product-price">RD$ 280</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">🎨</div>
+                            <h4>Rodillo con Bandeja</h4>
+                            <div class="product-price">RD$ 350</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">🖌️</div>
+                            <h4>Imprimante Sellador</h4>
+                            <div class="product-price">RD$ 1,200</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <h3>💡 Electricidad y Plomería</h3>
+                    <div class="products">
+                        <div class="product">
+                            <div class="product-image">💡</div>
+                            <h4>Cable Eléctrico</h4>
+                            <div class="product-price">RD$ 85</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">🔌</div>
+                            <h4>Interruptor Doble</h4>
+                            <div class="product-price">RD$ 120</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">🚿</div>
+                            <h4>Tubo PVC</h4>
+                            <div class="product-price">RD$ 180</div>
+                        </div>
+                        <div class="product">
+                            <div class="product-image">💧</div>
+                            <h4>Llave de Paso</h4>
+                            <div class="product-price">RD$ 250</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4>Ferretería Industrial Metálica del Este</h4>
+                    <p>División principal de FIME COMPANY</p>
+                    <p><strong>📞 829-440-9136</strong></p>
+                </div>
+                <div>
+                    <h4>FIME COMPANY</h4>
+                    <p><strong>CEO:</strong> Pedro Nicolás Hernández Lizardo</p>
+                    <p>Grupo empresarial líder</p>
+                    <p>7 divisiones especializadas</p>
+                </div>
+                <div>
+                    <h4>Servicios</h4>
+                    <p>• Venta de herramientas</p>
+                    <p>• Materiales de construcción</p>
+                    <p>• Asesoría técnica</p>
+                    <p>• Entregas a domicilio</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FIME COMPANY - Ferretería Industrial Metálica del Este. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

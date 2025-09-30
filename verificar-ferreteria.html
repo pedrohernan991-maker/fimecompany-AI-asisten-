@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificación - Catálogo Ferretería</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .status {
+      background: #e8f5e8;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 4px solid #27ae60;
+    }
+
+    .error {
+      background: #ffeaea;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 4px solid #e74c3c;
+    }
+
+    .info {
+      background: #e3f2fd;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 4px solid #2196f3;
+    }
+
+    .catalogo-preview {
+      background: #fff3e0;
+      padding: 20px;
+      border-radius: 5px;
+      margin: 20px 0;
+      border-left: 4px solid #ff9800;
+    }
+
+    .producto {
+      background: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .precio {
+      color: #27ae60;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🔧 Verificación - Catálogo Ferretería</h1>
+
+    <div class="status">
+      <h3>✅ Estado del Sitio</h3>
+      <p><strong>URL:</strong> https://fimecompany.com/ferreteria/</p>
+      <p><strong>Problema:</strong> Solo muestra título "Catálogo Ferretería"</p>
+      <p><strong>Diagnóstico:</strong> Falta contenido en la página</p>
+    </div>
+
+    <div class="info">
+      <h3>📁 Estructura de Archivos</h3>
+      <p><strong>Carpeta principal:</strong> FIMECOMPANY V4</p>
+      <p><strong>Ubicación:</strong> /public_html/FIMECOMPANY V4/</p>
+      <p><strong>Archivo:</strong> ferreteria/index.html</p>
+    </div>
+
+    <div class="catalogo-preview">
+      <h3>🛠️ Vista Previa del Catálogo</h3>
+      <p>Este es el contenido que debería aparecer en tu sitio:</p>
+
+      <div class="producto">
+        <h4>🔨 Martillo de Carpintero</h4>
+        <p>Martillo profesional de acero forjado</p>
+        <p class="precio">$25.000</p>
+      </div>
+
+      <div class="producto">
+        <h4>🔧 Juego de Destornilladores</h4>
+        <p>Set de 12 destornilladores profesionales</p>
+        <p class="precio">$45.000</p>
+      </div>
+
+      <div class="producto">
+        <h4>⚡ Taladro Eléctrico</h4>
+        <p>Taladro inalámbrico 18V con batería</p>
+        <p class="precio">$180.000</p>
+      </div>
+
+      <div class="producto">
+        <h4>🔩 Tornillos y Tuercas</h4>
+        <p>Juego completo de tornillos y tuercas</p>
+        <p class="precio">$15.000</p>
+      </div>
+    </div>
+
+    <div class="error">
+      <h3>❌ Problemas Identificados</h3>
+      <ul>
+        <li>Archivo HTML incompleto</li>
+        <li>Falta de contenido en la página</li>
+        <li>Posible problema de CSS</li>
+        <li>Archivo no encontrado o corrupto</li>
+      </ul>
+    </div>
+
+    <div class="info">
+      <h3>🔧 Solución</h3>
+      <p>1. <strong>Conectar con SFTP</strong> para ver archivos</p>
+      <p>2. <strong>Verificar</strong> archivo ferreteria/index.html</p>
+      <p>3. <strong>Crear</strong> página completa con catálogo</p>
+      <p>4. <strong>Subir</strong> archivos al servidor</p>
+      <p>5. <strong>Verificar</strong> funcionamiento</p>
+    </div>
+
+    <div class="status">
+      <h3>📅 Fecha de Verificación</h3>
+      <p id="fecha"></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('fecha').textContent = new Date().toLocaleString('es-ES');
+  </script>
+</body>
+
+</html>

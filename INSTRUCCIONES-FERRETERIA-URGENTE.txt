@@ -1,0 +1,36 @@
+🚨 SOLUCIÓN URGENTE - FERRETERÍA NO SE VE
+
+=== PASOS INMEDIATOS EN CPANEL ===
+
+1. VE A CPANEL → ADMINISTRADOR DE ARCHIVOS
+
+2. NAVEGA A: /public_html/
+
+3. VERIFICAR SI EXISTE CARPETA "ferreteria":
+   ❌ SI NO EXISTE: Click derecho → "Create Folder" → Nombre: ferreteria
+
+4. ENTRAR A LA CARPETA: /public_html/ferreteria/
+
+5. VERIFICAR SI EXISTE "index.html":
+   ❌ SI NO EXISTE: Click derecho → "Create New File" → Nombre: index.html
+
+6. EDITAR EL ARCHIVO: Click derecho sobre index.html → "Edit"
+
+7. PEGAR EL CÓDIGO DE FERRETERÍA (tu código actual)
+
+=== ESTRUCTURA CORRECTA ===
+/public_html/
+├── index.html (Portal principal FIME COMPANY)
+└── ferreteria/
+    └── index.html (Tu código de ferretería)
+
+=== VERIFICAR EN LA WEB ===
+• Portal: fimecompany.com ✅
+• Ferretería: fimecompany.com/ferreteria/ ❌ → ✅
+
+=== SI SIGUE SIN FUNCIONAR ===
+- Verificar permisos del archivo (644)
+- Verificar que el código esté completo
+- Limpiar caché del navegador (Ctrl+F5)
+
+CURSOR: LISTO PARA GUIARTE PASO A PASO 🤖

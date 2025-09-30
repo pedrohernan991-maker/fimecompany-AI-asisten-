@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT 4.0 - FimeTech | Inteligencia Artificial Avanzada</title>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7619200532568255"
+     crossorigin="anonymous"></script>
+    <meta name="description" content="Descubre ChatGPT 4.0, la IA conversacional más avanzada. Prompts, casos de uso, integración empresarial y guías completas.">
+    <meta name="keywords" content="ChatGPT, GPT-4, inteligencia artificial, IA, OpenAI, prompts, conversación">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #10a37f;
+            --secondary-color: #1a7f64;
+            --accent-color: #ff6b35;
+            --dark-bg: #0f172a;
+            --dark-surface: #1e293b;
+            --dark-border: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --gradient-primary: linear-gradient(135deg, #10a37f 0%, #1a7f64 100%);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--dark-border);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .back-btn {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .main-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .content-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--dark-surface);
+            border: 1px solid var(--dark-border);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.35);
+        }
+
+        .btn-secondary {
+            background: var(--dark-surface);
+            color: var(--text-primary);
+            border: 1px solid var(--dark-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark-border);
+            transform: translateY(-2px);
+        }
+
+        .chat-demo {
+            background: var(--dark-surface);
+            border: 1px solid var(--dark-border);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .chat-messages {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--dark-bg);
+            border-radius: 8px;
+        }
+
+        .message {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .message.user {
+            background: var(--gradient-primary);
+            margin-left: 2rem;
+        }
+
+        .message.ai {
+            background: var(--dark-border);
+            margin-right: 2rem;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .chat-input input {
+            flex: 1;
+            background: var(--dark-bg);
+            border: 1px solid var(--dark-border);
+            border-radius: 25px;
+            padding: 1rem;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .chat-input input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .chat-input button {
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .chat-input button:hover {
+            transform: translateY(-2px);
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .features-list li {
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .features-list li::before {
+            content: '✅';
+            font-size: 1.2rem;
+        }
+
+        .pricing-card {
+            background: var(--dark-surface);
+            border: 2px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .price-period {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            .content-section {
+                padding: 3rem 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chat-input {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <div style="width: 40px; height: 40px; background: var(--gradient-primary); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">🤖</div>
+                <span>FimeTech</span>
+            </a>
+            
+            <a href="index.html" class="back-btn">← Volver a FimeTech</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">ChatGPT 4.0</h1>
+                <p class="hero-subtitle">
+                    La inteligencia artificial conversacional más avanzada del mundo. 
+                    Descubre el poder de GPT-4 y revoluciona tu forma de trabajar.
+                </p>
+            </div>
+        </section>
+
+        <!-- CONTENT SECTIONS -->
+        <section class="content-section">
+            <h2 class="section-title">¿Qué es ChatGPT 4.0?</h2>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🧠</div>
+                    <h3 class="card-title">Inteligencia Avanzada</h3>
+                    <p class="card-description">
+                        GPT-4 es el modelo de lenguaje más potente de OpenAI, capaz de entender 
+                        contexto complejo, realizar análisis profundos y generar contenido de alta calidad.
+                    </p>
+                    <ul class="features-list">
+                        <li>128K tokens de contexto</li>
+                        <li>Comprensión multimodal</li>
+                        <li>Razonamiento avanzado</li>
+                        <li>Creatividad superior</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">💼</div>
+                    <h3 class="card-title">Casos de Uso Empresarial</h3>
+                    <p class="card-description">
+                        Transforma tu negocio con ChatGPT 4.0. Desde automatización de procesos 
+                        hasta análisis de datos y generación de contenido.
+                    </p>
+                    <ul class="features-list">
+                        <li>Automatización de tareas</li>
+                        <li>Análisis de documentos</li>
+                        <li>Generación de reportes</li>
+                        <li>Soporte al cliente</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🎨</div>
+                    <h3 class="card-title">Creatividad y Contenido</h3>
+                    <p class="card-description">
+                        Crea contenido de calidad profesional. Desde artículos y blogs hasta 
+                        scripts, código y estrategias de marketing.
+                    </p>
+                    <ul class="features-list">
+                        <li>Generación de contenido</li>
+                        <li>Edición y mejora de textos</li>
+                        <li>Traducción precisa</li>
+                        <li>Brainstorming creativo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAT DEMO -->
+        <section class="content-section">
+            <h2 class="section-title">Prueba ChatGPT 4.0</h2>
+            
+            <div class="chat-demo">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message ai">
+                        <strong>ChatGPT 4.0:</strong> ¡Hola! Soy ChatGPT 4.0, tu asistente de IA avanzado. 
+                        ¿En qué puedo ayudarte hoy? Puedo responder preguntas, ayudar con tareas creativas, 
+                        analizar datos, escribir código y mucho más.
+                    </div>
+                </div>
+                
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="Escribe tu mensaje aquí..." maxlength="500">
+                    <button onclick="sendMessage()">Enviar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING -->
+        <section class="content-section">
+            <h2 class="section-title">Planes y Precios</h2>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h3 class="card-title">Plan Gratuito</h3>
+                    <div class="price">$0<span class="price-period">/mes</span></div>
+                    <ul class="features-list">
+                        <li>Acceso a GPT-3.5</li>
+                        <li>Límite de mensajes</li>
+                        <li>Soporte básico</li>
+                        <li>Funciones estándar</li>
+                    </ul>
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Comenzar Gratis</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-badge">Más Popular</div>
+                    <h3 class="card-title">ChatGPT Plus</h3>
+                    <div class="price">$20<span class="price-period">/mes</span></div>
+                    <ul class="features-list">
+                        <li>Acceso a GPT-4</li>
+                        <li>Sin límites de mensajes</li>
+                        <li>Respuestas más rápidas</li>
+                        <li>Nuevas funciones primero</li>
+                        <li>Soporte prioritario</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;" onclick="addToCart('chatgpt-4')">Suscribirse</button>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">ChatGPT Enterprise</h3>
+                    <div class="price">Personalizado</div>
+                    <ul class="features-list">
+                        <li>GPT-4 ilimitado</li>
+                        <li>API personalizada</li>
+                        <li>Seguridad avanzada</li>
+                        <li>Soporte 24/7</li>
+                        <li>Integración empresarial</li>
+                    </ul>
+                    <button class="btn btn-secondary" style="width: 100%; margin-top: 1rem;">Contactar Ventas</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TUTORIALS -->
+        <section class="content-section">
+            <h2 class="section-title">Guías y Tutoriales</h2>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">📝</div>
+                    <h3 class="card-title">Prompts Efectivos</h3>
+                    <p class="card-description">
+                        Aprende a escribir prompts que obtengan los mejores resultados de ChatGPT 4.0.
+                    </p>
+                    <button class="btn btn-primary">Ver Guía</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔧</div>
+                    <h3 class="card-title">Integración API</h3>
+                    <p class="card-description">
+                        Integra ChatGPT 4.0 en tus aplicaciones con la API de OpenAI.
+                    </p>
+                    <button class="btn btn-primary">Ver Tutorial</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">💡</div>
+                    <h3 class="card-title">Casos de Uso Avanzados</h3>
+                    <p class="card-description">
+                        Descubre cómo empresas están usando ChatGPT 4.0 para innovar.
+                    </p>
+                    <button class="btn btn-primary">Ver Ejemplos</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- CARRITO DE COMPRAS -->
+    <script src="cart.js"></script>
+
+    <script>
+        // Chat functionality
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const messages = document.getElementById('chatMessages');
+            const message = input.value.trim();
+            
+            if (!message) return;
+            
+            // Add user message
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user';
+            userMessage.innerHTML = `<strong>Tú:</strong> ${message}`;
+            messages.appendChild(userMessage);
+            
+            // Clear input
+            input.value = '';
+            
+            // Scroll to bottom
+            messages.scrollTop = messages.scrollHeight;
+            
+            // Simulate AI response
+            setTimeout(() => {
+                const aiMessage = document.createElement('div');
+                aiMessage.className = 'message ai';
+                aiMessage.innerHTML = `<strong>ChatGPT 4.0:</strong> ${getAIResponse(message)}`;
+                messages.appendChild(aiMessage);
+                messages.scrollTop = messages.scrollHeight;
+            }, 1000);
+        }
+        
+        function getAIResponse(userMessage) {
+            const responses = [
+                "Esa es una excelente pregunta. ChatGPT 4.0 puede ayudarte con eso de varias maneras...",
+                "Interesante consulta. Te puedo proporcionar información detallada sobre ese tema...",
+                "ChatGPT 4.0 está diseñado para manejar exactamente ese tipo de tareas. Aquí tienes algunas opciones...",
+                "Perfecto, puedo ayudarte con eso. Te voy a dar una respuesta completa y detallada...",
+                "Esa es una consulta muy común. ChatGPT 4.0 tiene capacidades específicas para ese caso de uso..."
+            ];
+            
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+        
+        // Enter key support
+        document.getElementById('chatInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Analytics
+        function trackEvent(category, action, label) {
+            console.log(`Analytics: ${category} - ${action} - ${label}`);
+        }
+        
+        // Track page view
+        trackEvent('Page', 'View', 'ChatGPT 4.0');
+        
+        // Track button clicks
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                trackEvent('Button', 'Click', this.textContent.trim());
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

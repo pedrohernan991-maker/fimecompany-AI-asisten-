@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FimeTech - Tecnología de Vanguardia</title>
+    <meta name="description" content="Portal tecnológico con IA, gadgets, reviews y tutoriales">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #00e5e5;
+            --bg: #0a0a0a;
+            --card: #2a2a2a;
+            --text: #ffffff;
+            --text-muted: #888;
+            --border: #333;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: var(--bg);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 0 1rem;
+            transition: transform 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .categories {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 229, 229, 0.2);
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card p {
+            color: var(--text-muted);
+        }
+        
+        .products {
+            padding: 4rem 2rem;
+            background: #1a1a1a;
+        }
+        
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            background: var(--card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
+        
+        .product-image {
+            height: 200px;
+            background: linear-gradient(135deg, #333, #555);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        
+        .product-content {
+            padding: 1.5rem;
+        }
+        
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-description {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            color: #00ff88;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .footer {
+            background: var(--bg);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav { flex-direction: column; gap: 1rem; }
+            .nav-links { gap: 1rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">🚀 FimeTech</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#tutoriales">Tutoriales</a></li>
+                <li><a href="../">FIME</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h1>FimeTech</h1>
+        <p>Tu portal definitivo de tecnología. Descubre IA, gadgets, reviews y tutoriales especializados.</p>
+        <div>
+            <a href="#productos" class="btn">🚀 Explorar Productos</a>
+            <a href="#tutoriales" class="btn">📚 Ver Tutoriales</a>
+        </div>
+    </section>
+
+    <section class="categories" id="categorias">
+        <h2 class="section-title">Categorías Destacadas</h2>
+        <div class="grid">
+            <div class="card" onclick="filterProducts('ia')">
+                <div class="card-icon">🤖</div>
+                <h3>Inteligencia Artificial</h3>
+                <p>ChatGPT, AutoGPT y las últimas herramientas de IA para potenciar tu trabajo.</p>
+            </div>
+            
+            <div class="card" onclick="filterProducts('gadgets')">
+                <div class="card-icon">📱</div>
+                <h3>Gadgets & Dispositivos</h3>
+                <p>Los mejores smartphones, tablets, smartwatches del mercado.</p>
+            </div>
+            
+            <div class="card" onclick="filterProducts('gaming')">
+                <div class="card-icon">🎮</div>
+                <h3>Gaming & Hardware</h3>
+                <p>Hardware gamer, tarjetas gráficas, procesadores de última generación.</p>
+            </div>
+            
+            <div class="card" onclick="filterProducts('software')">
+                <div class="card-icon">💻</div>
+                <h3>Software & Apps</h3>
+                <p>Las mejores aplicaciones y software de productividad del mercado.</p>
+            </div>
+            
+            <div class="card" onclick="filterProducts('reviews')">
+                <div class="card-icon">⭐</div>
+                <h3>Reviews & Análisis</h3>
+                <p>Reviews detalladas y análisis profundos de productos tecnológicos.</p>
+            </div>
+            
+            <div class="card" onclick="filterProducts('tutoriales')">
+                <div class="card-icon">🎓</div>
+                <h3>Tutoriales & Cursos</h3>
+                <p>Aprende programación, diseño y habilidades tecnológicas avanzadas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="productos">
+        <div class="products-container">
+            <h2 class="section-title">Productos Destacados</h2>
+            <div class="grid" id="productsGrid">
+                <!-- Productos se cargan aquí -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#tutoriales">Tutoriales</a>
+            <a href="../">FIME Company</a>
+        </div>
+        <p style="color: var(--text-muted);">
+            © 2024 FimeTech - FIME COMPANY. Portal tecnológico especializado.
+        </p>
+    </footer>
+
+    <script>
+        const productos = [
+            {
+                id: 1,
+                nombre: "ChatGPT Plus Premium",
+                categoria: "ia",
+                precio: "$20/mes",
+                descripcion: "Acceso premium a ChatGPT 4.0 con funciones avanzadas y plugins.",
+                imagen: "🤖",
+                rating: 4.9
+            },
+            {
+                id: 2,
+                nombre: "iPhone 15 Pro Max",
+                categoria: "gadgets",
+                precio: "$1,199",
+                descripcion: "Smartphone más avanzado con chip A17 Pro y cámara de 48MP.",
+                imagen: "📱",
+                rating: 4.8
+            },
+            {
+                id: 3,
+                nombre: "NVIDIA RTX 4090",
+                categoria: "gaming",
+                precio: "$1,599",
+                descripcion: "Tarjeta gráfica más potente para gaming 4K y rendering.",
+                imagen: "🎮",
+                rating: 4.9
+            },
+            {
+                id: 4,
+                nombre: "Tesla Cybertruck",
+                categoria: "gadgets",
+                precio: "$99,900",
+                descripcion: "Pickup eléctrico futurista con 500 millas de autonomía.",
+                imagen: "🚗",
+                rating: 4.7
+            },
+            {
+                id: 5,
+                nombre: "Meta Quest 3",
+                categoria: "gaming",
+                precio: "$499",
+                descripcion: "Realidad virtual de nueva generación con mixed reality.",
+                imagen: "🥽",
+                rating: 4.6
+            },
+            {
+                id: 6,
+                nombre: "MacBook Pro M3",
+                categoria: "software",
+                precio: "$3,199",
+                descripcion: "Laptop profesional con chip M3 Max para desarrollo y diseño.",
+                imagen: "💻",
+                rating: 4.9
+            }
+        ];
+
+        function mostrarProductos(productosAMostrar) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = productosAMostrar.map(producto => `
+                <div class="product-card" onclick="verProducto('${producto.id}')">
+                    <div class="product-image">${producto.imagen}</div>
+                    <div class="product-content">
+                        <h3 class="product-title">${producto.nombre}</h3>
+                        <p class="product-description">${producto.descripcion}</p>
+                        <div class="product-price">${producto.precio}</div>
+                        <div style="margin: 1rem 0;">
+                            <span style="color: #ffaa00;">⭐ ${producto.rating}</span>
+                        </div>
+                        <button class="btn" onclick="event.stopPropagation(); comprar('${producto.id}')" style="width: 100%; margin: 0;">
+                            🛒 Comprar Ahora
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterProducts(categoria) {
+            const productosFiltrados = productos.filter(p => p.categoria === categoria);
+            mostrarProductos(productosFiltrados);
+            document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function verProducto(id) {
+            const producto = productos.find(p => p.id == id);
+            alert(`Ver detalles de: ${producto.nombre}\n\n${producto.descripcion}\n\nPrecio: ${producto.precio}`);
+        }
+
+        function comprar(id) {
+            const producto = productos.find(p => p.id == id);
+            alert(`¡Producto agregado al carrito!\n\n${producto.nombre}\n${producto.precio}`);
+        }
+
+        // Cargar productos al inicio
+        document.addEventListener('DOMContentLoaded', function() {
+            mostrarProductos(productos);
+        });
+
+        // Navegación suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

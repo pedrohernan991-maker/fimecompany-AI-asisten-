@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FimeKids - Educacion Infantil Gratis con IA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: #ff6b6b;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .nav a:hover {
+            background: #ff6b6b;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .hero h2 {
+            color: #4ecdc4;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #555;
+        }
+
+        .free-badge {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 1rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .games-section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff6b6b;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-color: #ff6b6b;
+        }
+
+        .game-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .game-card h3 {
+            color: #ff6b6b;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .game-card p {
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .play-button {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .ai-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .ai-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .ai-feature {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid #4ecdc4;
+        }
+
+        .ai-feature h4 {
+            color: #4ecdc4;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer h4 {
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Juego interactivo */
+        .game-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 2rem 0;
+            display: none;
+            text-align: center;
+        }
+
+        .game-question {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: #ff6b6b;
+        }
+
+        .game-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .game-option {
+            background: #f8f8f8;
+            padding: 1rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .game-option:hover {
+            border-color: #4ecdc4;
+            transform: scale(1.05);
+        }
+
+        .game-feedback {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            padding: 1rem;
+            border-radius: 15px;
+            display: none;
+        }
+
+        .feedback-correct {
+            background: rgba(78, 205, 196, 0.2);
+            color: #4ecdc4;
+        }
+
+        .feedback-wrong {
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+        }
+
+        .voice-controls {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .voice-button {
+            background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .voice-button:hover {
+            transform: scale(1.05);
+        }
+
+        .voice-status {
+            margin-top: 1rem;
+            font-style: italic;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav {
+                justify-content: center;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../" class="logo">🎨 FimeKids</a>
+                <nav class="nav">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#juegos">Juegos</a>
+                    <a href="#ia">IA</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h1>🎨 FimeKids</h1>
+            <h2>Educacion Infantil Gratis con Voz Interactiva</h2>
+            <p>Aprende colores, numeros e idiomas de forma divertida! Nuestros juegos educativos se adaptan al ritmo de
+                cada nino con tecnologia de voz gratuita.</p>
+
+            <div class="free-badge">
+                🎉 100% GRATIS - Sin suscripciones
+            </div>
+
+            <div class="voice-controls">
+                <button class="voice-button"
+                    onclick="educacionVoz.hablar('Bienvenido a FimeKids! Aqui puedes aprender colores, numeros y formas de manera divertida!')">Escuchar
+                    Bienvenida</button>
+            </div>
+
+            <p style="color: #4ecdc4; font-weight: bold; font-size: 1.1rem;">
+                Division de FIME COMPANY - CEO: Pedro Nicolas Hernandez Lizardo
+            </p>
+        </div>
+    </section>
+
+    <section id="juegos" class="games-section">
+        <div class="container">
+            <h2 class="section-title">🎮 Nuestros Juegos Educativos</h2>
+            <div class="games-grid">
+                <div class="game-card" onclick="iniciarJuegoColores()">
+                    <span class="game-icon">🌈</span>
+                    <h3>Aprende Colores</h3>
+                    <p>Descubre los colores en espanol, ingles y frances con juegos interactivos y divertidos!</p>
+                    <button class="play-button">Jugar Ahora</button>
+                </div>
+
+                <div class="game-card" onclick="iniciarJuegoNumeros()">
+                    <span class="game-icon">🔢</span>
+                    <h3>Cuenta Numeros</h3>
+                    <p>Aprende a contar del 1 al 20 en diferentes idiomas con animaciones coloridas!</p>
+                    <button class="play-button">Jugar Ahora</button>
+                </div>
+
+                <div class="game-card" onclick="iniciarJuegoFormas()">
+                    <span class="game-icon">🔷</span>
+                    <h3>Formas y Figuras</h3>
+                    <p>Reconoce circulos, cuadrados, triangulos y mas formas geometricas!</p>
+                    <button class="play-button">Jugar Ahora</button>
+                </div>
+            </div>
+
+            <!-- Contenedor para juegos interactivos -->
+            <div id="game-container" class="game-container">
+                <div class="game-question" id="game-question">¿De qué color es el cielo?</div>
+                <div class="game-options" id="game-options">
+                    <!-- Las opciones se generan dinámicamente -->
+                </div>
+                <div class="game-feedback" id="game-feedback"></div>
+                <div class="voice-controls">
+                    <button class="voice-button" onclick="escucharRespuesta()">Responder por Voz</button>
+                    <button class="voice-button" onclick="repetirPregunta()">Repetir Pregunta</button>
+                </div>
+                <div class="voice-status" id="voice-status"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ia" class="ai-section">
+        <div class="container">
+            <h2 class="section-title">🗣️ Educacion con Voz Interactiva</h2>
+            <p style="font-size: 1.2rem; color: #555; margin-bottom: 2rem;">
+                Nuestra tecnologia de voz gratuita permite a los ninos aprender de forma interactiva sin necesidad de
+                APIs externas.
+            </p>
+
+            <div class="ai-features">
+                <div class="ai-feature">
+                    <h4>🎯 Aprendizaje Interactivo</h4>
+                    <p>Responde preguntas por voz y recibe feedback inmediato.</p>
+                </div>
+
+                <div class="ai-feature">
+                    <h4>📊 Progreso Local</h4>
+                    <p>Guarda tu avance en el navegador para continuar donde lo dejaste.</p>
+                </div>
+
+                <div class="ai-feature">
+                    <h4>🎨 Contenido Educativo</h4>
+                    <p>Aprende colores, numeros y formas con ejercicios divertidos.</p>
+                </div>
+
+                <div class="ai-feature">
+                    <h4>🌍 Multilingue</h4>
+                    <p>Aprende conceptos basicos en diferentes idiomas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4>🎨 FimeKids</h4>
+                    <p>Educacion infantil gratis con voz</p>
+                    <p>Division de FIME COMPANY</p>
+                </div>
+                <div>
+                    <h4>👨‍💼 CEO</h4>
+                    <p>Pedro Nicolas Hernandez Lizardo</p>
+                    <p>Grupo empresarial lider</p>
+                </div>
+                <div>
+                    <h4>🎮 Juegos Disponibles</h4>
+                    <p>• Colores • Numeros • Formas</p>
+                    <p>• Interaccion por Voz • 100% Gratis</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FIME COMPANY - FimeKids. Educacion gratuita para todos los ninos.</p>
+                <p>Desarrollado con ❤️ y tecnologia de voz gratuita</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sistema educativo con voz gratuita
+        class EducacionVoz {
+            constructor() {
+                this.synth = window.speechSynthesis;
+                this.recognition = null;
+                this.juegoActual = null;
+                this.preguntaActual = null;
+                this.respuestaCorrecta = null;
+                this.intentos = 0;
+                this.puntos = this.cargarPuntos();
+
+                // Intentar inicializar reconocimiento de voz si está disponible
+                try {
+                    this.recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                    this.recognition.lang = 'es-ES';
+                    this.configurarReconocimiento();
+                } catch (e) {
+                    console.log('Reconocimiento de voz no disponible');
+                }
+            }
+
+            cargarPuntos() {
+                return localStorage.getItem('fimekids_puntos') ?
+                    JSON.parse(localStorage.getItem('fimekids_puntos')) :
+                    { colores: 0, numeros: 0, formas: 0 };
+            }
+
+            guardarPuntos() {
+                localStorage.setItem('fimekids_puntos', JSON.stringify(this.puntos));
+            }
+
+            hablar(texto) {
+                // Cancelar cualquier habla previa
+                this.synth.cancel();
+
+                const mensaje = new SpeechSynthesisUtterance(texto);
+                mensaje.lang = 'es-ES';
+                mensaje.rate = 1.0;
+                mensaje.pitch = 1.2;
+                mensaje.volume = 1.0;
+
+                this.synth.speak(mensaje);
+
+                document.getElementById('voice-status').textContent = 'Hablando...';
+
+                mensaje.onend = () => {
+                    document.getElementById('voice-status').textContent = '';
+                };
+            }
+
+            configurarReconocimiento() {
+                if (!this.recognition) return;
+
+                this.recognition.continuous = false;
+                this.recognition.interimResults = false;
+
+                this.recognition.onstart = () => {
+                    document.getElementById('voice-status').textContent = 'Escuchando...';
+                };
+
+                this.recognition.onresult = (event) => {
+                    const respuesta = event.results[0][0].transcript.toLowerCase();
+                    document.getElementById('voice-status').textContent = 'Respuesta: ' + respuesta;
+                    this.procesarRespuesta(respuesta);
+                };
+
+                this.recognition.onerror = (event) => {
+                    document.getElementById('voice-status').textContent = 'Error: ' + event.error;
+                };
+
+                this.recognition.onend = () => {
+                    document.getElementById('voice-status').textContent = 'Reconocimiento finalizado';
+                };
+            }
+
+            escuchar() {
+                if (!this.recognition) {
+                    this.hablar('Lo siento, el reconocimiento de voz no está disponible en este navegador.');
+                    return;
+                }
+
+                try {
+                    this.recognition.start();
+                } catch (e) {
+                    console.error('Error al iniciar reconocimiento:', e);
+                    this.recognition.stop();
+                    setTimeout(() => this.recognition.start(), 200);
+                }
+            }
+
+            procesarRespuesta(respuesta) {
+                if (!this.juegoActual || !this.respuestaCorrecta) return;
+
+                const feedback = document.getElementById('game-feedback');
+
+                if (respuesta.includes(this.respuestaCorrecta)) {
+                    // Respuesta correcta
+                    feedback.textContent = '¡Correcto! ¡Muy bien!';
+                    feedback.className = 'game-feedback feedback-correct';
+                    feedback.style.display = 'block';
+
+                    this.hablar('¡Correcto! ¡Muy bien!');
+
+                    // Actualizar puntos
+                    this.puntos[this.juegoActual]++;
+                    this.guardarPuntos();
+
+                    // Mostrar siguiente pregunta después de 2 segundos
+                    setTimeout(() => {
+                        this.mostrarSiguientePregunta();
+                    }, 2000);
+
+                } else {
+                    // Respuesta incorrecta
+                    this.intentos++;
+
+                    if (this.intentos < 3) {
+                        feedback.textContent = 'Intenta de nuevo';
+                        feedback.className = 'game-feedback feedback-wrong';
+                        feedback.style.display = 'block';
+
+                        this.hablar('Intenta de nuevo. ' + this.preguntaActual);
+                    } else {
+                        feedback.textContent = `La respuesta correcta es: ${this.respuestaCorrecta}`;
+                        feedback.className = 'game-feedback feedback-wrong';
+                        feedback.style.display = 'block';
+
+                        this.hablar(`La respuesta correcta es: ${this.respuestaCorrecta}. Vamos a la siguiente pregunta.`);
+
+                        // Mostrar siguiente pregunta después de 3 segundos
+                        setTimeout(() => {
+                            this.mostrarSiguientePregunta();
+                        }, 3000);
+                    }
+                }
+            }
+
+            iniciarJuego(tipo) {
+                this.juegoActual = tipo;
+                this.intentos = 0;
+
+                // Mostrar contenedor del juego
+                document.getElementById('game-container').style.display = 'block';
+
+                // Desplazar a la vista
+                document.getElementById('game-container').scrollIntoView({ behavior: 'smooth' });
+
+                this.mostrarSiguientePregunta();
+            }
+
+            mostrarSiguientePregunta() {
+                const preguntas = {
+                    colores: [
+                        { pregunta: "¿De qué color es el cielo?", respuesta: "azul", opciones: ["azul", "rojo", "verde"] },
+                        { pregunta: "¿De qué color es el sol?", respuesta: "amarillo", opciones: ["amarillo", "naranja", "blanco"] },
+                        { pregunta: "¿De qué color es la hierba?", respuesta: "verde", opciones: ["verde", "marron", "amarillo"] }
+                    ],
+                    numeros: [
+                        { pregunta: "¿Cuántos son uno más uno?", respuesta: "dos", opciones: ["uno", "dos", "tres"] },
+                        { pregunta: "¿Cuántos dedos tienes en una mano?", respuesta: "cinco", opciones: ["cuatro", "cinco", "seis"] },
+                        { pregunta: "¿Cuántos días tiene una semana?", respuesta: "siete", opciones: ["cinco", "seis", "siete"] }
+                    ],
+                    formas: [
+                        { pregunta: "¿Qué forma tiene una pelota?", respuesta: "circulo", opciones: ["circulo", "cuadrado", "triangulo"] },
+                        { pregunta: "¿Qué forma tiene una caja?", respuesta: "cuadrado", opciones: ["circulo", "cuadrado", "triangulo"] },
+                        { pregunta: "¿Qué forma tiene una pizza?", respuesta: "circulo", opciones: ["circulo", "cuadrado", "triangulo"] }
+                    ]
+                };
+
+                // Reiniciar intentos
+                this.intentos = 0;
+
+                // Ocultar feedback
+                document.getElementById('game-feedback').style.display = 'none';
+
+                // Obtener nivel actual basado en puntos
+                const nivel = Math.min(Math.floor(this.puntos[this.juegoActual] / 3), preguntas[this.juegoActual].length - 1);
+
+                // Seleccionar pregunta
+                const preguntaObj = preguntas[this.juegoActual][nivel];
+                this.preguntaActual = preguntaObj.pregunta;
+                this.respuestaCorrecta = preguntaObj.respuesta;
+
+                // Actualizar interfaz
+                document.getElementById('game-question').textContent = this.preguntaActual;
+
+                // Generar opciones
+                const opcionesContainer = document.getElementById('game-options');
+                opcionesContainer.innerHTML = '';
+
+                // Mezclar opciones
+                const opcionesMezcladas = [...preguntaObj.opciones].sort(() => Math.random() - 0.5);
+
+                opcionesMezcladas.forEach(opcion => {
+                    const opcionElement = document.createElement('div');
+                    opcionElement.className = 'game-option';
+                    opcionElement.textContent = opcion;
+                    opcionElement.onclick = () => this.procesarRespuesta(opcion);
+                    opcionesContainer.appendChild(opcionElement);
+                });
+
+                // Leer la pregunta
+                this.hablar(this.preguntaActual);
+            }
+        }
+
+        // Inicializar sistema educativo
+        const educacionVoz = new EducacionVoz();
+
+        // Funciones para iniciar juegos
+        function iniciarJuegoColores() {
+            educacionVoz.iniciarJuego('colores');
+        }
+
+        function iniciarJuegoNumeros() {
+            educacionVoz.iniciarJuego('numeros');
+        }
+
+        function iniciarJuegoFormas() {
+            educacionVoz.iniciarJuego('formas');
+        }
+
+        // Funciones para controles de voz
+        function escucharRespuesta() {
+            educacionVoz.escuchar();
+        }
+
+        function repetirPregunta() {
+            educacionVoz.hablar(educacionVoz.preguntaActual);
+        }
+
+        // Inicializar bienvenida
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(() => {
+                educacionVoz.hablar('Bienvenido a FimeKids! Aqui puedes aprender colores, numeros y formas de manera divertida!');
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

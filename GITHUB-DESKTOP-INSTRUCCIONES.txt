@@ -1,0 +1,36 @@
+🏢 FIME COMPANY - INSTRUCCIONES GITHUB DESKTOP
+===========================================
+
+✅ CONFIGURACIÓN AUTOMÁTICA COMPLETADA
+✅ ARCHIVOS LISTOS PARA GITHUB
+✅ DEPLOY AUTOMÁTICO CONFIGURADO
+
+🚀 PASOS SIMPLES:
+
+1. DESCARGAR GITHUB DESKTOP:
+   https://desktop.github.com/
+   
+2. INSTALAR (2 minutos)
+
+3. ABRIR GITHUB DESKTOP
+   - "Add Local Repository" 
+   - Seleccionar: C:\Users\PC\.android\c panel
+   
+4. PUBLICAR:
+   - "Publish Repository"
+   - Nombre: fime-company-professional
+   - ✅ Public
+   - Create Repository
+
+5. CONFIGURAR SECRET:
+   - Ir a github.com → tu repo → Settings → Secrets → Actions
+   - New secret: CPANEL_PASSWORD = [tu contraseña cPanel]
+
+🎉 ¡LISTO! 
+
+AHORA FUNCIONA ASÍ:
+- Cambios en Cursor → Save
+- GitHub Desktop detecta cambios
+- Commit + Push → Deploy automático a fimecompany.com
+
+¡SISTEMA PROFESIONAL FUNCIONANDO! 🚀

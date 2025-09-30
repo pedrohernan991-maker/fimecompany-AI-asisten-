@@ -1,0 +1,23 @@
+﻿{
+    "downloadOnOpen":  false,
+    "username":  "cursor_user@fimecompany.com",
+    "port":  21,
+    "uploadOnSave":  true,
+    "localPath":  "./public_html",
+    "remotePath":  "/",
+    "name":  "FimeCompany FTP",
+    "host":  "ftp.fimecompany.com",
+    "useTempFile":  false,
+    "protocol":  "ftp",
+    "ignore":  [
+                   ".vscode",
+                   ".git",
+                   "*.ps1",
+                   "*.md"
+               ],
+    "connectTimeout":  10000,
+    "openSsh":  false,
+    "interactiveAuth":  false,
+    "syncMode":  "update",
+    "password":  "QeWgB6DB~Lpt"
+}

@@ -1,0 +1,23 @@
+﻿{
+    "users": [
+        {
+            "id": "user_001",
+            "name": "Admin FimeTech",
+            "email": "admin@fimecompany.com",
+            "role": "admin",
+            "created": "2024-09-26"
+        },
+        {
+            "id": "user_002", 
+            "name": "Usuario Demo",
+            "email": "demo@fimecompany.com",
+            "role": "user",
+            "created": "2024-09-26"
+        }
+    ],
+    "settings": {
+        "max_cart_items": 50,
+        "search_delay": 300,
+        "notification_duration": 3000
+    }
+}

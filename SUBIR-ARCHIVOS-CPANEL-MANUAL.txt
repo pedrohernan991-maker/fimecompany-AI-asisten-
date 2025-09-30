@@ -1,0 +1,72 @@
+===============================================
+SUBIR ARCHIVOS A CPANEL - MÉTODO MANUAL
+===============================================
+
+🚨 PROBLEMA: Los archivos están en tu PC, NO en cPanel
+📍 UBICACIÓN LOCAL: C:\Users\PC\.android\c panel\
+
+🎯 SOLUCIÓN PASO A PASO:
+
+1️⃣ ENTRAR A CPANEL:
+   • URL: https://fimecompany.com:2083
+   • Usuario: fimecomp  
+   • Contraseña: [tu contraseña de cPanel]
+
+2️⃣ ABRIR FILE MANAGER:
+   • Buscar "File Manager" en cPanel
+   • Hacer clic en "File Manager"
+   • Ir a carpeta "public_html"
+
+3️⃣ SUBIR ARCHIVO PRINCIPAL:
+   • En public_html, hacer clic en "Upload"
+   • Seleccionar desde tu PC: C:\Users\PC\.android\c panel\index.html
+   • Esperar a que suba
+   • ✅ Verificar: https://fimecompany.com debe funcionar
+
+4️⃣ CREAR CARPETA FIMETECH:
+   • En public_html, hacer clic en "New Folder"
+   • Nombre: fimetech
+   • Entrar a la carpeta fimetech
+
+5️⃣ SUBIR FIMETECH:
+   • Dentro de carpeta fimetech, hacer clic en "Upload"  
+   • Seleccionar desde tu PC: C:\Users\PC\.android\c panel\fimetech\index-nuevo.html
+   • Después de subir, seleccionar el archivo
+   • Hacer clic derecho → Rename
+   • Cambiar nombre a: index.html
+   • ✅ Verificar: https://fimecompany.com/fimetech/ debe funcionar
+
+6️⃣ SUBIR STYLES.CSS (SI EXISTE):
+   • En public_html, hacer clic en "Upload"
+   • Seleccionar: C:\Users\PC\.android\c panel\styles.css
+   • Subir
+
+7️⃣ CREAR OTRAS CARPETAS (SI QUIERES):
+   • fimekids: Crear carpeta y subir index.html
+   • ferreteria: Crear carpeta y subir index.html
+
+8️⃣ CONFIGURAR PERMISOS:
+   • Seleccionar todos los archivos subidos
+   • Hacer clic derecho → Permissions
+   • Carpetas: 755
+   • Archivos HTML: 644
+
+===============================================
+🔍 VERIFICAR QUE FUNCIONÓ:
+===============================================
+
+✅ https://fimecompany.com - Portal principal
+✅ https://fimecompany.com/fimetech/ - FimeTech funcional
+✅ https://fimecompany.com/fimekids/ - FimeKids (si subiste)
+✅ https://fimecompany.com/ferreteria/ - Ferretería (si subiste)
+
+===============================================
+🚨 IMPORTANTE:
+===============================================
+
+• Los archivos DEBEN estar en public_html para ser visibles en internet
+• Si no subes los archivos, la página permanecerá vacía
+• Cada carpeta necesita su propio index.html
+• Los nombres de archivo son sensibles a mayúsculas/minúsculas
+
+===============================================

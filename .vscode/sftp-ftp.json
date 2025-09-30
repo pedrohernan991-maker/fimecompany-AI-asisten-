@@ -1,0 +1,32 @@
+{
+    "name": "cPanel Hosting - FTP (Alternativo)",
+    "host": "fimecompany.com",
+    "protocol": "ftp",
+    "port": 21,
+    "username": "cursor_user@fimecompany.com",
+    "password": "QeWgB6DB~Lpt",
+    "remotePath": "/home/rodeky.../cursor_user",
+    "uploadOnSave": true,
+    "useTempFile": false,
+    "openSsh": false,
+    "downloadOnOpen": false,
+    "ignore": [
+        ".vscode",
+        ".git",
+        ".DS_Store",
+        "node_modules",
+        "*.log"
+    ],
+    "syncMode": "update",
+    "watcher": {
+        "files": "**/*",
+        "autoUpload": true,
+        "autoDelete": false
+    },
+    "connectTimeout": 10000,
+    "passive": true,
+    "secure": false
+}
+
+
+

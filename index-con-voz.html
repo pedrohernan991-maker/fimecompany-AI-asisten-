@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FimeCompany - Portal Principal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.3em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .navigation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .nav-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .nav-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .nav-description {
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .nav-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-button:hover {
+            transform: scale(1.05);
+        }
+
+        .stats {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .stats h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+
+        .footer {
+            background: rgba(44, 62, 80, 0.9);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .contact-info h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-item {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .contact-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        /* Botón de voz */
+        .voice-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: inline-block;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .voice-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .voice-status {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .navigation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>🏢 FimeCompany</h1>
+        <p>Empresa Global - Establecida en 25+ Paises</p>
+    </div>
+
+    <div class="container">
+        <!-- Botón de bienvenida con voz -->
+        <div style="text-align: center; margin: 20px 0;">
+            <button id="welcomeButton" class="voice-button">
+                🔊 Escuchar Bienvenida
+            </button>
+            <div id="voiceStatus" class="voice-status"></div>
+        </div>
+
+        <div class="stats">
+            <h2>📊 Estadisticas de FIME COMPANY</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Divisiones Especializadas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Paises Establecidos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Clientes Satisfechos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Productos y Servicios</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Soporte Tecnico</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Anos de Experiencia</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation-grid">
+            <div class="nav-card">
+                <div class="nav-icon">🔧</div>
+                <div class="nav-title">Ferreteria Industrial</div>
+                <div class="nav-description">Herramientas, materiales de construccion metalica y soluciones industriales
+                    especializadas.</div>
+                <a href="ferreteria/" class="nav-button">Ver Catalogo</a>
+            </div>
+
+            <div class="nav-card">
+                <div class="nav-icon">💻</div>
+                <div class="nav-title">FimeTech</div>
+                <div class="nav-description">Tecnologia de vanguardia, reviews de gadgets, IA y las ultimas innovaciones
+                    digitales.</div>
+                <a href="fimetech/" class="nav-button">Explorar Tech</a>
+            </div>
+
+            <div class="nav-card">
+                <div class="nav-icon">🎨</div>
+                <div class="nav-title">FimeKids</div>
+                <div class="nav-description">Educacion infantil con IA: colores, numeros e idiomas en juegos
+                    interactivos.</div>
+                <a href="fimekids/" class="nav-button">Jugar y Aprender</a>
+            </div>
+
+            <div class="nav-card">
+                <div class="nav-icon">🌐</div>
+                <div class="nav-title">CreaWeb</div>
+                <div class="nav-description">Desarrollo de software, paginas web avanzadas, IA y venta de
+                    dominios/hosting.</div>
+                <a href="creaweb/" class="nav-button">Desarrollar</a>
+            </div>
+
+            <div class="nav-card">
+                <div class="nav-icon">⚡</div>
+                <div class="nav-title">Energia Limpia</div>
+                <div class="nav-description">Soluciones en energias renovables y tecnologias sostenibles para el futuro.
+                </div>
+                <a href="energia/" class="nav-button">Ver Soluciones</a>
+            </div>
+
+            <div class="nav-card">
+                <div class="nav-icon">🏗️</div>
+                <div class="nav-title">Constructora Metalica</div>
+                <div class="nav-description">Construccion de estructuras metalicas y proyectos arquitectonicos
+                    especializados.</div>
+                <a href="constructora/" class="nav-button">Ver Proyectos</a>
+            </div>
+
+            <div class="nav-card">
+                <div class="nav-icon">🎯</div>
+                <div class="nav-title">Imprex Laser</div>
+                <div class="nav-description">Servicios de impresion laser, grabado y personalizacion de materiales.
+                </div>
+                <a href="imprexlaser/" class="nav-button">Ver Servicios</a>
+            </div>
+
+            <div class="nav-card">
+                <div class="nav-icon">💰</div>
+                <div class="nav-title">Inversiones FIMEFORMOSA</div>
+                <div class="nav-description">Oportunidades de inversion y expansion financiera del grupo empresarial.
+                </div>
+                <a href="inversiones/" class="nav-button">Invertir</a>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h2>📞 Informacion de Contacto - FIME COMPANY</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>👨‍💼 CEO</h3>
+                    <p>Pedro Nicolas Hernandez Lizardo<br>Empresa Global en 25+ Paises</p>
+                </div>
+                <div class="contact-item">
+                    <h3>🔧 Ferreteria Industrial</h3>
+                    <p>829-440-9136<br>Division Principal</p>
+                </div>
+                <div class="contact-item">
+                    <h3>✉️ Email Corporativo</h3>
+                    <p>info@fimecompany.com<br>ceo@fimecompany.com</p>
+                </div>
+                <div class="contact-item">
+                    <h3>🌐 Sitio Web</h3>
+                    <p>fimecompany.com<br>8 Divisiones Especializadas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>&copy; 2024 FIME COMPANY. Todos los derechos reservados.</p>
+            <p>CEO: Pedro Nicolas Hernandez Lizardo - 8 Divisiones Especializadas</p>
+            <p>Desarrollado con ❤️ y las ultimas tecnologias</p>
+        </div>
+    </div>
+
+    <!-- AdsTerra - Monetizacion Completa del Sitio -->
+    <script>
+        // AdsTerra Banner Superior
+        (function () {
+            var script = document.createElement('script');
+            script.src = 'https://www.profitabledisplaynetwork.com/5305901.js';
+            script.async = true;
+            document.head.appendChild(script);
+        })();
+    </script>
+
+    <!-- AdsTerra Popunder (despues de 30 segundos) -->
+    <script>
+        setTimeout(function () {
+            var script = document.createElement('script');
+            script.src = 'https://www.profitabledisplaynetwork.com/5305901.js';
+            script.async = true;
+            document.head.appendChild(script);
+        }, 30000);
+    </script>
+
+    <!-- AdsTerra Native Ads entre divisiones -->
+    <div id="adsterra-native-main" style="margin: 2rem 0; text-align: center;">
+        <script>
+            (function () {
+                var script = document.createElement('script');
+                script.src = 'https://www.profitabledisplaynetwork.com/5305901.js';
+                script.async = true;
+                document.getElementById('adsterra-native-main').appendChild(script);
+            })();
+        </script>
+    </div>
+
+    <script>
+        // Sistema de voz compatible con móviles
+        class VozBienvenida {
+            constructor() {
+                this.synth = window.speechSynthesis;
+                this.voiceEnabled = false;
+                this.statusElement = document.getElementById('voiceStatus');
+                this.welcomeButton = document.getElementById('welcomeButton');
+
+                // Configurar botón de bienvenida
+                if (this.welcomeButton) {
+                    this.welcomeButton.addEventListener('click', () => this.playWelcome());
+                }
+
+                // Verificar soporte de voz
+                if ('speechSynthesis' in window) {
+                    this.voiceEnabled = true;
+                    this.statusElement.textContent = "Voz disponible. Haz clic en el botón para escuchar.";
+                } else {
+                    this.statusElement.textContent = "Tu navegador no soporta síntesis de voz.";
+                    this.welcomeButton.disabled = true;
+                }
+            }
+
+            playWelcome() {
+                if (!this.voiceEnabled) return;
+
+                // Cancelar cualquier síntesis previa
+                this.synth.cancel();
+
+                // Crear mensaje
+                const message = new SpeechSynthesisUtterance();
+                message.text = "Bienvenido a FIME COMPANY! Somos una empresa global establecida en más de 25 países. Tenemos 8 divisiones especializadas. Haz clic en cualquiera de nuestras divisiones para explorar nuestros productos y servicios.";
+                message.lang = 'es-ES';
+                message.rate = 1.0;  // Normal para mejor compatibilidad
+                message.pitch = 1.0; // Normal para mejor compatibilidad
+                message.volume = 1.0;
+
+                // Eventos de voz
+                message.onstart = () => {
+                    this.statusElement.textContent = "Reproduciendo bienvenida...";
+                    this.welcomeButton.disabled = true;
+                };
+
+                message.onend = () => {
+                    this.statusElement.textContent = "Bienvenida completada.";
+                    this.welcomeButton.disabled = false;
+                };
+
+                message.onerror = (e) => {
+                    this.statusElement.textContent = "Error: " + e.error;
+                    this.welcomeButton.disabled = false;
+                };
+
+                // Reproducir en dispositivos móviles requiere interacción del usuario
+                this.synth.speak(message);
+            }
+
+            // Reproducir automáticamente después de interacción del usuario
+            autoPlayAfterInteraction() {
+                document.addEventListener('click', () => {
+                    // Solo reproducir una vez
+                    if (!sessionStorage.getItem('welcomePlayed')) {
+                        setTimeout(() => {
+                            this.playWelcome();
+                            sessionStorage.setItem('welcomePlayed', 'true');
+                        }, 1000);
+                    }
+                }, { once: true });
+            }
+        }
+
+        // Inicializar sistema de voz
+        const vozBienvenida = new VozBienvenida();
+
+        // Agregar funcionalidad de navegacion
+        document.querySelectorAll('.nav-button').forEach(button => {
+            button.addEventListener('click', function (e) {
+                // Agregar efecto de carga
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1.05)';
+                }, 150);
+            });
+        });
+
+        // Agregar animacion de entrada
+        window.addEventListener('load', function () {
+            const cards = document.querySelectorAll('.nav-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+
+            // Configurar reproducción automática después de interacción
+            vozBienvenida.autoPlayAfterInteraction();
+        });
+
+        // AdsTerra - Cargar anuncios adicionales despues de interacciones
+        let adCounter = 0;
+        function loadAdditionalAds() {
+            if (adCounter < 5) { // Maximo 5 anuncios adicionales
+                setTimeout(function () {
+                    var script = document.createElement('script');
+                    script.src = 'https://www.profitabledisplaynetwork.com/5305901.js';
+                    script.async = true;
+                    document.head.appendChild(script);
+                    adCounter++;
+                }, 15000);
+            }
+        }
+
+        // Cargar anuncios en eventos de usuario
+        document.addEventListener('click', loadAdditionalAds);
+        document.addEventListener('scroll', loadAdditionalAds);
+    </script>
+</body>
+
+</html>

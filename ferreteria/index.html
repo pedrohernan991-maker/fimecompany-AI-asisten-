@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ferretería Industrial Metálica del Este FIME.SRL - Materiales de Construcción Metálica</title>
+  <meta name="description" content="Ferretería Industrial Metálica del Este FIME.SRL - Especialistas en materiales de construcción metálica. Viga de acero, perfiles, láminas, tornillería industrial y más.">
+  <meta name="keywords" content="ferretería industrial, materiales construcción metálica, viga acero, perfiles metálicos, láminas galvanizadas, tornillería industrial, FIME.SRL">
+  <meta name="author" content="Ferretería Industrial Metálica del Este FIME.SRL">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ferretería Industrial Metálica del Este FIME.SRL">
+  <meta property="og:description" content="Especialistas en materiales de construcción metálica">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fimecompany.com/ferreteria/">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .header {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      color: #2c3e50;
+      font-size: 2.2em;
+      font-weight: bold;
+    }
+
+    .header .subtitle {
+      color: #7f8c8d;
+      font-size: 0.9em;
+      margin-top: 5px;
+    }
+
+    .breadcrumb {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 20px;
+      border-radius: 20px;
+    }
+
+    .breadcrumb a {
+      color: #2c3e50;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .main-content {
+      padding: 40px 0;
+    }
+
+    .hero-section {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .hero-section h2 {
+      color: #2c3e50;
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    .hero-section p {
+      color: #7f8c8d;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #2c3e50;
+    }
+
+    .contact-item a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .categorias {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+
+    .categorias h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    .categoria-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .categoria-btn {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .categoria-btn:hover {
+      background: #c0392b;
+      transform: translateY(-2px);
+    }
+
+    .categoria-btn.active {
+      background: #2c3e50;
+    }
+
+    .catalogo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .producto-card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #e0e0e0;
+    }
+
+    .producto-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .producto-icon {
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .producto-titulo {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .producto-descripcion {
+      color: #7f8c8d;
+      margin-bottom: 15px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .producto-precio {
+      color: #e74c3c;
+      font-weight: bold;
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .producto-boton {
+      background: linear-gradient(45deg, #e74c3c, #c0392b);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: bold;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .producto-boton:hover {
+      transform: scale(1.05);
+    }
+
+    .location-section {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .location-section h3 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+
+    .map-container {
+      background: #f8f9fa;
+      border: 2px dashed #dee2e6;
+      border-radius: 10px;
+      padding: 40px;
+      margin: 20px 0;
+    }
+
+    .map-placeholder {
+      color: #6c757d;
+      font-size: 1.2em;
+    }
+
+    .social-section {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .social-section h3 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 1.8em;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      background: #3498db;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-link:hover {
+      background: #2980b9;
+      transform: translateY(-2px);
+    }
+
+    .social-link.email {
+      background: #e74c3c;
+    }
+
+    .social-link.email:hover {
+      background: #c0392b;
+    }
+
+    .footer {
+      background: rgba(44, 62, 80, 0.9);
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 50px;
+    }
+
+    .footer h4 {
+      color: #3498db;
+      margin-bottom: 15px;
+      font-size: 1.5em;
+    }
+
+    .footer p {
+      margin-bottom: 10px;
+    }
+
+    .footer a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .header h1 {
+        font-size: 1.8em;
+      }
+
+      .catalogo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .social-links {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Estilos para el botón de compartir */
+    .share-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(45deg, #e74c3c, #c0392b);
+        color: white;
+        border: none;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 24px;
+        box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .share-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+    }
+
+    .share-button:active {
+        transform: scale(0.95);
+    }
+
+    /* Modal de compartir */
+    .share-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 2000;
+        backdrop-filter: blur(5px);
+    }
+
+    .share-modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        max-width: 400px;
+        width: 90%;
+        text-align: center;
+    }
+
+    .share-modal h3 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+        font-size: 1.5em;
+    }
+
+    .share-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .share-option {
+        background: #f8f9fa;
+        border: 2px solid #e9ecef;
+        border-radius: 10px;
+        padding: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: #2c3e50;
+    }
+
+    .share-option:hover {
+        background: #e74c3c;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .share-option i {
+        font-size: 24px;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .share-url {
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 10px;
+        margin: 15px 0;
+        font-family: monospace;
+        font-size: 14px;
+        word-break: break-all;
+    }
+
+    .close-share {
+        background: #6c757d;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .close-share:hover {
+        background: #5a6268;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .share-button {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            top: 15px;
+            right: 15px;
+        }
+
+        .share-modal-content {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .share-options {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BOTÓN DE COMPARTIR -->
+  <button class="share-button" onclick="openShareModal()" title="Compartir página">
+      📤
+  </button>
+
+  <!-- MODAL DE COMPARTIR -->
+  <div id="shareModal" class="share-modal">
+      <div class="share-modal-content">
+          <h3>📤 Compartir Página</h3>
+          <div class="share-options">
+              <a href="#" class="share-option" onclick="shareWhatsApp()">
+                  <i>📱</i>
+                  WhatsApp
+              </a>
+              <a href="#" class="share-option" onclick="shareFacebook()">
+                  <i>📘</i>
+                  Facebook
+              </a>
+              <a href="#" class="share-option" onclick="shareTwitter()">
+                  <i>🐦</i>
+                  Twitter
+              </a>
+              <a href="#" class="share-option" onclick="shareEmail()">
+                  <i>📧</i>
+                  Email
+              </a>
+              <a href="#" class="share-option" onclick="copyLink()">
+                  <i>📋</i>
+                  Copiar Link
+              </a>
+              <a href="#" class="share-option" onclick="shareTelegram()">
+                  <i>✈️</i>
+                  Telegram
+              </a>
+          </div>
+          <div class="share-url" id="shareUrl"></div>
+          <button class="close-share" onclick="closeShareModal()">Cerrar</button>
+      </div>
+  </div>
+
+  <div class="header">
+    <div class="container">
+      <div class="header-content">
+        <div>
+          <h1>🔧 Ferretería Industrial Metálica del Este</h1>
+          <div class="subtitle">FIME.SRL - Especialistas en Construcción Metálica</div>
+        </div>
+        <div class="breadcrumb">
+          <a href="../">🏠 Inicio</a> > <span>Ferretería Industrial</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="container">
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <h2>🏗️ Materiales de Construcción Metálica</h2>
+        <p>Especialistas en materiales industriales para construcción metálica. Calidad, durabilidad y precio competitivo.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>📧</span>
+            <a href="mailto:ferreteriaindustrial@gmail.com">ferreteriaindustrial@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <span>📞</span>
+            <span>829-440-9136</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categorías -->
+      <div class="categorias">
+        <h2>📂 Categorías de Productos Metálicos</h2>
+        <div class="categoria-buttons">
+          <button class="categoria-btn active" onclick="filtrarCategoria('todos')">Todos</button>
+          <button class="categoria-btn" onclick="filtrarCategoria('vigas')">Vigas de Acero</button>
+          <button class="categoria-btn" onclick="filtrarCategoria('perfiles')">Perfiles Metálicos</button>
+          <button class="categoria-btn" onclick="filtrarCategoria('laminas')">Láminas</button>
+          <button class="categoria-btn" onclick="filtrarCategoria('tornilleria')">Tornillería</button>
+          <button class="categoria-btn" onclick="filtrarCategoria('herramientas')">Herramientas</button>
+        </div>
+      </div>
+
+      <!-- Catálogo de Productos -->
+      <div class="catalogo-grid" id="catalogo">
+        <!-- Vigas de Acero -->
+        <div class="producto-card" data-categoria="vigas">
+          <div class="producto-icon">🏗️</div>
+          <div class="producto-titulo">Viga de Acero I</div>
+          <div class="producto-descripcion">Viga de acero estructural tipo I, 6 metros de longitud, grado A36</div>
+          <div class="producto-precio">$45.000/m</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+
+        <div class="producto-card" data-categoria="vigas">
+          <div class="producto-icon">🔩</div>
+          <div class="producto-titulo">Viga de Acero H</div>
+          <div class="producto-descripcion">Viga de acero estructural tipo H, 12 metros, grado A572</div>
+          <div class="producto-precio">$65.000/m</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+
+        <div class="producto-card" data-categoria="vigas">
+          <div class="producto-icon">⚡</div>
+          <div class="producto-titulo">Viga de Acero Canal</div>
+          <div class="producto-descripcion">Viga de acero canal C, 6 metros, para estructuras ligeras</div>
+          <div class="producto-precio">$28.000/m</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+
+        <!-- Perfiles Metálicos -->
+        <div class="producto-card" data-categoria="perfiles">
+          <div class="producto-icon">📐</div>
+          <div class="producto-titulo">Perfil Angular</div>
+          <div class="producto-descripcion">Perfil angular de acero 2"x2"x1/4", 6 metros de longitud</div>
+          <div class="producto-precio">$18.000/m</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+
+        <div class="producto-card" data-categoria="perfiles">
+          <div class="producto-icon">🔲</div>
+          <div class="producto-titulo">Perfil Cuadrado</div>
+          <div class="producto-descripcion">Perfil cuadrado de acero 3"x3"x1/4", 6 metros</div>
+          <div class="producto-precio">$22.000/m</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+
+        <div class="producto-card" data-categoria="perfiles">
+          <div class="producto-icon">🔳</div>
+          <div class="producto-titulo">Perfil Rectangular</div>
+          <div class="producto-descripcion">Perfil rectangular de acero 4"x2"x1/4", 6 metros</div>
+          <div class="producto-precio">$25.000/m</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+
+        <!-- Láminas -->
+        <div class="producto-card" data-categoria="laminas">
+          <div class="producto-icon">🏠</div>
+          <div class="producto-titulo">Lámina Galvanizada</div>
+          <div class="producto-descripcion">Lámina galvanizada calibre 26, 3 metros de ancho</div>
+          <div class="producto-precio">$8.500/m²</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+
+        <div class="producto-card" data-categoria="laminas">
+          <div class="producto-icon">🌧️</div>
+          <div class="producto-titulo">Lámina PTR</div>
+          <div class="producto-descripcion">Lámina PTR (Pintada) calibre 24, 3 metros de ancho</div>
+          <div class="producto-precio">$12.000/m²</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+
+        <div class="producto-card" data-categoria="laminas">
+          <div class="producto-icon">🏭</div>
+          <div class="producto-titulo">Lámina Industrial</div>
+          <div class="producto-descripcion">Lámina industrial calibre 22, 3 metros de ancho</div>
+          <div class="producto-precio">$15.000/m²</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+
+        <!-- Tornillería -->
+        <div class="producto-card" data-categoria="tornilleria">
+          <div class="producto-icon">🔩</div>
+          <div class="producto-titulo">Tornillos Estructurales</div>
+          <div class="producto-descripcion">Tornillos estructurales A325, 1/2" x 3", caja de 100 unidades</div>
+          <div class="producto-precio">$35.000</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+
+        <div class="producto-card" data-categoria="tornilleria">
+          <div class="producto-icon">⚙️</div>
+          <div class="producto-titulo">Tuercas Estructurales</div>
+          <div class="producto-descripcion">Tuercas estructurales A325, 1/2", caja de 100 unidades</div>
+          <div class="producto-precio">$15.000</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+
+        <div class="producto-card" data-categoria="tornilleria">
+          <div class="producto-icon">🔧</div>
+          <div class="producto-titulo">Arandelas Estructurales</div>
+          <div class="producto-descripcion">Arandelas estructurales 1/2", caja de 100 unidades</div>
+          <div class="producto-precio">$8.000</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+
+        <!-- Herramientas -->
+        <div class="producto-card" data-categoria="herramientas">
+          <div class="producto-icon">🔨</div>
+          <div class="producto-titulo">Martillo de Bola</div>
+          <div class="producto-descripcion">Martillo de bola 2 libras, mango de fibra de vidrio</div>
+          <div class="producto-precio">$25.000</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+
+        <div class="producto-card" data-categoria="herramientas">
+          <div class="producto-icon">⚡</div>
+          <div class="producto-titulo">Taladro Industrial</div>
+          <div class="producto-descripcion">Taladro industrial 1/2", 800W, para metal</div>
+          <div class="producto-precio">$180.000</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+
+        <div class="producto-card" data-categoria="herramientas">
+          <div class="producto-icon">🔧</div>
+          <div class="producto-titulo">Llave de Tubo</div>
+          <div class="producto-descripcion">Llave de tubo ajustable 12", para trabajos pesados</div>
+          <div class="producto-precio">$35.000</div>
+          <button class="producto-boton">Cotizar</button>
+        </div>
+      </div>
+
+      <!-- Ubicación -->
+      <div class="location-section">
+        <h3>📍 Nuestra Ubicación</h3>
+        <div class="map-container">
+          <div class="map-placeholder">
+            🗺️ Mapa de ubicación de Ferretería Industrial Metálica del Este FIME.SRL<br>
+            <small>Ubicación: República Dominicana</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Redes Sociales -->
+      <div class="social-section">
+        <h3>🌐 Síguenos en Redes Sociales</h3>
+        <div class="social-links">
+          <a href="mailto:ferreteriaindustrial@gmail.com" class="social-link email">
+            📧 Email
+          </a>
+          <a href="#" class="social-link" onclick="alert('Facebook: Ferretería Industrial Metálica del Este FIME.SRL')">
+            📘 Facebook
+          </a>
+          <a href="#" class="social-link" onclick="alert('Instagram: @ferreteriafime')">
+            📷 Instagram
+          </a>
+          <a href="#" class="social-link" onclick="alert('WhatsApp: 829-440-9136')">
+            📱 WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      <h4>🔧 Ferretería Industrial Metálica del Este FIME.SRL</h4>
+      <p>Especialistas en materiales de construcción metálica</p>
+      <p>📧 ferreteriaindustrial@gmail.com | 📞 829-440-9136</p>
+      <p><a href="../">← Volver al Portal Principal FIME COMPANY</a></p>
+      <p>&copy; 2024 FIME COMPANY - Ferretería Industrial. Todos los derechos reservados.</p>
+    </div>
+  </div>
+
+  <script>
+    function filtrarCategoria(categoria) {
+      const productos = document.querySelectorAll('.producto-card');
+      const botones = document.querySelectorAll('.categoria-btn');
+
+      botones.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      productos.forEach(producto => {
+        if (categoria === 'todos' || producto.dataset.categoria === categoria) {
+          producto.style.display = 'block';
+        } else {
+          producto.style.display = 'none';
+        }
+      });
+    }
+
+    document.querySelectorAll('.producto-boton').forEach(boton => {
+      boton.addEventListener('click', function () {
+        const producto = this.closest('.producto-card');
+        const titulo = producto.querySelector('.producto-titulo').textContent;
+        const precio = producto.querySelector('.producto-precio').textContent;
+
+        alert(`¡${titulo} agregado para cotización!\nPrecio: ${precio}\n\nContacto: ferreteriaindustrial@gmail.com\nTeléfono: 829-440-9136`);
+      });
+    });
+
+    // ========== FUNCIONES DE COMPARTIR ==========
+    
+    // Función para abrir el modal de compartir
+    function openShareModal() {
+        const modal = document.getElementById('shareModal');
+        const urlElement = document.getElementById('shareUrl');
+        
+        // Obtener la URL actual
+        const currentUrl = window.location.href;
+        const pageTitle = document.title;
+        
+        // Mostrar la URL en el modal
+        urlElement.textContent = currentUrl;
+        
+        // Mostrar el modal
+        modal.style.display = 'block';
+        
+        // Agregar animación de entrada
+        setTimeout(() => {
+            modal.querySelector('.share-modal-content').style.transform = 'translate(-50%, -50%) scale(1)';
+            modal.querySelector('.share-modal-content').style.opacity = '1';
+        }, 10);
+    }
+
+    // Función para cerrar el modal
+    function closeShareModal() {
+        const modal = document.getElementById('shareModal');
+        modal.style.display = 'none';
+    }
+
+    // Cerrar modal al hacer click fuera
+    document.getElementById('shareModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeShareModal();
+        }
+    });
+
+    // Función para compartir en WhatsApp
+    function shareWhatsApp() {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(document.title);
+        const text = encodeURIComponent(`¡Mira la Ferretería Industrial Metálica del Este FIME.SRL!\n\n${title}\n\n`);
+        
+        window.open(`https://wa.me/?text=${text}${url}`, '_blank');
+        closeShareModal();
+    }
+
+    // Función para compartir en Facebook
+    function shareFacebook() {
+        const url = encodeURIComponent(window.location.href);
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+        closeShareModal();
+    }
+
+    // Función para compartir en Twitter
+    function shareTwitter() {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(document.title);
+        const text = encodeURIComponent(`¡Mira la Ferretería Industrial Metálica del Este FIME.SRL! ${title}`);
+        
+        window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+        closeShareModal();
+    }
+
+    // Función para compartir por email
+    function shareEmail() {
+        const url = window.location.href;
+        const title = document.title;
+        const subject = encodeURIComponent(`Compartir: ${title}`);
+        const body = encodeURIComponent(`¡Hola!\n\nTe comparto la Ferretería Industrial Metálica del Este FIME.SRL:\n\n${title}\n${url}\n\n¡Saludos!`);
+        
+        window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        closeShareModal();
+    }
+
+    // Función para copiar el link
+    function copyLink() {
+        const url = window.location.href;
+        
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(url).then(() => {
+                alert('¡Link copiado al portapapeles!');
+            });
+        } else {
+            // Fallback para navegadores más antiguos
+            const textArea = document.createElement('textarea');
+            textArea.value = url;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('¡Link copiado al portapapeles!');
+        }
+        
+        closeShareModal();
+    }
+
+    // Función para compartir en Telegram
+    function shareTelegram() {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent(document.title);
+        const text = encodeURIComponent(`¡Mira la Ferretería Industrial Metálica del Este FIME.SRL!\n\n${title}\n\n`);
+        
+        window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
+        closeShareModal();
+    }
+
+    // Agregar efecto de vibración en dispositivos móviles
+    function vibrate() {
+        if (navigator.vibrate) {
+            navigator.vibrate(50);
+        }
+    }
+
+    // Agregar vibración a los botones
+    document.querySelectorAll('.share-option').forEach(option => {
+        option.addEventListener('click', vibrate);
+    });
+
+    document.querySelector('.share-button').addEventListener('click', vibrate);
+  </script>
+</body>
+
+</html>
+
+      color: white;
+
+      text-align: center;
+
+      padding: 30px 0;
+
+      margin-top: 50px;
+
+    }
+
+
+
+    @media (max-width: 768px) {
+
+      .header-content {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+      }
+
+
+
+      .header h1 {
+
+        font-size: 2em;
+
+      }
+
+
+
+      .catalogo-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+  <div class="header">
+
+    <div class="container">
+
+      <div class="header-content">
+
+        <h1>🔧 Ferretería</h1>
+
+        <div class="breadcrumb">
+
+          <a href="../">🏠 Inicio</a> > <span>Ferretería</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="main-content">
+
+    <div class="container">
+
+      <div class="categorias">
+
+        <h2>📂 Categorías de Productos</h2>
+
+        <div class="categoria-buttons">
+
+          <button class="categoria-btn active" onclick="filtrarCategoria('todos')">Todos</button>
+
+          <button class="categoria-btn" onclick="filtrarCategoria('herramientas')">Herramientas</button>
+
+          <button class="categoria-btn" onclick="filtrarCategoria('electricidad')">Electricidad</button>
+
+          <button class="categoria-btn" onclick="filtrarCategoria('plomeria')">Plomería</button>
+
+          <button class="categoria-btn" onclick="filtrarCategoria('construccion')">Construcción</button>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="catalogo-grid" id="catalogo">
+
+        <!-- Herramientas -->
+
+        <div class="producto-card" data-categoria="herramientas">
+
+          <div class="producto-icon">🔨</div>
+
+          <div class="producto-titulo">Martillo de Carpintero</div>
+
+          <div class="producto-descripcion">Martillo profesional de acero forjado con mango de madera</div>
+
+          <div class="producto-precio">$25.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="herramientas">
+
+          <div class="producto-icon">🔧</div>
+
+          <div class="producto-titulo">Juego de Destornilladores</div>
+
+          <div class="producto-descripcion">Set de 12 destornilladores profesionales con puntas intercambiables</div>
+
+          <div class="producto-precio">$45.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="herramientas">
+
+          <div class="producto-icon">🔩</div>
+
+          <div class="producto-titulo">Tornillos y Tuercas</div>
+
+          <div class="producto-descripcion">Juego completo de tornillos y tuercas en diferentes tamaños</div>
+
+          <div class="producto-precio">$15.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <!-- Electricidad -->
+
+        <div class="producto-card" data-categoria="electricidad">
+
+          <div class="producto-icon">⚡</div>
+
+          <div class="producto-titulo">Taladro Eléctrico</div>
+
+          <div class="producto-descripcion">Taladro inalámbrico 18V con batería de litio y cargador</div>
+
+          <div class="producto-precio">$180.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="electricidad">
+
+          <div class="producto-icon">💡</div>
+
+          <div class="producto-titulo">Cable Eléctrico</div>
+
+          <div class="producto-descripcion">Cable eléctrico 12 AWG para instalaciones domésticas</div>
+
+          <div class="producto-precio">$8.500</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="electricidad">
+
+          <div class="producto-icon">🔌</div>
+
+          <div class="producto-titulo">Tomacorrientes</div>
+
+          <div class="producto-descripcion">Tomacorrientes dobles con conexión a tierra</div>
+
+          <div class="producto-precio">$12.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <!-- Plomería -->
+
+        <div class="producto-card" data-categoria="plomeria">
+
+          <div class="producto-icon">🚰</div>
+
+          <div class="producto-titulo">Tubería PVC</div>
+
+          <div class="producto-descripcion">Tubería PVC de 1/2 pulgada para instalaciones de agua</div>
+
+          <div class="producto-precio">$6.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="plomeria">
+
+          <div class="producto-icon">🔧</div>
+
+          <div class="producto-titulo">Llave de Tubo</div>
+
+          <div class="producto-descripcion">Llave de tubo ajustable para trabajos de plomería</div>
+
+          <div class="producto-precio">$35.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <!-- Construcción -->
+
+        <div class="producto-card" data-categoria="construccion">
+
+          <div class="producto-icon">🧱</div>
+
+          <div class="producto-titulo">Cemento</div>
+
+          <div class="producto-descripcion">Cemento gris de 50kg para construcción</div>
+
+          <div class="producto-precio">$18.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="construccion">
+
+          <div class="producto-icon">🏗️</div>
+
+          <div class="producto-titulo">Ladrillos</div>
+
+          <div class="producto-descripcion">Ladrillos de arcilla para construcción</div>
+
+          <div class="producto-precio">$800</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="footer">
+
+    <div class="container">
+
+      <p>&copy; 2024 FimeCompany - Ferretería. Todos los derechos reservados.</p>
+
+      <p><a href="../" style="color: #3498db;">← Volver al Portal Principal</a></p>
+
+    </div>
+
+  </div>
+
+
+
+  <script>
+
+    function filtrarCategoria(categoria) {
+
+      const productos = document.querySelectorAll('.producto-card');
+
+      const botones = document.querySelectorAll('.categoria-btn');
+
+
+
+      botones.forEach(btn => btn.classList.remove('active'));
+
+      event.target.classList.add('active');
+
+
+
+      productos.forEach(producto => {
+
+        if (categoria === 'todos' || producto.dataset.categoria === categoria) {
+
+          producto.style.display = 'block';
+
+        } else {
+
+          producto.style.display = 'none';
+
+        }
+
+      });
+
+    }
+
+
+
+    document.querySelectorAll('.producto-boton').forEach(boton => {
+
+      boton.addEventListener('click', function () {
+
+        const producto = this.closest('.producto-card');
+
+        const titulo = producto.querySelector('.producto-titulo').textContent;
+
+        const precio = producto.querySelector('.producto-precio').textContent;
+
+
+
+        alert(`¡${titulo} agregado al carrito!\nPrecio: ${precio}`);
+
+      });
+
+    });
+
+  </script>
+
+</body>
+
+
+
+</html>
+
+      color: white;
+
+      text-align: center;
+
+      padding: 30px 0;
+
+      margin-top: 50px;
+
+    }
+
+
+
+    @media (max-width: 768px) {
+
+      .header-content {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+      }
+
+
+
+      .header h1 {
+
+        font-size: 2em;
+
+      }
+
+
+
+      .catalogo-grid {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+
+  <div class="header">
+
+    <div class="container">
+
+      <div class="header-content">
+
+        <h1>🔧 Ferretería</h1>
+
+        <div class="breadcrumb">
+
+          <a href="../">🏠 Inicio</a> > <span>Ferretería</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="main-content">
+
+    <div class="container">
+
+      <div class="categorias">
+
+        <h2>📂 Categorías de Productos</h2>
+
+        <div class="categoria-buttons">
+
+          <button class="categoria-btn active" onclick="filtrarCategoria('todos')">Todos</button>
+
+          <button class="categoria-btn" onclick="filtrarCategoria('herramientas')">Herramientas</button>
+
+          <button class="categoria-btn" onclick="filtrarCategoria('electricidad')">Electricidad</button>
+
+          <button class="categoria-btn" onclick="filtrarCategoria('plomeria')">Plomería</button>
+
+          <button class="categoria-btn" onclick="filtrarCategoria('construccion')">Construcción</button>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="catalogo-grid" id="catalogo">
+
+        <!-- Herramientas -->
+
+        <div class="producto-card" data-categoria="herramientas">
+
+          <div class="producto-icon">🔨</div>
+
+          <div class="producto-titulo">Martillo de Carpintero</div>
+
+          <div class="producto-descripcion">Martillo profesional de acero forjado con mango de madera</div>
+
+          <div class="producto-precio">$25.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="herramientas">
+
+          <div class="producto-icon">🔧</div>
+
+          <div class="producto-titulo">Juego de Destornilladores</div>
+
+          <div class="producto-descripcion">Set de 12 destornilladores profesionales con puntas intercambiables</div>
+
+          <div class="producto-precio">$45.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="herramientas">
+
+          <div class="producto-icon">🔩</div>
+
+          <div class="producto-titulo">Tornillos y Tuercas</div>
+
+          <div class="producto-descripcion">Juego completo de tornillos y tuercas en diferentes tamaños</div>
+
+          <div class="producto-precio">$15.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <!-- Electricidad -->
+
+        <div class="producto-card" data-categoria="electricidad">
+
+          <div class="producto-icon">⚡</div>
+
+          <div class="producto-titulo">Taladro Eléctrico</div>
+
+          <div class="producto-descripcion">Taladro inalámbrico 18V con batería de litio y cargador</div>
+
+          <div class="producto-precio">$180.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="electricidad">
+
+          <div class="producto-icon">💡</div>
+
+          <div class="producto-titulo">Cable Eléctrico</div>
+
+          <div class="producto-descripcion">Cable eléctrico 12 AWG para instalaciones domésticas</div>
+
+          <div class="producto-precio">$8.500</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="electricidad">
+
+          <div class="producto-icon">🔌</div>
+
+          <div class="producto-titulo">Tomacorrientes</div>
+
+          <div class="producto-descripcion">Tomacorrientes dobles con conexión a tierra</div>
+
+          <div class="producto-precio">$12.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <!-- Plomería -->
+
+        <div class="producto-card" data-categoria="plomeria">
+
+          <div class="producto-icon">🚰</div>
+
+          <div class="producto-titulo">Tubería PVC</div>
+
+          <div class="producto-descripcion">Tubería PVC de 1/2 pulgada para instalaciones de agua</div>
+
+          <div class="producto-precio">$6.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="plomeria">
+
+          <div class="producto-icon">🔧</div>
+
+          <div class="producto-titulo">Llave de Tubo</div>
+
+          <div class="producto-descripcion">Llave de tubo ajustable para trabajos de plomería</div>
+
+          <div class="producto-precio">$35.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <!-- Construcción -->
+
+        <div class="producto-card" data-categoria="construccion">
+
+          <div class="producto-icon">🧱</div>
+
+          <div class="producto-titulo">Cemento</div>
+
+          <div class="producto-descripcion">Cemento gris de 50kg para construcción</div>
+
+          <div class="producto-precio">$18.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="construccion">
+
+          <div class="producto-icon">🏗️</div>
+
+          <div class="producto-titulo">Ladrillos</div>
+
+          <div class="producto-descripcion">Ladrillos de arcilla para construcción</div>
+
+          <div class="producto-precio">$800</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="footer">
+
+    <div class="container">
+
+      <p>&copy; 2024 FimeCompany - Ferretería. Todos los derechos reservados.</p>
+
+      <p><a href="../" style="color: #3498db;">← Volver al Portal Principal</a></p>
+
+    </div>
+
+  </div>
+
+
+
+  <script>
+
+    function filtrarCategoria(categoria) {
+
+      const productos = document.querySelectorAll('.producto-card');
+
+      const botones = document.querySelectorAll('.categoria-btn');
+
+
+
+      botones.forEach(btn => btn.classList.remove('active'));
+
+      event.target.classList.add('active');
+
+
+
+      productos.forEach(producto => {
+
+        if (categoria === 'todos' || producto.dataset.categoria === categoria) {
+
+          producto.style.display = 'block';
+
+        } else {
+
+          producto.style.display = 'none';
+
+        }
+
+      });
+
+    }
+
+
+
+    document.querySelectorAll('.producto-boton').forEach(boton => {
+
+      boton.addEventListener('click', function () {
+
+        const producto = this.closest('.producto-card');
+
+        const titulo = producto.querySelector('.producto-titulo').textContent;
+
+        const precio = producto.querySelector('.producto-precio').textContent;
+
+
+
+        alert(`¡${titulo} agregado al carrito!\nPrecio: ${precio}`);
+
+      });
+
+    });
+
+  </script>
+
+</body>
+
+
+
+</html>
+
+
+
+          <button class="categoria-btn" onclick="filtrarCategoria('plomeria')">Plomería</button>
+
+          <button class="categoria-btn" onclick="filtrarCategoria('construccion')">Construcción</button>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="catalogo-grid" id="catalogo">
+
+        <!-- Herramientas -->
+
+        <div class="producto-card" data-categoria="herramientas">
+
+          <div class="producto-icon">🔨</div>
+
+          <div class="producto-titulo">Martillo de Carpintero</div>
+
+          <div class="producto-descripcion">Martillo profesional de acero forjado con mango de madera</div>
+
+          <div class="producto-precio">$25.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="herramientas">
+
+          <div class="producto-icon">🔧</div>
+
+          <div class="producto-titulo">Juego de Destornilladores</div>
+
+          <div class="producto-descripcion">Set de 12 destornilladores profesionales con puntas intercambiables</div>
+
+          <div class="producto-precio">$45.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="herramientas">
+
+          <div class="producto-icon">🔩</div>
+
+          <div class="producto-titulo">Tornillos y Tuercas</div>
+
+          <div class="producto-descripcion">Juego completo de tornillos y tuercas en diferentes tamaños</div>
+
+          <div class="producto-precio">$15.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <!-- Electricidad -->
+
+        <div class="producto-card" data-categoria="electricidad">
+
+          <div class="producto-icon">⚡</div>
+
+          <div class="producto-titulo">Taladro Eléctrico</div>
+
+          <div class="producto-descripcion">Taladro inalámbrico 18V con batería de litio y cargador</div>
+
+          <div class="producto-precio">$180.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="electricidad">
+
+          <div class="producto-icon">💡</div>
+
+          <div class="producto-titulo">Cable Eléctrico</div>
+
+          <div class="producto-descripcion">Cable eléctrico 12 AWG para instalaciones domésticas</div>
+
+          <div class="producto-precio">$8.500</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="electricidad">
+
+          <div class="producto-icon">🔌</div>
+
+          <div class="producto-titulo">Tomacorrientes</div>
+
+          <div class="producto-descripcion">Tomacorrientes dobles con conexión a tierra</div>
+
+          <div class="producto-precio">$12.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <!-- Plomería -->
+
+        <div class="producto-card" data-categoria="plomeria">
+
+          <div class="producto-icon">🚰</div>
+
+          <div class="producto-titulo">Tubería PVC</div>
+
+          <div class="producto-descripcion">Tubería PVC de 1/2 pulgada para instalaciones de agua</div>
+
+          <div class="producto-precio">$6.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="plomeria">
+
+          <div class="producto-icon">🔧</div>
+
+          <div class="producto-titulo">Llave de Tubo</div>
+
+          <div class="producto-descripcion">Llave de tubo ajustable para trabajos de plomería</div>
+
+          <div class="producto-precio">$35.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <!-- Construcción -->
+
+        <div class="producto-card" data-categoria="construccion">
+
+          <div class="producto-icon">🧱</div>
+
+          <div class="producto-titulo">Cemento</div>
+
+          <div class="producto-descripcion">Cemento gris de 50kg para construcción</div>
+
+          <div class="producto-precio">$18.000</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+
+
+        <div class="producto-card" data-categoria="construccion">
+
+          <div class="producto-icon">🏗️</div>
+
+          <div class="producto-titulo">Ladrillos</div>
+
+          <div class="producto-descripcion">Ladrillos de arcilla para construcción</div>
+
+          <div class="producto-precio">$800</div>
+
+          <button class="producto-boton">Agregar al Carrito</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="footer">
+
+    <div class="container">
+
+      <p>&copy; 2024 FimeCompany - Ferretería. Todos los derechos reservados.</p>
+
+      <p><a href="../" style="color: #3498db;">← Volver al Portal Principal</a></p>
+
+    </div>
+
+  </div>
+
+
+
+  <script>
+
+    function filtrarCategoria(categoria) {
+
+      const productos = document.querySelectorAll('.producto-card');
+
+      const botones = document.querySelectorAll('.categoria-btn');
+
+
+
+      botones.forEach(btn => btn.classList.remove('active'));
+
+      event.target.classList.add('active');
+
+
+
+      productos.forEach(producto => {
+
+        if (categoria === 'todos' || producto.dataset.categoria === categoria) {
+
+          producto.style.display = 'block';
+
+        } else {
+
+          producto.style.display = 'none';
+
+        }
+
+      });
+
+    }
+
+
+
+    document.querySelectorAll('.producto-boton').forEach(boton => {
+
+      boton.addEventListener('click', function () {
+
+        const producto = this.closest('.producto-card');
+
+        const titulo = producto.querySelector('.producto-titulo').textContent;
+
+        const precio = producto.querySelector('.producto-precio').textContent;
+
+
+
+        alert(`¡${titulo} agregado al carrito!\nPrecio: ${precio}`);
+
+      });
+
+    });
+
+  </script>
+
+</body>
+
+
+
+</html>
+
+
+

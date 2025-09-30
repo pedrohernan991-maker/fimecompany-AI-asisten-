@@ -1,0 +1,9 @@
+open fimecompany.com
+cursor_user@fimecompany.com
+QeWgB6DB~Lpt
+cd public_html
+cd ferreteria
+delete index.html
+put index-final-optimizado.html index.html
+put categorias.json
+quit

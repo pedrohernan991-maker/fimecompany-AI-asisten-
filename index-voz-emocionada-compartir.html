@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIME COMPANY - Experiencia Interactiva</title>
+    <meta name="description"
+        content="FIME COMPANY - Grupo empresarial líder con experiencia interactiva, voz emocionada y opciones para compartir">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #0a0a0a, #1a1a1a, #0a0a0a);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
+            color: #eee;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Partículas flotantes */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #00e5e5;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) translateX(0px);
+                opacity: 0.7;
+            }
+
+            50% {
+                transform: translateY(-20px) translateX(10px);
+                opacity: 1;
+            }
+        }
+
+        .header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #00e5e5;
+            backdrop-filter: blur(10px);
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: #00e5e5;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: #eee;
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav a:hover {
+            color: #00e5e5;
+            transform: translateY(-2px);
+        }
+
+        .nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: #00e5e5;
+            transition: left 0.3s;
+        }
+
+        .nav a:hover::before {
+            left: 0;
+        }
+
+        /* Botones de compartir */
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            background: linear-gradient(45deg, #333, #555);
+            border: 1px solid #666;
+            padding: 8px 15px;
+            border-radius: 25px;
+            color: #eee;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 229, 229, 0.3);
+        }
+
+        .share-btn.whatsapp:hover {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+        }
+
+        .share-btn.facebook:hover {
+            background: linear-gradient(45deg, #1877F2, #42A5F5);
+        }
+
+        .share-btn.twitter:hover {
+            background: linear-gradient(45deg, #1DA1F2, #0D8BD9);
+        }
+
+        .share-btn.linkedin:hover {
+            background: linear-gradient(45deg, #0077B5, #005885);
+        }
+
+        .share-btn.telegram:hover {
+            background: linear-gradient(45deg, #0088CC, #006699);
+        }
+
+        .share-btn.copy:hover {
+            background: linear-gradient(45deg, #00e5e5, #00ff00);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 0;
+            background: radial-gradient(circle at center, rgba(0, 229, 229, 0.1), transparent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 229, 229, 0.1), transparent);
+            animation: sweep 4s ease-in-out infinite;
+        }
+
+        @keyframes sweep {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: #00e5e5;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(0, 229, 229, 0.5);
+            animation: titleGlow 3s ease-in-out infinite;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes titleGlow {
+
+            0%,
+            100% {
+                text-shadow: 0 0 20px rgba(0, 229, 229, 0.5);
+            }
+
+            50% {
+                text-shadow: 0 0 30px rgba(0, 229, 229, 0.8), 0 0 40px rgba(0, 229, 229, 0.6);
+            }
+        }
+
+        .hero h2 {
+            color: #00e5e5;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 2s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 2s ease-out 1s both;
+        }
+
+        .ceo-info {
+            background: rgba(0, 229, 229, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            border: 2px solid #00e5e5;
+            backdrop-filter: blur(10px);
+            animation: slideInScale 2s ease-out 1.5s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes slideInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8) translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .ceo-info::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(0, 229, 229, 0.1), transparent);
+            animation: rotate 8s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .ceo-info h2 {
+            color: #00e5e5;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .welcome-message {
+            background: rgba(0, 255, 0, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid #00ff00;
+            margin: 2rem 0;
+            animation: voiceActiveGlow 2s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes voiceActiveGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 30px rgba(0, 255, 0, 0.4);
+                border-color: #00ff00;
+            }
+
+            50% {
+                box-shadow: 0 0 50px rgba(0, 255, 0, 0.7);
+                border-color: #00e5e5;
+            }
+        }
+
+        .voice-status {
+            background: linear-gradient(45deg, #00e5e5, #00ff00);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: #000;
+            font-weight: bold;
+            margin: 1rem;
+            font-size: 1.1rem;
+            animation: excitedPulse 0.6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes excitedPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(0, 229, 229, 0.5);
+            }
+
+            50% {
+                transform: scale(1.12);
+                box-shadow: 0 0 40px rgba(0, 255, 0, 0.8);
+            }
+        }
+
+        .voice-button {
+            background: linear-gradient(45deg, #333, #555);
+            border: 1px solid #666;
+            padding: 12px 25px;
+            border-radius: 30px;
+            color: #aaa;
+            font-weight: normal;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .voice-button:hover {
+            background: linear-gradient(45deg, #555, #777);
+            color: #eee;
+            border-color: #999;
+        }
+
+        .divisiones {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #00e5e5;
+            margin-bottom: 3rem;
+            text-shadow: 0 0 10px rgba(0, 229, 229, 0.5);
+            animation: fadeInUp 2s ease-out;
+        }
+
+        .divisiones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .division-card {
+            background: rgba(26, 26, 26, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 2px solid #333;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            animation: cardSlideIn 0.8s ease-out;
+        }
+
+        @keyframes cardSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .division-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #00e5e5;
+            box-shadow: 0 20px 40px rgba(0, 229, 229, 0.3);
+        }
+
+        .division-card.ferreteria {
+            border-color: #00e5e5;
+            background: rgba(0, 229, 229, 0.05);
+            animation: ferreteriaGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes ferreteriaGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(0, 229, 229, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 0 30px rgba(0, 229, 229, 0.4);
+            }
+        }
+
+        .division-card.ferreteria:hover {
+            border-color: #00ff00;
+            box-shadow: 0 25px 50px rgba(0, 255, 0, 0.4);
+        }
+
+        .division-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .division-card h3 {
+            color: #00e5e5;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .division-card.ferreteria h3 {
+            color: #00ff00;
+        }
+
+        .division-phone {
+            color: #00e5e5;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 1rem;
+            animation: phoneGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes phoneGlow {
+
+            0%,
+            100% {
+                text-shadow: 0 0 10px rgba(0, 229, 229, 0.5);
+            }
+
+            50% {
+                text-shadow: 0 0 15px rgba(0, 229, 229, 0.8);
+            }
+        }
+
+        .division-card.ferreteria .division-phone {
+            color: #00ff00;
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 3rem 0 1rem;
+            border-top: 2px solid #00e5e5;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer h4 {
+            color: #00e5e5;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #999;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav {
+                justify-content: center;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .divisiones-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .share-buttons {
+                gap: 5px;
+            }
+
+            .share-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Loading overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeOut 3s ease-out 2s both;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .loading-text {
+            color: #00e5e5;
+            font-size: 2rem;
+            animation: loadingPulse 1s ease-in-out infinite;
+        }
+
+        @keyframes loadingPulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+        }
+
+        /* Audio permission overlay */
+        .audio-permission {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            backdrop-filter: blur(10px);
+        }
+
+        .permission-box {
+            background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid #00e5e5;
+            text-align: center;
+            max-width: 500px;
+            animation: permissionPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes permissionPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 30px rgba(0, 229, 229, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 50px rgba(0, 229, 229, 0.6);
+            }
+        }
+
+        .permission-button {
+            background: linear-gradient(45deg, #00e5e5, #00ff00);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            animation: buttonExcited 1s ease-in-out infinite;
+        }
+
+        @keyframes buttonExcited {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.08);
+            }
+        }
+
+        .permission-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 229, 229, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Audio Permission Overlay -->
+    <div class="audio-permission" id="audioPermission">
+        <div class="permission-box">
+            <h2 style="color: #00e5e5; margin-bottom: 1rem;">🎉 ¡Bienvenida Emocionada!</h2>
+            <p style="margin-bottom: 1.5rem;">FIME COMPANY te dará una bienvenida súper emocionada con voz femenina
+                robótica</p>
+            <button class="permission-button" onclick="enableAutoVoice()">
+                🔊 ¡Activar Bienvenida Emocionada!
+            </button>
+            <p style="font-size: 0.9rem; color: #999; margin-top: 1rem;">
+                Solo se reproduce una vez por visita
+            </p>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-overlay">
+        <div class="loading-text">🌐 FIME COMPANY</div>
+    </div>
+
+    <!-- Partículas flotantes -->
+    <div class="particles" id="particles"></div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="./" class="logo">🌐 FIME COMPANY</a>
+                <nav class="nav">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#quienes">Quiénes Somos</a>
+                    <a href="#divisiones">Divisiones</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h1>FIME COMPANY</h1>
+            <h2>¡Corporación Global Súper Emocionante!</h2>
+            <p>¡Grupo empresarial líder en soluciones industriales, construcción, energía limpia y desarrollo
+                tecnológico con la experiencia más emocionante del mundo!</p>
+
+            <!-- Botones de compartir página principal -->
+            <div class="share-buttons">
+                <a href="#" class="share-btn whatsapp"
+                    onclick="shareWhatsApp('¡Conoce FIME COMPANY! Corporación global líder con 7 divisiones especializadas', window.location.href)">
+                    📱 WhatsApp
+                </a>
+                <a href="#" class="share-btn facebook" onclick="shareFacebook(window.location.href)">
+                    📘 Facebook
+                </a>
+                <a href="#" class="share-btn twitter"
+                    onclick="shareTwitter('¡Conoce FIME COMPANY! Corporación global líder 🏢', window.location.href)">
+                    🐦 Twitter
+                </a>
+                <a href="#" class="share-btn linkedin" onclick="shareLinkedIn(window.location.href)">
+                    💼 LinkedIn
+                </a>
+                <a href="#" class="share-btn telegram"
+                    onclick="shareTelegram('¡Conoce FIME COMPANY! Corporación global líder', window.location.href)">
+                    ✈️ Telegram
+                </a>
+                <a href="#" class="share-btn copy" onclick="copyToClipboard(window.location.href)">
+                    📋 Copiar Link
+                </a>
+            </div>
+
+            <div class="welcome-message">
+                <h3 style="color: #00ff00; margin-bottom: 1rem;">🎉 ¡Bienvenida Súper Emocionada!</h3>
+                <div class="voice-status" id="voiceStatus">
+                    🔊 ¡Reproduciendo Bienvenida Emocionada!
+                </div>
+                <button class="voice-button" onclick="playWelcomeMessage()">
+                    🔄 Repetir Bienvenida
+                </button>
+                <p style="color: #00ff00; font-size: 0.9rem; margin-top: 0.5rem;">
+                    Voz femenina robótica súper emocionada - Solo una vez por visita
+                </p>
+            </div>
+
+            <div class="ceo-info">
+                <h2>👨‍💼 CEO: Pedro Nicolás Hernández Lizardo</h2>
+                <p>¡Liderando la visión empresarial con 7 divisiones especializadas, ofreciendo las soluciones más
+                    emocionantes e integrales para el desarrollo industrial y tecnológico global!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="divisiones" class="divisiones">
+        <div class="container">
+            <h2 class="section-title">¡Nuestras 7 Divisiones Súper Emocionantes!</h2>
+            <div class="divisiones-grid">
+                <div class="division-card ferreteria" onclick="irAFerreteria()">
+                    <span class="division-icon">🔧</span>
+                    <h3>Ferretería Industrial Metálica del Este</h3>
+                    <p>¡Herramientas, materiales de construcción y soluciones industriales especializadas con el
+                        catálogo más emocionante!</p>
+                    <div class="division-phone">📞 829-440-9136</div>
+                    <div
+                        style="background: rgba(0,255,0,0.1); padding: 0.5rem; border-radius: 5px; margin-top: 1rem; color: #00ff00; font-size: 0.9rem;">
+                        👆 ¡Click para experiencia súper emocionante!
+                    </div>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn whatsapp"
+                            onclick="shareWhatsApp('¡Ferretería Industrial Metálica del Este! Tel: 829-440-9136', window.location.href + 'ferreteria/')">
+                            📱 Compartir
+                        </a>
+                        <a href="#" class="share-btn copy"
+                            onclick="copyToClipboard(window.location.href + 'ferreteria/')">
+                            📋 Link
+                        </a>
+                    </div>
+                </div>
+
+                <div class="division-card" onclick="irADivision('fimekids')">
+                    <span class="division-icon">👶</span>
+                    <h3>FIMEKIDS</h3>
+                    <p>¡Educación Infantil con Inteligencia Artificial súper emocionante! Desarrollo de programas
+                        educativos innovadores para el futuro.</p>
+                    <div class="division-phone">📞 Próximamente</div>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn whatsapp"
+                            onclick="shareWhatsApp('¡FIMEKIDS! Educación infantil con IA', window.location.href + 'fimekids/')">
+                            📱 Compartir
+                        </a>
+                        <a href="#" class="share-btn copy"
+                            onclick="copyToClipboard(window.location.href + 'fimekids/')">
+                            📋 Link
+                        </a>
+                    </div>
+                </div>
+
+                <div class="division-card" onclick="irADivision('global')">
+                    <span class="division-icon">🌍</span>
+                    <h3>DEGLOBALPLAN</h3>
+                    <p>¡Desarrollo Global Planetario súper emocionante! Planificación y desarrollo de proyectos globales
+                        con visión estratégica.</p>
+                    <div class="division-phone">📞 Próximamente</div>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn whatsapp"
+                            onclick="shareWhatsApp('¡DEGLOBALPLAN! Desarrollo global planetario', window.location.href + 'global/')">
+                            📱 Compartir
+                        </a>
+                        <a href="#" class="share-btn copy" onclick="copyToClipboard(window.location.href + 'global/')">
+                            📋 Link
+                        </a>
+                    </div>
+                </div>
+
+                <div class="division-card" onclick="irADivision('energia')">
+                    <span class="division-icon">⚡</span>
+                    <h3>Energía Limpia</h3>
+                    <p>¡Soluciones súper emocionantes en energías renovables y tecnologías verdes para la
+                        descontaminación ambiental!</p>
+                    <div class="division-phone">📞 Próximamente</div>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn whatsapp"
+                            onclick="shareWhatsApp('¡Energía Limpia FIME! Soluciones renovables', window.location.href + 'energia/')">
+                            📱 Compartir
+                        </a>
+                        <a href="#" class="share-btn copy" onclick="copyToClipboard(window.location.href + 'energia/')">
+                            📋 Link
+                        </a>
+                    </div>
+                </div>
+
+                <div class="division-card" onclick="irADivision('imprexlaser')">
+                    <span class="division-icon">🖨️</span>
+                    <h3>Imprex Laser</h3>
+                    <p>¡Servicios de impresiones láser súper modernos y emocionantes! Tecnología avanzada en impresión
+                        láser.</p>
+                    <div class="division-phone">📞 Próximamente</div>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn whatsapp"
+                            onclick="shareWhatsApp('¡Imprex Laser! Impresiones láser modernas', window.location.href + 'imprexlaser/')">
+                            📱 Compartir
+                        </a>
+                        <a href="#" class="share-btn copy"
+                            onclick="copyToClipboard(window.location.href + 'imprexlaser/')">
+                            📋 Link
+                        </a>
+                    </div>
+                </div>
+
+                <div class="division-card" onclick="irADivision('constructora')">
+                    <span class="division-icon">🏗️</span>
+                    <h3>Constructora Metálica</h3>
+                    <p>¡Construcción súper emocionante de estructuras metálicas avanzadas! Especialistas en construcción
+                        industrial.</p>
+                    <div class="division-phone">📞 Próximamente</div>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn whatsapp"
+                            onclick="shareWhatsApp('¡Constructora Metálica FIME! Estructuras avanzadas', window.location.href + 'constructora/')">
+                            📱 Compartir
+                        </a>
+                        <a href="#" class="share-btn copy"
+                            onclick="copyToClipboard(window.location.href + 'constructora/')">
+                            📋 Link
+                        </a>
+                    </div>
+                </div>
+
+                <div class="division-card" onclick="irADivision('inversiones')">
+                    <span class="division-icon">💰</span>
+                    <h3>Inversiones FIMEFORMOSA</h3>
+                    <p>¡Expansión financiera súper emocionante e inversiones globales! Gestión de inversiones y
+                        desarrollo de proyectos financieros.</p>
+                    <div class="division-phone">📞 Próximamente</div>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn whatsapp"
+                            onclick="shareWhatsApp('¡Inversiones FIMEFORMOSA! Inversiones globales', window.location.href + 'inversiones/')">
+                            📱 Compartir
+                        </a>
+                        <a href="#" class="share-btn copy"
+                            onclick="copyToClipboard(window.location.href + 'inversiones/')">
+                            📋 Link
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4>FIME COMPANY</h4>
+                    <p>¡Grupo empresarial súper líder!</p>
+                    <p><strong>CEO:</strong> Pedro Nicolás Hernández Lizardo</p>
+                    <p>¡Experiencia súper emocionante!</p>
+                </div>
+                <div>
+                    <h4>División Principal</h4>
+                    <p><strong>Ferretería Industrial Metálica del Este</strong></p>
+                    <p style="color: #00e5e5;">📞 829-440-9136</p>
+                    <p>¡Catálogo súper emocionante disponible!</p>
+                </div>
+                <div>
+                    <h4>Todas las Divisiones</h4>
+                    <p>• Ferretería Industrial Metálica del Este</p>
+                    <p>• FIMEKIDS • DEGLOBALPLAN</p>
+                    <p>• Energía Limpia • Imprex Laser</p>
+                    <p>• Constructora Metálica • Inversiones FIMEFORMOSA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FIME COMPANY - ¡Experiencia Súper Emocionante! Todos los derechos reservados.</p>
+                <p>CEO: Pedro Nicolás Hernández Lizardo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let voiceEnabled = false;
+        let hasPlayedOnce = false; // Control para una sola reproducción
+
+        // Crear partículas flotantes
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particles.appendChild(particle);
+            }
+        }
+
+        // Función para habilitar voz automática
+        function enableAutoVoice() {
+            voiceEnabled = true;
+            document.getElementById('audioPermission').style.display = 'none';
+
+            // Solo reproducir si no se ha reproducido antes
+            if (!hasPlayedOnce) {
+                setTimeout(() => {
+                    playWelcomeMessage();
+                }, 1000);
+            }
+        }
+
+        // Función de bienvenida con voz EMOCIONADA
+        function playWelcomeMessage() {
+            if (!voiceEnabled) {
+                document.getElementById('audioPermission').style.display = 'flex';
+                return;
+            }
+
+            if ('speechSynthesis' in window) {
+                // Detener cualquier síntesis anterior
+                speechSynthesis.cancel();
+
+                const message = new SpeechSynthesisUtterance();
+                message.text = "¡Hola! ¡Bienvenidos a FIME COMPANY! ¡Estamos súper emocionados de tenerlos aquí! Somos una corporación global súper líder con siete divisiones especializadas increíbles. Nuestro CEO Pedro Nicolás Hernández Lizardo los invita a explorar nuestras soluciones industriales y tecnológicas más emocionantes. ¡Para contactar nuestra ferretería industrial súper genial, marque ocho dos nueve, cuatro cuatro cero, nueve uno tres seis! ¡Gracias por visitarnos!";
+                message.lang = 'es-ES';
+                message.rate = 1.1; // Más rápido y emocionado
+                message.pitch = 1.4; // Tono más alto y emocionado
+                message.volume = 0.9; // Más volumen
+
+                // Buscar voz femenina
+                const voices = speechSynthesis.getVoices();
+                const femaleVoice = voices.find(voice =>
+                    voice.lang.includes('es') &&
+                    (voice.name.toLowerCase().includes('female') ||
+                        voice.name.toLowerCase().includes('mujer') ||
+                        voice.name.toLowerCase().includes('maria') ||
+                        voice.name.toLowerCase().includes('carmen') ||
+                        voice.name.toLowerCase().includes('paloma') ||
+                        voice.name.toLowerCase().includes('monica'))
+                );
+
+                if (femaleVoice) {
+                    message.voice = femaleVoice;
+                }
+
+                // Efectos visuales durante la reproducción
+                const statusElement = document.getElementById('voiceStatus');
+
+                message.onstart = function () {
+                    hasPlayedOnce = true; // Marcar como reproducido
+                    statusElement.textContent = '🎉 ¡Reproduciendo Bienvenida Súper Emocionada!';
+                    statusElement.style.animation = 'excitedPulse 0.4s ease-in-out infinite';
+                };
+
+                message.onend = function () {
+                    statusElement.textContent = '✅ ¡Bienvenida Emocionada Completada!';
+                    statusElement.style.animation = 'buttonExcited 2s ease-in-out infinite';
+
+                    // Después de 5 segundos, cambiar a modo silencioso
+                    setTimeout(() => {
+                        statusElement.textContent = '🤖 ¡Sistema de Voz Súper Listo!';
+                        statusElement.style.animation = 'pulse 3s ease-in-out infinite';
+                    }, 5000);
+                };
+
+                message.onerror = function () {
+                    statusElement.textContent = '⚠️ Error en reproducción';
+                    console.log('Error en síntesis de voz');
+                };
+
+                speechSynthesis.speak(message);
+            } else {
+                document.getElementById('voiceStatus').textContent = '❌ Voz no disponible';
+                console.log('Síntesis de voz no soportada');
+            }
+        }
+
+        // Funciones de compartir
+        function shareWhatsApp(text, url) {
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function shareFacebook(url) {
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            window.open(facebookUrl, '_blank');
+        }
+
+        function shareTwitter(text, url) {
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+            window.open(twitterUrl, '_blank');
+        }
+
+        function shareLinkedIn(url) {
+            const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+            window.open(linkedinUrl, '_blank');
+        }
+
+        function shareTelegram(text, url) {
+            const telegramUrl = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+            window.open(telegramUrl, '_blank');
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function () {
+                alert('¡Link copiado al portapapeles!');
+            }, function (err) {
+                console.error('Error al copiar: ', err);
+                // Fallback para navegadores más antiguos
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    alert('¡Link copiado al portapapeles!');
+                } catch (err) {
+                    alert('No se pudo copiar el link');
+                }
+                document.body.removeChild(textArea);
+            });
+        }
+
+        // Funciones de navegación
+        function irAFerreteria() {
+            window.location.href = './ferreteria/';
+        }
+
+        function irADivision(division) {
+            window.location.href = './' + division + '/';
+        }
+
+        // Inicializar efectos
+        document.addEventListener('DOMContentLoaded', function () {
+            createParticles();
+
+            // Verificar si ya se reprodujo en esta sesión
+            hasPlayedOnce = sessionStorage.getItem('fimeVoicePlayed') === 'true';
+
+            // Cargar voces
+            if ('speechSynthesis' in window) {
+                function loadVoices() {
+                    const voices = speechSynthesis.getVoices();
+                    if (voices.length > 0) {
+                        console.log('Voces disponibles:', voices.length);
+                    }
+                }
+
+                loadVoices();
+                speechSynthesis.onvoiceschanged = loadVoices;
+            }
+
+            // Mostrar overlay de permisos después de la pantalla de carga
+            setTimeout(() => {
+                if (!voiceEnabled && !hasPlayedOnce) {
+                    document.getElementById('audioPermission').style.display = 'flex';
+                }
+            }, 2500);
+        });
+
+        // Efecto de parallax suave
+        window.addEventListener('scroll', function () {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero');
+            const speed = scrolled * 0.5;
+            parallax.style.transform = 'translateY(' + speed + 'px)';
+        });
+
+        // Marcar como reproducido en sessionStorage
+        window.addEventListener('beforeunload', function () {
+            if (hasPlayedOnce) {
+                sessionStorage.setItem('fimeVoicePlayed', 'true');
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FimeKids - FIME COMPANY</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .game-container {
+            background: rgba(26, 26, 26, 0.8);
+            border: 2px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .game-button {
+            background: linear-gradient(45deg, #00e5e5, #0099cc);
+            color: #000;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .game-button:hover {
+            background: linear-gradient(45deg, #00cccc, #0077aa);
+            transform: scale(1.05);
+        }
+
+        .score-display {
+            background: rgba(0, 229, 229, 0.1);
+            border: 2px solid #00e5e5;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #00e5e5;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .ai-assistant {
+            background: rgba(255, 107, 107, 0.1);
+            border: 2px solid #ff6b6b;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .ai-assistant h3 {
+            color: #ff6b6b;
+            margin-bottom: 15px;
+        }
+
+        .ai-response {
+            color: #ccc;
+            font-style: italic;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>👶 FimeKids</h1>
+            <p>Plataforma Educativa para Niños - Aprende Jugando</p>
+        </div>
+
+        <div class="game-container">
+            <h2>🎮 Juegos Educativos</h2>
+            <div class="game-grid">
+                <a href="juegos/colores/" class="game-button">🎨 Colores</a>
+                <a href="juegos/numeros/" class="game-button">🔢 Números</a>
+                <a href="juegos/formas/" class="game-button">🔷 Formas</a>
+                <a href="juegos/idiomas/" class="game-button">🌍 Idiomas</a>
+                <a href="juegos/animales/" class="game-button">🐾 Animales</a>
+            </div>
+
+            <div class="score-display">
+                ¡Elige un juego para comenzar a aprender!
+            </div>
+        </div>
+
+        <div class="ai-assistant">
+            <h3>🤖 Asistente IA FimeKids</h3>
+            <p>¡Hola! Soy tu asistente de aprendizaje. Puedes preguntarme sobre cualquier tema educativo.</p>
+            <div class="ai-response" id="aiResponse">
+                Haz clic en "Hablar con IA" para comenzar una conversación educativa.
+            </div>
+            <button class="voice-button" onclick="startAIConversation()">🗣️ Hablar con IA</button>
+        </div>
+
+        <div class="content">
+            <h2>🌟 Características de FimeKids</h2>
+            <p>• Juegos interactivos para aprender colores, números y formas</p>
+            <p>• Asistente de IA para responder preguntas educativas</p>
+            <p>• Sistema de puntuación y niveles de progreso</p>
+            <p>• Interfaz amigable y segura para niños</p>
+            <a href="../index.html" class="nav-button">← Volver al Portal Principal</a>
+        </div>
+    </div>
+
+    <script>
+        // Función de síntesis de voz
+        function speak(text) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'es-ES';
+                utterance.rate = 0.8;
+                speechSynthesis.speak(utterance);
+            }
+        }
+
+        // Conversación con IA
+        function startAIConversation() {
+            if ('webkitSpeechRecognition' in window) {
+                const recognition = new webkitSpeechRecognition();
+                recognition.lang = 'es-ES';
+                recognition.continuous = false;
+                recognition.interimResults = false;
+
+                recognition.onstart = function () {
+                    document.getElementById('aiResponse').textContent = "🎤 Escuchando...";
+                };
+
+                recognition.onresult = function (event) {
+                    const transcript = event.results[0][0].transcript;
+                    document.getElementById('aiResponse').textContent = `Tú dijiste: "${transcript}"`;
+
+                    // Respuestas educativas simples
+                    let response = "¡Interesante pregunta! ";
+                    if (transcript.includes('color')) {
+                        response += "Los colores primarios son rojo, azul y amarillo.";
+                    } else if (transcript.includes('número')) {
+                        response += "Los números nos ayudan a contar y medir cosas.";
+                    } else if (transcript.includes('animal')) {
+                        response += "Los animales son seres vivos que viven en diferentes hábitats.";
+                    } else {
+                        response += "Esa es una excelente pregunta. ¡Sigue aprendiendo!";
+                    }
+
+                    setTimeout(() => {
+                        document.getElementById('aiResponse').textContent = response;
+                        speak(response);
+                    }, 1000);
+                };
+
+                recognition.onerror = function (event) {
+                    document.getElementById('aiResponse').textContent = "Error: No pude escucharte. Intenta de nuevo.";
+                };
+
+                recognition.start();
+            } else {
+                document.getElementById('aiResponse').textContent = "Tu navegador no soporta reconocimiento de voz.";
+            }
+        }
+
+        // Mensaje de bienvenida
+        window.onload = function () {
+            setTimeout(() => {
+                speak("¡Bienvenido a FimeKids! Aquí puedes aprender jugando. Elige un juego para comenzar.");
+            }, 1000);
+        };
+    </script>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferreteria – FIME COMPANY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0a0a0a;
+            color: #eee;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #00e5e5 0%, #0a0a0a 100%);
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 2px 20px rgba(0, 229, 229, 0.3);
+        }
+        
+        .header h1 {
+            color: #00e5e5;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 229, 229, 0.5);
+        }
+        
+        .header p {
+            color: #ccc;
+            font-size: 1.2em;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .breadcrumb a {
+            color: #00e5e5;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: #00ffff;
+            text-shadow: 0 0 5px rgba(0, 229, 229, 0.7);
+        }
+        
+        .categorias {
+            background: rgba(0, 229, 229, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 229, 229, 0.3);
+        }
+        
+        .categorias h2 {
+            text-align: center;
+            color: #00e5e5;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .categoria-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .categoria-btn {
+            background: linear-gradient(45deg, #00e5e5, #008080);
+            color: #0a0a0a;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 229, 229, 0.3);
+        }
+        
+        .categoria-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 229, 229, 0.5);
+        }
+        
+        .categoria-btn.active {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+        }
+        
+        .catalogo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .producto-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 229, 229, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .producto-card:hover {
+            transform: translateY(-5px);
+            border-color: #00e5e5;
+            box-shadow: 0 10px 30px rgba(0, 229, 229, 0.2);
+        }
+        
+        .producto-icon {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 10px rgba(0, 229, 229, 0.3));
+        }
+        
+        .producto-titulo {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #00e5e5;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .producto-descripcion {
+            color: #ccc;
+            margin-bottom: 15px;
+            text-align: center;
+            line-height: 1.5;
+        }
+        
+        .producto-precio {
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+        }
+        
+        .producto-boton {
+            background: linear-gradient(45deg, #00e5e5, #008080);
+            color: #0a0a0a;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 229, 229, 0.3);
+        }
+        
+        .producto-boton:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 229, 229, 0.5);
+        }
+        
+        .footer {
+            background: rgba(0, 229, 229, 0.1);
+            color: #ccc;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0, 229, 229, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .catalogo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .categoria-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔧 Ferreteria – División de FIME COMPANY</h1>
+        <p>Catálogo completo de herramientas y materiales</p>
+    </div>
+    
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">← Volver al inicio</a>
+        </div>
+        
+        <div class="categorias">
+            <h2>📂 Categorías de Productos</h2>
+            <div class="categoria-buttons">
+                <button class="categoria-btn active" onclick="filtrarCategoria('todos')">Todos</button>
+                <button class="categoria-btn" onclick="filtrarCategoria('herramientas')">Herramientas</button>
+                <button class="categoria-btn" onclick="filtrarCategoria('electricidad')">Electricidad</button>
+                <button class="categoria-btn" onclick="filtrarCategoria('plomeria')">Plomería</button>
+                <button class="categoria-btn" onclick="filtrarCategoria('construccion')">Construcción</button>
+            </div>
+        </div>
+        
+        <div class="catalogo-grid" id="catalogo">
+            <!-- Herramientas -->
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🔨</div>
+                <div class="producto-titulo">Martillo de Carpintero</div>
+                <div class="producto-descripcion">Martillo profesional de acero forjado con mango de madera ergonómico</div>
+                <div class="producto-precio">$25.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🔧</div>
+                <div class="producto-titulo">Juego de Destornilladores</div>
+                <div class="producto-descripcion">Set de 12 destornilladores profesionales con puntas intercambiables</div>
+                <div class="producto-precio">$45.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🔩</div>
+                <div class="producto-titulo">Tornillos y Tuercas</div>
+                <div class="producto-descripcion">Juego completo de tornillos y tuercas en diferentes tamaños</div>
+                <div class="producto-precio">$15.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <!-- Electricidad -->
+            <div class="producto-card" data-categoria="electricidad">
+                <div class="producto-icon">⚡</div>
+                <div class="producto-titulo">Taladro Eléctrico</div>
+                <div class="producto-descripcion">Taladro inalámbrico 18V con batería de litio y cargador</div>
+                <div class="producto-precio">$180.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="electricidad">
+                <div class="producto-icon">💡</div>
+                <div class="producto-titulo">Cable Eléctrico</div>
+                <div class="producto-descripcion">Cable eléctrico 12 AWG para instalaciones domésticas</div>
+                <div class="producto-precio">$8.500</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="electricidad">
+                <div class="producto-icon">🔌</div>
+                <div class="producto-titulo">Tomacorrientes</div>
+                <div class="producto-descripcion">Tomacorrientes dobles con conexión a tierra</div>
+                <div class="producto-precio">$12.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <!-- Plomería -->
+            <div class="producto-card" data-categoria="plomeria">
+                <div class="producto-icon">🚰</div>
+                <div class="producto-titulo">Tubería PVC</div>
+                <div class="producto-descripcion">Tubería PVC de 1/2 pulgada para instalaciones de agua</div>
+                <div class="producto-precio">$6.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="plomeria">
+                <div class="producto-icon">🔧</div>
+                <div class="producto-titulo">Llave de Tubo</div>
+                <div class="producto-descripcion">Llave de tubo ajustable para trabajos de plomería</div>
+                <div class="producto-precio">$35.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <!-- Construcción -->
+            <div class="producto-card" data-categoria="construccion">
+                <div class="producto-icon">🧱</div>
+                <div class="producto-titulo">Cemento</div>
+                <div class="producto-descripcion">Cemento gris de 50kg para construcción</div>
+                <div class="producto-precio">$18.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="construccion">
+                <div class="producto-icon">🏗️</div>
+                <div class="producto-titulo">Ladrillos</div>
+                <div class="producto-descripcion">Ladrillos de arcilla para construcción</div>
+                <div class="producto-precio">$800</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🪚</div>
+                <div class="producto-titulo">Sierra Eléctrica</div>
+                <div class="producto-descripcion">Sierra circular eléctrica para cortes precisos</div>
+                <div class="producto-precio">$120.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🔨</div>
+                <div class="producto-titulo">Nivel de Burbuja</div>
+                <div class="producto-descripcion">Nivel profesional de aluminio de 60cm</div>
+                <div class="producto-precio">$22.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="electricidad">
+                <div class="producto-icon">🔋</div>
+                <div class="producto-titulo">Multímetro Digital</div>
+                <div class="producto-descripcion">Multímetro digital profesional con pantalla LCD</div>
+                <div class="producto-precio">$65.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2024 FIME COMPANY - Ferretería. Todos los derechos reservados.</p>
+        <p><a href="../index.html" style="color:#00e5e5;">← Volver al inicio</a></p>
+    </div>
+    
+    <script>
+        function filtrarCategoria(categoria) {
+            const productos = document.querySelectorAll('.producto-card');
+            const botones = document.querySelectorAll('.categoria-btn');
+            
+            // Remover clase active de todos los botones
+            botones.forEach(btn => btn.classList.remove('active'));
+            
+            // Agregar clase active al botón clickeado
+            event.target.classList.add('active');
+            
+            // Filtrar productos
+            productos.forEach(producto => {
+                if (categoria === 'todos' || producto.dataset.categoria === categoria) {
+                    producto.style.display = 'block';
+                } else {
+                    producto.style.display = 'none';
+                }
+            });
+        }
+        
+        // Agregar funcionalidad a los botones de carrito
+        document.querySelectorAll('.producto-boton').forEach(boton => {
+            boton.addEventListener('click', function() {
+                const producto = this.closest('.producto-card');
+                const titulo = producto.querySelector('.producto-titulo').textContent;
+                const precio = producto.querySelector('.producto-precio').textContent;
+                
+                alert(`¡${titulo} agregado al carrito!\nPrecio: ${precio}\n\n¡Gracias por elegir FIME COMPANY!`);
+            });
+        });
+        
+        // Animación de entrada
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.producto-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferreteria – FIME COMPANY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0a0a0a;
+            color: #eee;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #00e5e5 0%, #0a0a0a 100%);
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 2px 20px rgba(0, 229, 229, 0.3);
+        }
+        
+        .header h1 {
+            color: #00e5e5;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 229, 229, 0.5);
+        }
+        
+        .header p {
+            color: #ccc;
+            font-size: 1.2em;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .breadcrumb a {
+            color: #00e5e5;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: #00ffff;
+            text-shadow: 0 0 5px rgba(0, 229, 229, 0.7);
+        }
+        
+        .categorias {
+            background: rgba(0, 229, 229, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 229, 229, 0.3);
+        }
+        
+        .categorias h2 {
+            text-align: center;
+            color: #00e5e5;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .categoria-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .categoria-btn {
+            background: linear-gradient(45deg, #00e5e5, #008080);
+            color: #0a0a0a;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 229, 229, 0.3);
+        }
+        
+        .categoria-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 229, 229, 0.5);
+        }
+        
+        .categoria-btn.active {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+        }
+        
+        .catalogo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .producto-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 229, 229, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .producto-card:hover {
+            transform: translateY(-5px);
+            border-color: #00e5e5;
+            box-shadow: 0 10px 30px rgba(0, 229, 229, 0.2);
+        }
+        
+        .producto-icon {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 10px rgba(0, 229, 229, 0.3));
+        }
+        
+        .producto-titulo {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #00e5e5;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .producto-descripcion {
+            color: #ccc;
+            margin-bottom: 15px;
+            text-align: center;
+            line-height: 1.5;
+        }
+        
+        .producto-precio {
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+        }
+        
+        .producto-boton {
+            background: linear-gradient(45deg, #00e5e5, #008080);
+            color: #0a0a0a;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 229, 229, 0.3);
+        }
+        
+        .producto-boton:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 229, 229, 0.5);
+        }
+        
+        .footer {
+            background: rgba(0, 229, 229, 0.1);
+            color: #ccc;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0, 229, 229, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .catalogo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .categoria-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔧 Ferreteria – División de FIME COMPANY</h1>
+        <p>Catálogo completo de herramientas y materiales</p>
+    </div>
+    
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">← Volver al inicio</a>
+        </div>
+        
+        <div class="categorias">
+            <h2>📂 Categorías de Productos</h2>
+            <div class="categoria-buttons">
+                <button class="categoria-btn active" onclick="filtrarCategoria('todos')">Todos</button>
+                <button class="categoria-btn" onclick="filtrarCategoria('herramientas')">Herramientas</button>
+                <button class="categoria-btn" onclick="filtrarCategoria('electricidad')">Electricidad</button>
+                <button class="categoria-btn" onclick="filtrarCategoria('plomeria')">Plomería</button>
+                <button class="categoria-btn" onclick="filtrarCategoria('construccion')">Construcción</button>
+            </div>
+        </div>
+        
+        <div class="catalogo-grid" id="catalogo">
+            <!-- Herramientas -->
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🔨</div>
+                <div class="producto-titulo">Martillo de Carpintero</div>
+                <div class="producto-descripcion">Martillo profesional de acero forjado con mango de madera ergonómico</div>
+                <div class="producto-precio">$25.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🔧</div>
+                <div class="producto-titulo">Juego de Destornilladores</div>
+                <div class="producto-descripcion">Set de 12 destornilladores profesionales con puntas intercambiables</div>
+                <div class="producto-precio">$45.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🔩</div>
+                <div class="producto-titulo">Tornillos y Tuercas</div>
+                <div class="producto-descripcion">Juego completo de tornillos y tuercas en diferentes tamaños</div>
+                <div class="producto-precio">$15.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <!-- Electricidad -->
+            <div class="producto-card" data-categoria="electricidad">
+                <div class="producto-icon">⚡</div>
+                <div class="producto-titulo">Taladro Eléctrico</div>
+                <div class="producto-descripcion">Taladro inalámbrico 18V con batería de litio y cargador</div>
+                <div class="producto-precio">$180.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="electricidad">
+                <div class="producto-icon">💡</div>
+                <div class="producto-titulo">Cable Eléctrico</div>
+                <div class="producto-descripcion">Cable eléctrico 12 AWG para instalaciones domésticas</div>
+                <div class="producto-precio">$8.500</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="electricidad">
+                <div class="producto-icon">🔌</div>
+                <div class="producto-titulo">Tomacorrientes</div>
+                <div class="producto-descripcion">Tomacorrientes dobles con conexión a tierra</div>
+                <div class="producto-precio">$12.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <!-- Plomería -->
+            <div class="producto-card" data-categoria="plomeria">
+                <div class="producto-icon">🚰</div>
+                <div class="producto-titulo">Tubería PVC</div>
+                <div class="producto-descripcion">Tubería PVC de 1/2 pulgada para instalaciones de agua</div>
+                <div class="producto-precio">$6.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="plomeria">
+                <div class="producto-icon">🔧</div>
+                <div class="producto-titulo">Llave de Tubo</div>
+                <div class="producto-descripcion">Llave de tubo ajustable para trabajos de plomería</div>
+                <div class="producto-precio">$35.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <!-- Construcción -->
+            <div class="producto-card" data-categoria="construccion">
+                <div class="producto-icon">🧱</div>
+                <div class="producto-titulo">Cemento</div>
+                <div class="producto-descripcion">Cemento gris de 50kg para construcción</div>
+                <div class="producto-precio">$18.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="construccion">
+                <div class="producto-icon">🏗️</div>
+                <div class="producto-titulo">Ladrillos</div>
+                <div class="producto-descripcion">Ladrillos de arcilla para construcción</div>
+                <div class="producto-precio">$800</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🪚</div>
+                <div class="producto-titulo">Sierra Eléctrica</div>
+                <div class="producto-descripcion">Sierra circular eléctrica para cortes precisos</div>
+                <div class="producto-precio">$120.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🔨</div>
+                <div class="producto-titulo">Nivel de Burbuja</div>
+                <div class="producto-descripcion">Nivel profesional de aluminio de 60cm</div>
+                <div class="producto-precio">$22.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="electricidad">
+                <div class="producto-icon">🔋</div>
+                <div class="producto-titulo">Multímetro Digital</div>
+                <div class="producto-descripcion">Multímetro digital profesional con pantalla LCD</div>
+                <div class="producto-precio">$65.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2024 FIME COMPANY - Ferretería. Todos los derechos reservados.</p>
+        <p><a href="../index.html" style="color:#00e5e5;">← Volver al inicio</a></p>
+    </div>
+    
+    <script>
+        function filtrarCategoria(categoria) {
+            const productos = document.querySelectorAll('.producto-card');
+            const botones = document.querySelectorAll('.categoria-btn');
+            
+            // Remover clase active de todos los botones
+            botones.forEach(btn => btn.classList.remove('active'));
+            
+            // Agregar clase active al botón clickeado
+            event.target.classList.add('active');
+            
+            // Filtrar productos
+            productos.forEach(producto => {
+                if (categoria === 'todos' || producto.dataset.categoria === categoria) {
+                    producto.style.display = 'block';
+                } else {
+                    producto.style.display = 'none';
+                }
+            });
+        }
+        
+        // Agregar funcionalidad a los botones de carrito
+        document.querySelectorAll('.producto-boton').forEach(boton => {
+            boton.addEventListener('click', function() {
+                const producto = this.closest('.producto-card');
+                const titulo = producto.querySelector('.producto-titulo').textContent;
+                const precio = producto.querySelector('.producto-precio').textContent;
+                
+                alert(`¡${titulo} agregado al carrito!\nPrecio: ${precio}\n\n¡Gracias por elegir FIME COMPANY!`);
+            });
+        });
+        
+        // Animación de entrada
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.producto-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferreteria – FIME COMPANY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0a0a0a;
+            color: #eee;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #00e5e5 0%, #0a0a0a 100%);
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 2px 20px rgba(0, 229, 229, 0.3);
+        }
+        
+        .header h1 {
+            color: #00e5e5;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 229, 229, 0.5);
+        }
+        
+        .header p {
+            color: #ccc;
+            font-size: 1.2em;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .breadcrumb a {
+            color: #00e5e5;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: #00ffff;
+            text-shadow: 0 0 5px rgba(0, 229, 229, 0.7);
+        }
+        
+        .categorias {
+            background: rgba(0, 229, 229, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 229, 229, 0.3);
+        }
+        
+        .categorias h2 {
+            text-align: center;
+            color: #00e5e5;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .categoria-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .categoria-btn {
+            background: linear-gradient(45deg, #00e5e5, #008080);
+            color: #0a0a0a;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 229, 229, 0.3);
+        }
+        
+        .categoria-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 229, 229, 0.5);
+        }
+        
+        .categoria-btn.active {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+        }
+        
+        .catalogo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .producto-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 229, 229, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .producto-card:hover {
+            transform: translateY(-5px);
+            border-color: #00e5e5;
+            box-shadow: 0 10px 30px rgba(0, 229, 229, 0.2);
+        }
+        
+        .producto-icon {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 10px rgba(0, 229, 229, 0.3));
+        }
+        
+        .producto-titulo {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #00e5e5;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .producto-descripcion {
+            color: #ccc;
+            margin-bottom: 15px;
+            text-align: center;
+            line-height: 1.5;
+        }
+        
+        .producto-precio {
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px rgba(0, 255, 136, 0.5);
+        }
+        
+        .producto-boton {
+            background: linear-gradient(45deg, #00e5e5, #008080);
+            color: #0a0a0a;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 229, 229, 0.3);
+        }
+        
+        .producto-boton:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 229, 229, 0.5);
+        }
+        
+        .footer {
+            background: rgba(0, 229, 229, 0.1);
+            color: #ccc;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0, 229, 229, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .catalogo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .categoria-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔧 Ferreteria – División de FIME COMPANY</h1>
+        <p>Catálogo completo de herramientas y materiales</p>
+    </div>
+    
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="../index.html">← Volver al inicio</a>
+        </div>
+        
+        <div class="categorias">
+            <h2>📂 Categorías de Productos</h2>
+            <div class="categoria-buttons">
+                <button class="categoria-btn active" onclick="filtrarCategoria('todos')">Todos</button>
+                <button class="categoria-btn" onclick="filtrarCategoria('herramientas')">Herramientas</button>
+                <button class="categoria-btn" onclick="filtrarCategoria('electricidad')">Electricidad</button>
+                <button class="categoria-btn" onclick="filtrarCategoria('plomeria')">Plomería</button>
+                <button class="categoria-btn" onclick="filtrarCategoria('construccion')">Construcción</button>
+            </div>
+        </div>
+        
+        <div class="catalogo-grid" id="catalogo">
+            <!-- Herramientas -->
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🔨</div>
+                <div class="producto-titulo">Martillo de Carpintero</div>
+                <div class="producto-descripcion">Martillo profesional de acero forjado con mango de madera ergonómico</div>
+                <div class="producto-precio">$25.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🔧</div>
+                <div class="producto-titulo">Juego de Destornilladores</div>
+                <div class="producto-descripcion">Set de 12 destornilladores profesionales con puntas intercambiables</div>
+                <div class="producto-precio">$45.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🔩</div>
+                <div class="producto-titulo">Tornillos y Tuercas</div>
+                <div class="producto-descripcion">Juego completo de tornillos y tuercas en diferentes tamaños</div>
+                <div class="producto-precio">$15.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <!-- Electricidad -->
+            <div class="producto-card" data-categoria="electricidad">
+                <div class="producto-icon">⚡</div>
+                <div class="producto-titulo">Taladro Eléctrico</div>
+                <div class="producto-descripcion">Taladro inalámbrico 18V con batería de litio y cargador</div>
+                <div class="producto-precio">$180.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="electricidad">
+                <div class="producto-icon">💡</div>
+                <div class="producto-titulo">Cable Eléctrico</div>
+                <div class="producto-descripcion">Cable eléctrico 12 AWG para instalaciones domésticas</div>
+                <div class="producto-precio">$8.500</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="electricidad">
+                <div class="producto-icon">🔌</div>
+                <div class="producto-titulo">Tomacorrientes</div>
+                <div class="producto-descripcion">Tomacorrientes dobles con conexión a tierra</div>
+                <div class="producto-precio">$12.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <!-- Plomería -->
+            <div class="producto-card" data-categoria="plomeria">
+                <div class="producto-icon">🚰</div>
+                <div class="producto-titulo">Tubería PVC</div>
+                <div class="producto-descripcion">Tubería PVC de 1/2 pulgada para instalaciones de agua</div>
+                <div class="producto-precio">$6.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="plomeria">
+                <div class="producto-icon">🔧</div>
+                <div class="producto-titulo">Llave de Tubo</div>
+                <div class="producto-descripcion">Llave de tubo ajustable para trabajos de plomería</div>
+                <div class="producto-precio">$35.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <!-- Construcción -->
+            <div class="producto-card" data-categoria="construccion">
+                <div class="producto-icon">🧱</div>
+                <div class="producto-titulo">Cemento</div>
+                <div class="producto-descripcion">Cemento gris de 50kg para construcción</div>
+                <div class="producto-precio">$18.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="construccion">
+                <div class="producto-icon">🏗️</div>
+                <div class="producto-titulo">Ladrillos</div>
+                <div class="producto-descripcion">Ladrillos de arcilla para construcción</div>
+                <div class="producto-precio">$800</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🪚</div>
+                <div class="producto-titulo">Sierra Eléctrica</div>
+                <div class="producto-descripcion">Sierra circular eléctrica para cortes precisos</div>
+                <div class="producto-precio">$120.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="herramientas">
+                <div class="producto-icon">🔨</div>
+                <div class="producto-titulo">Nivel de Burbuja</div>
+                <div class="producto-descripcion">Nivel profesional de aluminio de 60cm</div>
+                <div class="producto-precio">$22.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+            
+            <div class="producto-card" data-categoria="electricidad">
+                <div class="producto-icon">🔋</div>
+                <div class="producto-titulo">Multímetro Digital</div>
+                <div class="producto-descripcion">Multímetro digital profesional con pantalla LCD</div>
+                <div class="producto-precio">$65.000</div>
+                <button class="producto-boton">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2024 FIME COMPANY - Ferretería. Todos los derechos reservados.</p>
+        <p><a href="../index.html" style="color:#00e5e5;">← Volver al inicio</a></p>
+    </div>
+    
+    <script>
+        function filtrarCategoria(categoria) {
+            const productos = document.querySelectorAll('.producto-card');
+            const botones = document.querySelectorAll('.categoria-btn');
+            
+            // Remover clase active de todos los botones
+            botones.forEach(btn => btn.classList.remove('active'));
+            
+            // Agregar clase active al botón clickeado
+            event.target.classList.add('active');
+            
+            // Filtrar productos
+            productos.forEach(producto => {
+                if (categoria === 'todos' || producto.dataset.categoria === categoria) {
+                    producto.style.display = 'block';
+                } else {
+                    producto.style.display = 'none';
+                }
+            });
+        }
+        
+        // Agregar funcionalidad a los botones de carrito
+        document.querySelectorAll('.producto-boton').forEach(boton => {
+            boton.addEventListener('click', function() {
+                const producto = this.closest('.producto-card');
+                const titulo = producto.querySelector('.producto-titulo').textContent;
+                const precio = producto.querySelector('.producto-precio').textContent;
+                
+                alert(`¡${titulo} agregado al carrito!\nPrecio: ${precio}\n\n¡Gracias por elegir FIME COMPANY!`);
+            });
+        });
+        
+        // Animación de entrada
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.producto-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+

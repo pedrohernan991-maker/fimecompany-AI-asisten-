@@ -1,0 +1,16 @@
+open fimecompany.com
+user cursor_user@fimecompany.com
+QeWgB6DB~Lpt
+binary
+cd public_html
+put public_html\index.html index.html
+cd ferreteria
+put public_html\ferreteria\index.html index.html
+put categorias.json categorias.json
+cd ..
+cd fimekids
+put public_html\fimekids\index.html index.html
+cd ..
+cd industria
+put public_html\industria\index.html index.html
+quit

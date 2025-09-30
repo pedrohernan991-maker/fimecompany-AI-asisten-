@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico del Servidor - FimeCompany</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .diagnostico {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .error {
+            background: rgba(231, 76, 60, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #e74c3c;
+        }
+        .solucion {
+            background: rgba(39, 174, 96, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #27ae60;
+        }
+        .info {
+            background: rgba(52, 152, 219, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        .archivos {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .archivo {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        .timestamp {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Diagnóstico del Servidor</h1>
+        
+        <div class="error">
+            <h3>❌ Problema Identificado</h3>
+            <p><strong>URL:</strong> https://fimecompany.com/ferreteria/</p>
+            <p><strong>Síntoma:</strong> Solo muestra "Catálogo Ferretería" sin contenido</p>
+            <p><strong>Causa probable:</strong> Archivo index.html anterior o corrupto</p>
+        </div>
+        
+        <div class="info">
+            <h3>📁 Archivos que deberían estar en el servidor</h3>
+            <div class="archivos">
+                <div class="archivo">📄 /public_html/FIMECOMPANY V4/index.html (Portal Principal)</div>
+                <div class="archivo">📄 /public_html/FIMECOMPANY V4/ferreteria/index.html (Catálogo Ferretería)</div>
+                <div class="archivo">📄 /public_html/FIMECOMPANY V4/industria/index.html (Productos Industriales)</div>
+            </div>
+        </div>
+        
+        <div class="solucion">
+            <h3>🛠️ Solución Paso a Paso</h3>
+            <ol>
+                <li><strong>Conectar con SFTP:</strong> Usar Cursor para acceder al servidor</li>
+                <li><strong>Verificar archivos existentes:</strong> Revisar qué archivos están en el servidor</li>
+                <li><strong>Crear backup:</strong> Hacer copia de seguridad del archivo anterior</li>
+                <li><strong>Reemplazar archivo:</strong> Subir el nuevo index.html de ferretería</li>
+                <li><strong>Verificar funcionamiento:</strong> Comprobar que el sitio funciona</li>
+            </ol>
+        </div>
+        
+        <div class="diagnostico">
+            <h3>🔧 Comandos para Diagnosticar</h3>
+            <p><strong>1. Conectar con servidor:</strong></p>
+            <div class="archivo">Presiona F1 → "Conectar servidor" → Selecciona "fimecompany.com"</div>
+            
+            <p><strong>2. Navegar a la carpeta:</strong></p>
+            <div class="archivo">public_html → FIMECOMPANY V4 → ferreteria</div>
+            
+            <p><strong>3. Verificar archivo existente:</strong></p>
+            <div class="archivo">Revisar si existe index.html y su contenido</div>
+            
+            <p><strong>4. Reemplazar archivo:</strong></p>
+            <div class="archivo">Subir el nuevo ferreteria/index.html</div>
+        </div>
+        
+        <div class="info">
+            <h3>📋 Checklist de Verificación</h3>
+            <ul>
+                <li>✅ Archivo index.html existe en ferreteria/</li>
+                <li>✅ Archivo tiene contenido completo (no solo título)</li>
+                <li>✅ Archivo se subió correctamente al servidor</li>
+                <li>✅ Permisos de archivo son correctos (644)</li>
+                <li>✅ No hay errores de sintaxis en el HTML</li>
+            </ul>
+        </div>
+        
+        <div class="timestamp">
+            <strong>Fecha del diagnóstico:</strong><br>
+            <span id="fecha"></span>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('fecha').textContent = new Date().toLocaleString('es-ES');
+    </script>
+</body>
+</html>
+

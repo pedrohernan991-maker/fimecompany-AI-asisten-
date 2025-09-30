@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnóstico - Encontrar Archivo Problemático</title>
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(0, 229, 229, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid rgba(0, 229, 229, 0.3);
+    }
+
+    h1 {
+      color: #00e5e5;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(0, 229, 229, 0.5);
+    }
+
+    .problema {
+      background: rgba(255, 0, 0, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border-left: 4px solid #ff6b6b;
+    }
+
+    .solucion {
+      background: rgba(0, 255, 0, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border-left: 4px solid #00ff88;
+    }
+
+    .archivo {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      font-family: monospace;
+    }
+
+    .instruccion {
+      background: rgba(0, 229, 229, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🔍 Diagnóstico - Archivo Problemático</h1>
+
+    <div class="problema">
+      <h3>❌ Problema Identificado</h3>
+      <p><strong>Síntoma:</strong> El sitio solo muestra "Catálogo Ferretería" sin contenido</p>
+      <p><strong>URL afectada:</strong> https://fimecompany.com/ferreteria/</p>
+      <p><strong>Causa probable:</strong> Archivo index.html básico en el servidor</p>
+    </div>
+
+    <div class="solucion">
+      <h3>🛠️ Archivos que deben estar en el servidor</h3>
+      <div class="archivo">📄 /public_html/FIMECOMPANY V4/index.html (Portal Principal)</div>
+      <div class="archivo">📄 /public_html/FIMECOMPANY V4/ferreteria/index.html (Catálogo Completo)</div>
+      <div class="archivo">📄 /public_html/FIMECOMPANY V4/industria/index.html (Productos Industriales)</div>
+    </div>
+
+    <div class="instruccion">
+      <h3>📋 Instrucciones para Corregir</h3>
+      <ol>
+        <li><strong>Conectar con SFTP:</strong> Ctrl+Shift+P → "SFTP: List All"</li>
+        <li><strong>Navegar a:</strong> /public_html/FIMECOMPANY V4/ferreteria/</li>
+        <li><strong>Verificar archivo:</strong> index.html existente</li>
+        <li><strong>Reemplazar archivo:</strong> Subir el nuevo index.html</li>
+        <li><strong>Verificar funcionamiento:</strong> Visitar la URL</li>
+      </ol>
+    </div>
+
+    <div class="solucion">
+      <h3>✅ Archivo Correcto Creado</h3>
+      <p>El archivo <strong>public_html/ferreteria/index.html</strong> ha sido actualizado con:</p>
+      <ul>
+        <li>✅ Catálogo completo de productos</li>
+        <li>✅ Filtros por categoría funcionales</li>
+        <li>✅ Diseño que mantiene tu estilo (negro y cyan)</li>
+        <li>✅ Precios y descripciones de productos</li>
+        <li>✅ Botones de carrito funcionales</li>
+        <li>✅ Navegación de regreso al inicio</li>
+      </ul>
+    </div>
+
+    <div class="instruccion">
+      <h3>🎯 Próximo Paso</h3>
+      <p>Necesitas <strong>subir este archivo al servidor</strong> para reemplazar el archivo básico que solo dice
+        "Catálogo Ferretería".</p>
+      <p><strong>Ubicación local:</strong> C:\Users\PC\.android\c panel\public_html\ferreteria\index.html</p>
+      <p><strong>Destino servidor:</strong> /public_html/FIMECOMPANY V4/ferreteria/index.html</p>
+    </div>
+
+    <div class="archivo">
+      <strong>Archivo a reemplazar en el servidor:</strong><br>
+      Ubicación: /public_html/FIMECOMPANY V4/ferreteria/index.html<br>
+      Tamaño actual: Pequeño (solo texto básico)<br>
+      Tamaño nuevo: ~12KB (catálogo completo)
+    </div>
+  </div>
+
+  <script>
+    console.log('🔍 Diagnóstico cargado');
+    console.log('📁 Archivo problemático: /public_html/FIMECOMPANY V4/ferreteria/index.html');
+    console.log('✅ Solución: Reemplazar con catálogo completo');
+  </script>
+</body>
+
+</html>
+
+
+
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnóstico - Encontrar Archivo Problemático</title>
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(0, 229, 229, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid rgba(0, 229, 229, 0.3);
+    }
+
+    h1 {
+      color: #00e5e5;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(0, 229, 229, 0.5);
+    }
+
+    .problema {
+      background: rgba(255, 0, 0, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border-left: 4px solid #ff6b6b;
+    }
+
+    .solucion {
+      background: rgba(0, 255, 0, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border-left: 4px solid #00ff88;
+    }
+
+    .archivo {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      font-family: monospace;
+    }
+
+    .instruccion {
+      background: rgba(0, 229, 229, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🔍 Diagnóstico - Archivo Problemático</h1>
+
+    <div class="problema">
+      <h3>❌ Problema Identificado</h3>
+      <p><strong>Síntoma:</strong> El sitio solo muestra "Catálogo Ferretería" sin contenido</p>
+      <p><strong>URL afectada:</strong> https://fimecompany.com/ferreteria/</p>
+      <p><strong>Causa probable:</strong> Archivo index.html básico en el servidor</p>
+    </div>
+
+    <div class="solucion">
+      <h3>🛠️ Archivos que deben estar en el servidor</h3>
+      <div class="archivo">📄 /public_html/FIMECOMPANY V4/index.html (Portal Principal)</div>
+      <div class="archivo">📄 /public_html/FIMECOMPANY V4/ferreteria/index.html (Catálogo Completo)</div>
+      <div class="archivo">📄 /public_html/FIMECOMPANY V4/industria/index.html (Productos Industriales)</div>
+    </div>
+
+    <div class="instruccion">
+      <h3>📋 Instrucciones para Corregir</h3>
+      <ol>
+        <li><strong>Conectar con SFTP:</strong> Ctrl+Shift+P → "SFTP: List All"</li>
+        <li><strong>Navegar a:</strong> /public_html/FIMECOMPANY V4/ferreteria/</li>
+        <li><strong>Verificar archivo:</strong> index.html existente</li>
+        <li><strong>Reemplazar archivo:</strong> Subir el nuevo index.html</li>
+        <li><strong>Verificar funcionamiento:</strong> Visitar la URL</li>
+      </ol>
+    </div>
+
+    <div class="solucion">
+      <h3>✅ Archivo Correcto Creado</h3>
+      <p>El archivo <strong>public_html/ferreteria/index.html</strong> ha sido actualizado con:</p>
+      <ul>
+        <li>✅ Catálogo completo de productos</li>
+        <li>✅ Filtros por categoría funcionales</li>
+        <li>✅ Diseño que mantiene tu estilo (negro y cyan)</li>
+        <li>✅ Precios y descripciones de productos</li>
+        <li>✅ Botones de carrito funcionales</li>
+        <li>✅ Navegación de regreso al inicio</li>
+      </ul>
+    </div>
+
+    <div class="instruccion">
+      <h3>🎯 Próximo Paso</h3>
+      <p>Necesitas <strong>subir este archivo al servidor</strong> para reemplazar el archivo básico que solo dice
+        "Catálogo Ferretería".</p>
+      <p><strong>Ubicación local:</strong> C:\Users\PC\.android\c panel\public_html\ferreteria\index.html</p>
+      <p><strong>Destino servidor:</strong> /public_html/FIMECOMPANY V4/ferreteria/index.html</p>
+    </div>
+
+    <div class="archivo">
+      <strong>Archivo a reemplazar en el servidor:</strong><br>
+      Ubicación: /public_html/FIMECOMPANY V4/ferreteria/index.html<br>
+      Tamaño actual: Pequeño (solo texto básico)<br>
+      Tamaño nuevo: ~12KB (catálogo completo)
+    </div>
+  </div>
+
+  <script>
+    console.log('🔍 Diagnóstico cargado');
+    console.log('📁 Archivo problemático: /public_html/FIMECOMPANY V4/ferreteria/index.html');
+    console.log('✅ Solución: Reemplazar con catálogo completo');
+  </script>
+</body>
+
+</html>
+
+
+
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnóstico - Encontrar Archivo Problemático</title>
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(0, 229, 229, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid rgba(0, 229, 229, 0.3);
+    }
+
+    h1 {
+      color: #00e5e5;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px rgba(0, 229, 229, 0.5);
+    }
+
+    .problema {
+      background: rgba(255, 0, 0, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border-left: 4px solid #ff6b6b;
+    }
+
+    .solucion {
+      background: rgba(0, 255, 0, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border-left: 4px solid #00ff88;
+    }
+
+    .archivo {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      font-family: monospace;
+    }
+
+    .instruccion {
+      background: rgba(0, 229, 229, 0.2);
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🔍 Diagnóstico - Archivo Problemático</h1>
+
+    <div class="problema">
+      <h3>❌ Problema Identificado</h3>
+      <p><strong>Síntoma:</strong> El sitio solo muestra "Catálogo Ferretería" sin contenido</p>
+      <p><strong>URL afectada:</strong> https://fimecompany.com/ferreteria/</p>
+      <p><strong>Causa probable:</strong> Archivo index.html básico en el servidor</p>
+    </div>
+
+    <div class="solucion">
+      <h3>🛠️ Archivos que deben estar en el servidor</h3>
+      <div class="archivo">📄 /public_html/FIMECOMPANY V4/index.html (Portal Principal)</div>
+      <div class="archivo">📄 /public_html/FIMECOMPANY V4/ferreteria/index.html (Catálogo Completo)</div>
+      <div class="archivo">📄 /public_html/FIMECOMPANY V4/industria/index.html (Productos Industriales)</div>
+    </div>
+
+    <div class="instruccion">
+      <h3>📋 Instrucciones para Corregir</h3>
+      <ol>
+        <li><strong>Conectar con SFTP:</strong> Ctrl+Shift+P → "SFTP: List All"</li>
+        <li><strong>Navegar a:</strong> /public_html/FIMECOMPANY V4/ferreteria/</li>
+        <li><strong>Verificar archivo:</strong> index.html existente</li>
+        <li><strong>Reemplazar archivo:</strong> Subir el nuevo index.html</li>
+        <li><strong>Verificar funcionamiento:</strong> Visitar la URL</li>
+      </ol>
+    </div>
+
+    <div class="solucion">
+      <h3>✅ Archivo Correcto Creado</h3>
+      <p>El archivo <strong>public_html/ferreteria/index.html</strong> ha sido actualizado con:</p>
+      <ul>
+        <li>✅ Catálogo completo de productos</li>
+        <li>✅ Filtros por categoría funcionales</li>
+        <li>✅ Diseño que mantiene tu estilo (negro y cyan)</li>
+        <li>✅ Precios y descripciones de productos</li>
+        <li>✅ Botones de carrito funcionales</li>
+        <li>✅ Navegación de regreso al inicio</li>
+      </ul>
+    </div>
+
+    <div class="instruccion">
+      <h3>🎯 Próximo Paso</h3>
+      <p>Necesitas <strong>subir este archivo al servidor</strong> para reemplazar el archivo básico que solo dice
+        "Catálogo Ferretería".</p>
+      <p><strong>Ubicación local:</strong> C:\Users\PC\.android\c panel\public_html\ferreteria\index.html</p>
+      <p><strong>Destino servidor:</strong> /public_html/FIMECOMPANY V4/ferreteria/index.html</p>
+    </div>
+
+    <div class="archivo">
+      <strong>Archivo a reemplazar en el servidor:</strong><br>
+      Ubicación: /public_html/FIMECOMPANY V4/ferreteria/index.html<br>
+      Tamaño actual: Pequeño (solo texto básico)<br>
+      Tamaño nuevo: ~12KB (catálogo completo)
+    </div>
+  </div>
+
+  <script>
+    console.log('🔍 Diagnóstico cargado');
+    console.log('📁 Archivo problemático: /public_html/FIMECOMPANY V4/ferreteria/index.html');
+    console.log('✅ Solución: Reemplazar con catálogo completo');
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIME COMPANY - Grupo Empresarial Líder</title>
+    <meta name="description" content="FIME COMPANY - Grupo empresarial líder con 7 divisiones especializadas. CEO: Pedro Nicolás Hernández Lizardo">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; background: #0a0a0a; color: #eee; line-height: 1.6; }
+        .header { background: rgba(0, 0, 0, 0.9); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; border-bottom: 2px solid #00e5e5; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { color: #00e5e5; font-size: 2rem; font-weight: bold; text-decoration: none; }
+        .nav { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .nav a { color: #eee; text-decoration: none; transition: color 0.3s; }
+        .nav a:hover { color: #00e5e5; }
+        .hero { text-align: center; padding: 4rem 0; background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); }
+        .hero h1 { font-size: 3rem; color: #00e5e5; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .ceo-info { background: rgba(0, 229, 229, 0.1); padding: 2rem; border-radius: 10px; margin: 2rem 0; border: 1px solid #00e5e5; }
+        .ceo-info h2 { color: #00e5e5; margin-bottom: 1rem; }
+        .divisiones { padding: 4rem 0; }
+        .section-title { text-align: center; font-size: 2.5rem; color: #00e5e5; margin-bottom: 3rem; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
+        .divisiones-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .division-card { background: #1a1a1a; border-radius: 15px; padding: 2rem; border: 1px solid #333; transition: all 0.3s ease; text-decoration: none; color: inherit; cursor: pointer; }
+        .division-card:hover { transform: translateY(-5px); border-color: #00e5e5; box-shadow: 0 10px 25px rgba(0, 229, 229, 0.2); }
+        .division-card.ferreteria { border-color: #00e5e5; background: rgba(0, 229, 229, 0.05); }
+        .division-card.ferreteria:hover { border-color: #00ff00; box-shadow: 0 15px 30px rgba(0, 255, 0, 0.3); }
+        .division-icon { font-size: 3rem; margin-bottom: 1rem; display: block; text-align: center; }
+        .division-card h3 { color: #00e5e5; font-size: 1.5rem; margin-bottom: 1rem; text-align: center; }
+        .division-card.ferreteria h3 { color: #00ff00; }
+        .division-phone { color: #00e5e5; font-weight: bold; text-align: center; margin-top: 1rem; }
+        .division-card.ferreteria .division-phone { color: #00ff00; font-size: 1.2rem; }
+        .contacto { background: #1a1a1a; padding: 4rem 0; margin-top: 4rem; }
+        .contacto h2 { color: #00e5e5; text-align: center; margin-bottom: 2rem; }
+        .contacto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .contacto-item { background: rgba(0, 229, 229, 0.1); padding: 1.5rem; border-radius: 10px; border: 1px solid #333; text-align: center; }
+        .contacto-item h4 { color: #00e5e5; margin-bottom: 1rem; }
+        .footer { background: rgba(0, 0, 0, 0.9); padding: 3rem 0 1rem; border-top: 2px solid #00e5e5; text-align: center; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+        .footer h4 { color: #00e5e5; margin-bottom: 1rem; }
+        .footer-bottom { padding-top: 2rem; border-top: 1px solid #333; color: #999; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .nav { justify-content: center; width: 100%; margin-top: 1rem; } .divisiones-grid { grid-template-columns: 1fr; } }
+    </style>
+    <script>
+        function irAFerreteria() { window.location.href = './ferreteria/'; }
+        function irADivision(division) { window.location.href = './' + division + '/'; }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="./" class="logo">🌐 FIME COMPANY</a>
+                <nav class="nav">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#quienes">Quiénes Somos</a>
+                    <a href="#divisiones">Divisiones</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h1>FIME COMPANY</h1>
+            <h2 style="color: #00e5e5; font-size: 2rem; margin-bottom: 1rem;">Corporación Global</h2>
+            <p>Grupo empresarial líder en soluciones industriales, construcción, energía limpia y desarrollo tecnológico</p>
+            <div class="ceo-info">
+                <h2>👨‍💼 CEO: Pedro Nicolás Hernández Lizardo</h2>
+                <p>Liderando la visión empresarial con 7 divisiones especializadas, ofreciendo soluciones integrales para el desarrollo industrial y tecnológico global.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="quienes" class="hero">
+        <div class="container">
+            <h2 style="color: #00e5e5; font-size: 2.5rem; margin-bottom: 2rem;">Quiénes Somos</h2>
+            <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
+                <strong>FIME COMPANY</strong> es una corporación global con presencia en múltiples sectores estratégicos: ferretería industrial, energía limpia, educación infantil, inversiones, impresión láser y construcción metálica. Nuestra visión es impulsar el desarrollo económico, humano y ambiental a nivel mundial.
+            </p>
+        </div>
+    </section>
+
+    <section id="divisiones" class="divisiones">
+        <div class="container">
+            <h2 class="section-title">Nuestras 7 Divisiones</h2>
+            <div class="divisiones-grid">
+                <div class="division-card ferreteria" onclick="irAFerreteria()">
+                    <span class="division-icon">🔧</span>
+                    <h3>Ferretería Industrial Metálica del Este</h3>
+                    <p>Herramientas, materiales de construcción y soluciones industriales especializadas para profesionales y particulares.</p>
+                    <div class="division-phone">📞 829-440-9136</div>
+                    <div style="background: rgba(0,255,0,0.1); padding: 0.5rem; border-radius: 5px; margin-top: 1rem; color: #00ff00; font-size: 0.9rem;">
+                        👆 Click para acceder al catálogo completo
+                    </div>
+                </div>
+
+                <div class="division-card" onclick="irADivision('fimekids')">
+                    <span class="division-icon">👶</span>
+                    <h3>FIMEKIDS</h3>
+                    <p>Educación Infantil con Inteligencia Artificial. Desarrollo de programas educativos innovadores para el futuro de nuestros niños.</p>
+                    <div class="division-phone">📞 Próximamente</div>
+                </div>
+
+                <div class="division-card" onclick="irADivision('global')">
+                    <span class="division-icon">🌍</span>
+                    <h3>DEGLOBALPLAN</h3>
+                    <p>Desarrollo Global Planetario. Planificación y desarrollo de proyectos globales con visión estratégica y sostenible.</p>
+                    <div class="division-phone">📞 Próximamente</div>
+                </div>
+
+                <div class="division-card" onclick="irADivision('energia')">
+                    <span class="division-icon">⚡</span>
+                    <h3>Energía Limpia</h3>
+                    <p>Soluciones sostenibles en energías renovables y tecnologías verdes para la descontaminación ambiental.</p>
+                    <div class="division-phone">📞 Próximamente</div>
+                </div>
+
+                <div class="division-card" onclick="irADivision('imprexlaser')">
+                    <span class="division-icon">🖨️</span>
+                    <h3>Imprex Laser</h3>
+                    <p>Servicios de impresiones láser modernas. Tecnología avanzada en impresión láser y soluciones gráficas profesionales.</p>
+                    <div class="division-phone">📞 Próximamente</div>
+                </div>
+
+                <div class="division-card" onclick="irADivision('constructora')">
+                    <span class="division-icon">🏗️</span>
+                    <h3>Constructora Metálica</h3>
+                    <p>Construcción de estructuras metálicas avanzadas. Especialistas en construcción industrial y arquitectura moderna.</p>
+                    <div class="division-phone">📞 Próximamente</div>
+                </div>
+
+                <div class="division-card" onclick="irADivision('inversiones')">
+                    <span class="division-icon">💰</span>
+                    <h3>Inversiones FIMEFORMOSA</h3>
+                    <p>Expansión financiera e inversiones globales. Gestión de inversiones y desarrollo de proyectos financieros estratégicos.</p>
+                    <div class="division-phone">📞 Próximamente</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2>Contacto Corporativo</h2>
+            <p style="text-align: center; margin-bottom: 3rem; font-size: 1.1rem;">FIME COMPANY es una corporación global. Cada división tiene su propio contacto y atención especializada.</p>
+            <div class="contacto-grid">
+                <div class="contacto-item">
+                    <h4>🏢 Sede Corporativa</h4>
+                    <p><strong>CEO:</strong> Pedro Nicolás Hernández Lizardo</p>
+                    <p>Dirección corporativa global</p>
+                </div>
+                <div class="contacto-item">
+                    <h4>🔧 División Principal</h4>
+                    <p><strong>Ferretería Industrial Metálica del Este</strong></p>
+                    <p style="color: #00ff00; font-weight: bold;">📞 829-440-9136</p>
+                </div>
+                <div class="contacto-item">
+                    <h4>🌐 Presencia Global</h4>
+                    <p>7 divisiones especializadas</p>
+                    <p>Soluciones integrales mundiales</p>
+                </div>
+                <div class="contacto-item">
+                    <h4>⚡ Innovación</h4>
+                    <p>Tecnología de vanguardia</p>
+                    <p>Inteligencia Artificial aplicada</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4>FIME COMPANY</h4>
+                    <p>Grupo empresarial líder</p>
+                    <p><strong>CEO:</strong> Pedro Nicolás Hernández Lizardo</p>
+                    <p>Excelencia en cada división</p>
+                </div>
+                <div>
+                    <h4>División Principal</h4>
+                    <p><strong>Ferretería Industrial Metálica del Este</strong></p>
+                    <p style="color: #00e5e5;">📞 829-440-9136</p>
+                    <p>Herramientas y construcción</p>
+                </div>
+                <div>
+                    <h4>Todas las Divisiones</h4>
+                    <p>• Ferretería Industrial Metálica del Este</p>
+                    <p>• FIMEKIDS • DEGLOBALPLAN</p>
+                    <p>• Energía Limpia • Imprex Laser</p>
+                    <p>• Constructora Metálica • Inversiones FIMEFORMOSA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FIME COMPANY - Grupo Empresarial. Todos los derechos reservados.</p>
+                <p>CEO: Pedro Nicolás Hernández Lizardo</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba de Conexión - fimecompany.com</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+    }
+
+    .success {
+      background: #4CAF50;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>🎉 ¡Conexión Exitosa!</h1>
+    <div class="success">
+      <h2>✅ Cursor conectado a fimecompany.com</h2>
+      <p>Este archivo se subió automáticamente desde Cursor.</p>
+      <p><strong>Fecha:</strong> <span id="fecha"></span></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('fecha').textContent = new Date().toLocaleString('es-ES');
+  </script>
+</body>
+
+</html>
+
+

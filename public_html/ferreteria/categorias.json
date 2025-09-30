@@ -1,0 +1,832 @@
+{
+  "categorias": [
+    {
+      "nombre": "🔨 Herramientas Manuales",
+      "productos": [
+        {
+          "nombre": "Martillo Carpintero Stanley 16oz",
+          "precio": "$69.99",
+          "imagen": "martillo-stanley.jpg"
+        },
+        {
+          "nombre": "Destornilladores Set 6 Piezas",
+          "precio": "$45.50",
+          "imagen": "destornilladores-set.jpg"
+        },
+        {
+          "nombre": "Alicate Universal 8 Pulgadas",
+          "precio": "$32.75",
+          "imagen": "alicate-universal.jpg"
+        },
+        {
+          "nombre": "Sierra de Mano 20 TPI",
+          "precio": "$58.90",
+          "imagen": "sierra-mano.jpg"
+        },
+        {
+          "nombre": "Nivel de Burbuja 24 Pulgadas",
+          "precio": "$89.99",
+          "imagen": "nivel-burbuja.jpg"
+        },
+        {
+          "nombre": "Cinta Métrica 5m Stanley",
+          "precio": "$28.50",
+          "imagen": "cinta-metrica.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "⚡ Herramientas Eléctricas",
+      "productos": [
+        {
+          "nombre": "Taladro Inalámbrico Bosch 18V",
+          "precio": "$299.99",
+          "imagen": "taladro-bosch.jpg"
+        },
+        {
+          "nombre": "Sierra Circular 7¼ DeWalt",
+          "precio": "$189.75",
+          "imagen": "sierra-circular.jpg"
+        },
+        {
+          "nombre": "Amoladora Angular 4½ Makita",
+          "precio": "$145.99",
+          "imagen": "amoladora-makita.jpg"
+        },
+        {
+          "nombre": "Lijadora Orbital Black & Decker",
+          "precio": "$79.99",
+          "imagen": "lijadora-orbital.jpg"
+        },
+        {
+          "nombre": "Caladora Pendular Skil",
+          "precio": "$125.50",
+          "imagen": "caladora-skil.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🏗️ Materiales de Construcción",
+      "productos": [
+        {
+          "nombre": "Cemento Portland 50kg",
+          "precio": "$18.50",
+          "imagen": "cemento-portland.jpg"
+        },
+        {
+          "nombre": "Ladrillo Hueco Estructural (millar)",
+          "precio": "$750.00",
+          "imagen": "ladrillo-hueco.jpg"
+        },
+        {
+          "nombre": "Arena de Río m³",
+          "precio": "$45.00",
+          "imagen": "arena-rio.jpg"
+        },
+        {
+          "nombre": "Grava Triturada m³",
+          "precio": "$55.00",
+          "imagen": "grava-triturada.jpg"
+        },
+        {
+          "nombre": "Varilla Corrugada #4 (12m)",
+          "precio": "$35.75",
+          "imagen": "varilla-corrugada.jpg"
+        },
+        {
+          "nombre": "Block de Concreto 15x20x40",
+          "precio": "$2.85",
+          "imagen": "block-concreto.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "⚡ Material Eléctrico",
+      "productos": [
+        {
+          "nombre": "Cable THW Cal. 12 (metro)",
+          "precio": "$2.85",
+          "imagen": "cable-thw-12.jpg"
+        },
+        {
+          "nombre": "Interruptor Termomagnético 20A",
+          "precio": "$45.99",
+          "imagen": "interruptor-20a.jpg"
+        },
+        {
+          "nombre": "Contacto Duplex Polarizado",
+          "precio": "$8.50",
+          "imagen": "contacto-duplex.jpg"
+        },
+        {
+          "nombre": "Tubo Conduit PVC ½ (3m)",
+          "precio": "$12.75",
+          "imagen": "tubo-conduit.jpg"
+        },
+        {
+          "nombre": "Caja Registro Cuadrada",
+          "precio": "$3.25",
+          "imagen": "caja-registro.jpg"
+        },
+        {
+          "nombre": "Foco LED 12W Luz Blanca",
+          "precio": "$15.99",
+          "imagen": "foco-led-12w.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🚿 Plomería",
+      "productos": [
+        {
+          "nombre": "Tubería PVC Sanitaria 4\" (6m)",
+          "precio": "$28.75",
+          "imagen": "tuberia-pvc-4.jpg"
+        },
+        {
+          "nombre": "Llave de Paso Bronce ½\"",
+          "precio": "$25.99",
+          "imagen": "llave-paso-bronce.jpg"
+        },
+        {
+          "nombre": "Codo PVC 90° 2 Pulgadas",
+          "precio": "$4.50",
+          "imagen": "codo-pvc-90.jpg"
+        },
+        {
+          "nombre": "Válvula Check ¾ Pulgadas",
+          "precio": "$18.75",
+          "imagen": "valvula-check.jpg"
+        },
+        {
+          "nombre": "Sifón Botella Lavabo",
+          "precio": "$22.50",
+          "imagen": "sifon-botella.jpg"
+        },
+        {
+          "nombre": "Flotador Tanque WC Universal",
+          "precio": "$12.99",
+          "imagen": "flotador-tanque.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🌱 Jardinería",
+      "productos": [
+        {
+          "nombre": "Manguera Jardín ½\" x 15m",
+          "precio": "$42.99",
+          "imagen": "manguera-jardin.jpg"
+        },
+        {
+          "nombre": "Pala Recta Mango Largo",
+          "precio": "$35.50",
+          "imagen": "pala-recta.jpg"
+        },
+        {
+          "nombre": "Rastrillo Metálico 14 Dientes",
+          "precio": "$28.75",
+          "imagen": "rastrillo-metalico.jpg"
+        },
+        {
+          "nombre": "Tijeras Podar 8 Pulgadas",
+          "precio": "$45.99",
+          "imagen": "tijeras-podar.jpg"
+        },
+        {
+          "nombre": "Regadera Plástica 10L",
+          "precio": "$18.50",
+          "imagen": "regadera-plastica.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🦺 Seguridad Industrial",
+      "productos": [
+        {
+          "nombre": "Casco Seguridad Tipo II",
+          "precio": "$32.50",
+          "imagen": "casco-seguridad.jpg"
+        },
+        {
+          "nombre": "Guantes Carnaza Reforzados",
+          "precio": "$15.75",
+          "imagen": "guantes-carnaza.jpg"
+        },
+        {
+          "nombre": "Lentes Protección Transparentes",
+          "precio": "$8.99",
+          "imagen": "lentes-proteccion.jpg"
+        },
+        {
+          "nombre": "Chaleco Reflectivo Naranja",
+          "precio": "$25.50",
+          "imagen": "chaleco-reflectivo.jpg"
+        },
+        {
+          "nombre": "Botas Seguridad Punta Acero",
+          "precio": "$89.99",
+          "imagen": "botas-seguridad.jpg"
+        },
+        {
+          "nombre": "Mascarilla N95 (Caja 20 piezas)",
+          "precio": "$45.00",
+          "imagen": "mascarilla-n95.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🔩 Ferretería General",
+      "productos": [
+        {
+          "nombre": "Tornillos Autoperforantes #8 x 1\" (100 pz)",
+          "precio": "$12.50",
+          "imagen": "tornillos-autoperforantes.jpg"
+        },
+        {
+          "nombre": "Clavos Concreto 3\" (Kg)",
+          "precio": "$8.75",
+          "imagen": "clavos-concreto.jpg"
+        },
+        {
+          "nombre": "Candado Seguridad 40mm",
+          "precio": "$18.99",
+          "imagen": "candado-seguridad.jpg"
+        },
+        {
+          "nombre": "Bisagras Puerta 3½\" (Par)",
+          "precio": "$22.50",
+          "imagen": "bisagras-puerta.jpg"
+        },
+        {
+          "nombre": "Cerradura Pomo Dorado",
+          "precio": "$65.75",
+          "imagen": "cerradura-pomo.jpg"
+        },
+        {
+          "nombre": "Cadena Galvanizada 3/16\" (metro)",
+          "precio": "$5.25",
+          "imagen": "cadena-galvanizada.jpg"
+        }
+      ]
+    }
+  ]
+}
+
+
+
+  "categorias": [
+    {
+      "nombre": "🔨 Herramientas Manuales",
+      "productos": [
+        {
+          "nombre": "Martillo Carpintero Stanley 16oz",
+          "precio": "$69.99",
+          "imagen": "martillo-stanley.jpg"
+        },
+        {
+          "nombre": "Destornilladores Set 6 Piezas",
+          "precio": "$45.50",
+          "imagen": "destornilladores-set.jpg"
+        },
+        {
+          "nombre": "Alicate Universal 8 Pulgadas",
+          "precio": "$32.75",
+          "imagen": "alicate-universal.jpg"
+        },
+        {
+          "nombre": "Sierra de Mano 20 TPI",
+          "precio": "$58.90",
+          "imagen": "sierra-mano.jpg"
+        },
+        {
+          "nombre": "Nivel de Burbuja 24 Pulgadas",
+          "precio": "$89.99",
+          "imagen": "nivel-burbuja.jpg"
+        },
+        {
+          "nombre": "Cinta Métrica 5m Stanley",
+          "precio": "$28.50",
+          "imagen": "cinta-metrica.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "⚡ Herramientas Eléctricas",
+      "productos": [
+        {
+          "nombre": "Taladro Inalámbrico Bosch 18V",
+          "precio": "$299.99",
+          "imagen": "taladro-bosch.jpg"
+        },
+        {
+          "nombre": "Sierra Circular 7¼ DeWalt",
+          "precio": "$189.75",
+          "imagen": "sierra-circular.jpg"
+        },
+        {
+          "nombre": "Amoladora Angular 4½ Makita",
+          "precio": "$145.99",
+          "imagen": "amoladora-makita.jpg"
+        },
+        {
+          "nombre": "Lijadora Orbital Black & Decker",
+          "precio": "$79.99",
+          "imagen": "lijadora-orbital.jpg"
+        },
+        {
+          "nombre": "Caladora Pendular Skil",
+          "precio": "$125.50",
+          "imagen": "caladora-skil.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🏗️ Materiales de Construcción",
+      "productos": [
+        {
+          "nombre": "Cemento Portland 50kg",
+          "precio": "$18.50",
+          "imagen": "cemento-portland.jpg"
+        },
+        {
+          "nombre": "Ladrillo Hueco Estructural (millar)",
+          "precio": "$750.00",
+          "imagen": "ladrillo-hueco.jpg"
+        },
+        {
+          "nombre": "Arena de Río m³",
+          "precio": "$45.00",
+          "imagen": "arena-rio.jpg"
+        },
+        {
+          "nombre": "Grava Triturada m³",
+          "precio": "$55.00",
+          "imagen": "grava-triturada.jpg"
+        },
+        {
+          "nombre": "Varilla Corrugada #4 (12m)",
+          "precio": "$35.75",
+          "imagen": "varilla-corrugada.jpg"
+        },
+        {
+          "nombre": "Block de Concreto 15x20x40",
+          "precio": "$2.85",
+          "imagen": "block-concreto.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "⚡ Material Eléctrico",
+      "productos": [
+        {
+          "nombre": "Cable THW Cal. 12 (metro)",
+          "precio": "$2.85",
+          "imagen": "cable-thw-12.jpg"
+        },
+        {
+          "nombre": "Interruptor Termomagnético 20A",
+          "precio": "$45.99",
+          "imagen": "interruptor-20a.jpg"
+        },
+        {
+          "nombre": "Contacto Duplex Polarizado",
+          "precio": "$8.50",
+          "imagen": "contacto-duplex.jpg"
+        },
+        {
+          "nombre": "Tubo Conduit PVC ½ (3m)",
+          "precio": "$12.75",
+          "imagen": "tubo-conduit.jpg"
+        },
+        {
+          "nombre": "Caja Registro Cuadrada",
+          "precio": "$3.25",
+          "imagen": "caja-registro.jpg"
+        },
+        {
+          "nombre": "Foco LED 12W Luz Blanca",
+          "precio": "$15.99",
+          "imagen": "foco-led-12w.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🚿 Plomería",
+      "productos": [
+        {
+          "nombre": "Tubería PVC Sanitaria 4\" (6m)",
+          "precio": "$28.75",
+          "imagen": "tuberia-pvc-4.jpg"
+        },
+        {
+          "nombre": "Llave de Paso Bronce ½\"",
+          "precio": "$25.99",
+          "imagen": "llave-paso-bronce.jpg"
+        },
+        {
+          "nombre": "Codo PVC 90° 2 Pulgadas",
+          "precio": "$4.50",
+          "imagen": "codo-pvc-90.jpg"
+        },
+        {
+          "nombre": "Válvula Check ¾ Pulgadas",
+          "precio": "$18.75",
+          "imagen": "valvula-check.jpg"
+        },
+        {
+          "nombre": "Sifón Botella Lavabo",
+          "precio": "$22.50",
+          "imagen": "sifon-botella.jpg"
+        },
+        {
+          "nombre": "Flotador Tanque WC Universal",
+          "precio": "$12.99",
+          "imagen": "flotador-tanque.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🌱 Jardinería",
+      "productos": [
+        {
+          "nombre": "Manguera Jardín ½\" x 15m",
+          "precio": "$42.99",
+          "imagen": "manguera-jardin.jpg"
+        },
+        {
+          "nombre": "Pala Recta Mango Largo",
+          "precio": "$35.50",
+          "imagen": "pala-recta.jpg"
+        },
+        {
+          "nombre": "Rastrillo Metálico 14 Dientes",
+          "precio": "$28.75",
+          "imagen": "rastrillo-metalico.jpg"
+        },
+        {
+          "nombre": "Tijeras Podar 8 Pulgadas",
+          "precio": "$45.99",
+          "imagen": "tijeras-podar.jpg"
+        },
+        {
+          "nombre": "Regadera Plástica 10L",
+          "precio": "$18.50",
+          "imagen": "regadera-plastica.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🦺 Seguridad Industrial",
+      "productos": [
+        {
+          "nombre": "Casco Seguridad Tipo II",
+          "precio": "$32.50",
+          "imagen": "casco-seguridad.jpg"
+        },
+        {
+          "nombre": "Guantes Carnaza Reforzados",
+          "precio": "$15.75",
+          "imagen": "guantes-carnaza.jpg"
+        },
+        {
+          "nombre": "Lentes Protección Transparentes",
+          "precio": "$8.99",
+          "imagen": "lentes-proteccion.jpg"
+        },
+        {
+          "nombre": "Chaleco Reflectivo Naranja",
+          "precio": "$25.50",
+          "imagen": "chaleco-reflectivo.jpg"
+        },
+        {
+          "nombre": "Botas Seguridad Punta Acero",
+          "precio": "$89.99",
+          "imagen": "botas-seguridad.jpg"
+        },
+        {
+          "nombre": "Mascarilla N95 (Caja 20 piezas)",
+          "precio": "$45.00",
+          "imagen": "mascarilla-n95.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🔩 Ferretería General",
+      "productos": [
+        {
+          "nombre": "Tornillos Autoperforantes #8 x 1\" (100 pz)",
+          "precio": "$12.50",
+          "imagen": "tornillos-autoperforantes.jpg"
+        },
+        {
+          "nombre": "Clavos Concreto 3\" (Kg)",
+          "precio": "$8.75",
+          "imagen": "clavos-concreto.jpg"
+        },
+        {
+          "nombre": "Candado Seguridad 40mm",
+          "precio": "$18.99",
+          "imagen": "candado-seguridad.jpg"
+        },
+        {
+          "nombre": "Bisagras Puerta 3½\" (Par)",
+          "precio": "$22.50",
+          "imagen": "bisagras-puerta.jpg"
+        },
+        {
+          "nombre": "Cerradura Pomo Dorado",
+          "precio": "$65.75",
+          "imagen": "cerradura-pomo.jpg"
+        },
+        {
+          "nombre": "Cadena Galvanizada 3/16\" (metro)",
+          "precio": "$5.25",
+          "imagen": "cadena-galvanizada.jpg"
+        }
+      ]
+    }
+  ]
+}
+
+
+
+  "categorias": [
+    {
+      "nombre": "🔨 Herramientas Manuales",
+      "productos": [
+        {
+          "nombre": "Martillo Carpintero Stanley 16oz",
+          "precio": "$69.99",
+          "imagen": "martillo-stanley.jpg"
+        },
+        {
+          "nombre": "Destornilladores Set 6 Piezas",
+          "precio": "$45.50",
+          "imagen": "destornilladores-set.jpg"
+        },
+        {
+          "nombre": "Alicate Universal 8 Pulgadas",
+          "precio": "$32.75",
+          "imagen": "alicate-universal.jpg"
+        },
+        {
+          "nombre": "Sierra de Mano 20 TPI",
+          "precio": "$58.90",
+          "imagen": "sierra-mano.jpg"
+        },
+        {
+          "nombre": "Nivel de Burbuja 24 Pulgadas",
+          "precio": "$89.99",
+          "imagen": "nivel-burbuja.jpg"
+        },
+        {
+          "nombre": "Cinta Métrica 5m Stanley",
+          "precio": "$28.50",
+          "imagen": "cinta-metrica.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "⚡ Herramientas Eléctricas",
+      "productos": [
+        {
+          "nombre": "Taladro Inalámbrico Bosch 18V",
+          "precio": "$299.99",
+          "imagen": "taladro-bosch.jpg"
+        },
+        {
+          "nombre": "Sierra Circular 7¼ DeWalt",
+          "precio": "$189.75",
+          "imagen": "sierra-circular.jpg"
+        },
+        {
+          "nombre": "Amoladora Angular 4½ Makita",
+          "precio": "$145.99",
+          "imagen": "amoladora-makita.jpg"
+        },
+        {
+          "nombre": "Lijadora Orbital Black & Decker",
+          "precio": "$79.99",
+          "imagen": "lijadora-orbital.jpg"
+        },
+        {
+          "nombre": "Caladora Pendular Skil",
+          "precio": "$125.50",
+          "imagen": "caladora-skil.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🏗️ Materiales de Construcción",
+      "productos": [
+        {
+          "nombre": "Cemento Portland 50kg",
+          "precio": "$18.50",
+          "imagen": "cemento-portland.jpg"
+        },
+        {
+          "nombre": "Ladrillo Hueco Estructural (millar)",
+          "precio": "$750.00",
+          "imagen": "ladrillo-hueco.jpg"
+        },
+        {
+          "nombre": "Arena de Río m³",
+          "precio": "$45.00",
+          "imagen": "arena-rio.jpg"
+        },
+        {
+          "nombre": "Grava Triturada m³",
+          "precio": "$55.00",
+          "imagen": "grava-triturada.jpg"
+        },
+        {
+          "nombre": "Varilla Corrugada #4 (12m)",
+          "precio": "$35.75",
+          "imagen": "varilla-corrugada.jpg"
+        },
+        {
+          "nombre": "Block de Concreto 15x20x40",
+          "precio": "$2.85",
+          "imagen": "block-concreto.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "⚡ Material Eléctrico",
+      "productos": [
+        {
+          "nombre": "Cable THW Cal. 12 (metro)",
+          "precio": "$2.85",
+          "imagen": "cable-thw-12.jpg"
+        },
+        {
+          "nombre": "Interruptor Termomagnético 20A",
+          "precio": "$45.99",
+          "imagen": "interruptor-20a.jpg"
+        },
+        {
+          "nombre": "Contacto Duplex Polarizado",
+          "precio": "$8.50",
+          "imagen": "contacto-duplex.jpg"
+        },
+        {
+          "nombre": "Tubo Conduit PVC ½ (3m)",
+          "precio": "$12.75",
+          "imagen": "tubo-conduit.jpg"
+        },
+        {
+          "nombre": "Caja Registro Cuadrada",
+          "precio": "$3.25",
+          "imagen": "caja-registro.jpg"
+        },
+        {
+          "nombre": "Foco LED 12W Luz Blanca",
+          "precio": "$15.99",
+          "imagen": "foco-led-12w.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🚿 Plomería",
+      "productos": [
+        {
+          "nombre": "Tubería PVC Sanitaria 4\" (6m)",
+          "precio": "$28.75",
+          "imagen": "tuberia-pvc-4.jpg"
+        },
+        {
+          "nombre": "Llave de Paso Bronce ½\"",
+          "precio": "$25.99",
+          "imagen": "llave-paso-bronce.jpg"
+        },
+        {
+          "nombre": "Codo PVC 90° 2 Pulgadas",
+          "precio": "$4.50",
+          "imagen": "codo-pvc-90.jpg"
+        },
+        {
+          "nombre": "Válvula Check ¾ Pulgadas",
+          "precio": "$18.75",
+          "imagen": "valvula-check.jpg"
+        },
+        {
+          "nombre": "Sifón Botella Lavabo",
+          "precio": "$22.50",
+          "imagen": "sifon-botella.jpg"
+        },
+        {
+          "nombre": "Flotador Tanque WC Universal",
+          "precio": "$12.99",
+          "imagen": "flotador-tanque.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🌱 Jardinería",
+      "productos": [
+        {
+          "nombre": "Manguera Jardín ½\" x 15m",
+          "precio": "$42.99",
+          "imagen": "manguera-jardin.jpg"
+        },
+        {
+          "nombre": "Pala Recta Mango Largo",
+          "precio": "$35.50",
+          "imagen": "pala-recta.jpg"
+        },
+        {
+          "nombre": "Rastrillo Metálico 14 Dientes",
+          "precio": "$28.75",
+          "imagen": "rastrillo-metalico.jpg"
+        },
+        {
+          "nombre": "Tijeras Podar 8 Pulgadas",
+          "precio": "$45.99",
+          "imagen": "tijeras-podar.jpg"
+        },
+        {
+          "nombre": "Regadera Plástica 10L",
+          "precio": "$18.50",
+          "imagen": "regadera-plastica.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🦺 Seguridad Industrial",
+      "productos": [
+        {
+          "nombre": "Casco Seguridad Tipo II",
+          "precio": "$32.50",
+          "imagen": "casco-seguridad.jpg"
+        },
+        {
+          "nombre": "Guantes Carnaza Reforzados",
+          "precio": "$15.75",
+          "imagen": "guantes-carnaza.jpg"
+        },
+        {
+          "nombre": "Lentes Protección Transparentes",
+          "precio": "$8.99",
+          "imagen": "lentes-proteccion.jpg"
+        },
+        {
+          "nombre": "Chaleco Reflectivo Naranja",
+          "precio": "$25.50",
+          "imagen": "chaleco-reflectivo.jpg"
+        },
+        {
+          "nombre": "Botas Seguridad Punta Acero",
+          "precio": "$89.99",
+          "imagen": "botas-seguridad.jpg"
+        },
+        {
+          "nombre": "Mascarilla N95 (Caja 20 piezas)",
+          "precio": "$45.00",
+          "imagen": "mascarilla-n95.jpg"
+        }
+      ]
+    },
+    {
+      "nombre": "🔩 Ferretería General",
+      "productos": [
+        {
+          "nombre": "Tornillos Autoperforantes #8 x 1\" (100 pz)",
+          "precio": "$12.50",
+          "imagen": "tornillos-autoperforantes.jpg"
+        },
+        {
+          "nombre": "Clavos Concreto 3\" (Kg)",
+          "precio": "$8.75",
+          "imagen": "clavos-concreto.jpg"
+        },
+        {
+          "nombre": "Candado Seguridad 40mm",
+          "precio": "$18.99",
+          "imagen": "candado-seguridad.jpg"
+        },
+        {
+          "nombre": "Bisagras Puerta 3½\" (Par)",
+          "precio": "$22.50",
+          "imagen": "bisagras-puerta.jpg"
+        },
+        {
+          "nombre": "Cerradura Pomo Dorado",
+          "precio": "$65.75",
+          "imagen": "cerradura-pomo.jpg"
+        },
+        {
+          "nombre": "Cadena Galvanizada 3/16\" (metro)",
+          "precio": "$5.25",
+          "imagen": "cadena-galvanizada.jpg"
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+

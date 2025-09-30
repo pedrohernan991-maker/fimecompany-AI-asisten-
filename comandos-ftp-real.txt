@@ -1,0 +1,12 @@
+open ftp.fimecompany.com 21
+cursor_user@fimecompany.com
+QeWgB6DB~Lpt
+binary
+cd /public_html/ferreteria
+delete index.html
+put index-final-optimizado.html index.html
+put categorias.json
+chmod 644 index.html
+chmod 644 categorias.json
+dir
+quit

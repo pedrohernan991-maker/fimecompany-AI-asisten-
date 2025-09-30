@@ -1,0 +1,34 @@
+﻿{
+  "name": "fime-company-professional",
+  "version": "1.0.0",
+  "description": "🏢 FIME COMPANY - Portal Corporativo Profesional",
+  "main": "index.html",
+  "scripts": {
+    "deploy": "echo '🚀 Deploying to cPanel...'",
+    "test": "echo '✅ Testing project structure...'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/usuario/fime-company-professional.git"
+  },
+  "keywords": [
+    "fime",
+    "company", 
+    "corporate",
+    "website",
+    "cpanel",
+    "professional"
+  ],
+  "author": "FIME COMPANY - Pedro Nicolás Hernández Lizardo",
+  "license": "MIT",
+  "homepage": "https://fimecompany.com"
+}
+    "name": "cursor-web-project",
+    "version": "1.0.0",
+    "description": "Proyecto web creado con Cursor Avanzado",
+    "main": "index.html",
+    "scripts": {
+        "dev": "live-server --port=5500",
+        "start": "live-server --port=5500"
+    }
+}
