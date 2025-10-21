@@ -76,7 +76,10 @@ class CursorQuantumBotChat:
         
         # Comandos específicos de YARA
         if any(word in message_lower for word in ['yara', 'panel', 'comercial', 'html', 'localhost', 'api']):
-            return self.execute_programming_command('yara_panel')
+            if any(word in message_lower for word in ['optimizado', 'optimize', 'completo', 'sistema']):
+                return self.execute_programming_command('yara_optimized')
+            else:
+                return self.execute_programming_command('yara_panel')
         
         # Respuesta por defecto
         return {
@@ -161,6 +164,7 @@ class CursorQuantumBotChat:
                 ],
                 "🌐 YARA & Panel": [
                     "yara panel - Abrir panel comercial HTML",
+                    "yara optimized - Sistema optimizado completo",
                     "localhost - Verificar localhost",
                     "yara api - Verificar API de YARA"
                 ],

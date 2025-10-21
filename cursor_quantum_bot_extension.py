@@ -55,6 +55,10 @@ class CursorQuantumBotExtension:
                     "description": "Abrir panel comercial HTML con verificación de localhost y YARA API",
                     "action": "open_yara_panel"
                 },
+                "yara_optimized": {
+                    "description": "Sistema optimizado: inicia localhost, abre panel y verifica YARA API",
+                    "action": "run_yara_optimized_system"
+                },
                 "create_file": {
                     "description": "Crear nuevo archivo",
                     "action": "create_file"
@@ -409,6 +413,35 @@ public class Main {{
             return {
                 "success": False,
                 "message": f"❌ Error abriendo panel YARA: {e}"
+            }
+    
+    def run_yara_optimized_system(self, **kwargs):
+        """Ejecuta el sistema YARA optimizado completo"""
+        try:
+            from yara_optimized_system import YaraOptimizedSystem
+            
+            system = YaraOptimizedSystem()
+            
+            # Iniciar localhost
+            localhost_started = system.start_localhost_server()
+            
+            # Abrir panel
+            panel_result = system.open_optimized_panel()
+            
+            # Verificar servicios
+            services = system.verify_all_services()
+            
+            return {
+                "success": True,
+                "message": "✅ Sistema YARA optimizado iniciado exitosamente",
+                "localhost_started": localhost_started,
+                "panel": panel_result,
+                "services": services
+            }
+        except Exception as e:
+            return {
+                "success": False,
+                "message": f"❌ Error ejecutando sistema YARA optimizado: {e}"
             }
     
     def process_command(self, command, **kwargs):
