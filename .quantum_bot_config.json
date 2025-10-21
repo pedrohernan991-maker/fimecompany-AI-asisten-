@@ -1,0 +1,8 @@
+{
+  "quantum_api_key": "",
+  "cursor_integration": true,
+  "auto_save": true,
+  "debug_mode": false,
+  "preferred_language": "python",
+  "quantum_simulator": "qiskit"
+}
