@@ -1,0 +1,49 @@
+{
+  "name": "Quantum Programmer Bot",
+  "version": "1.0.0",
+  "description": "Bot programador con IA cu\u00e1ntica integrada para Cursor",
+  "author": "Quantum Bot Team",
+  "main": "cursor_quantum_bot_extension.py",
+  "commands": {
+    "quantum_hello": {
+      "description": "Crear Hello World cu\u00e1ntico",
+      "action": "create_quantum_hello"
+    },
+    "quantum_entangle": {
+      "description": "Crear circuito de entrelazamiento cu\u00e1ntico",
+      "action": "create_quantum_entangle"
+    },
+    "quantum_grover": {
+      "description": "Crear algoritmo de Grover",
+      "action": "create_quantum_grover"
+    },
+    "quantum_simulate": {
+      "description": "Simular circuito cu\u00e1ntico",
+      "action": "simulate_quantum_circuit"
+    },
+    "code_generate": {
+      "description": "Generar c\u00f3digo en lenguaje espec\u00edfico",
+      "action": "generate_code"
+    },
+    "analyze_code": {
+      "description": "Analizar c\u00f3digo y obtener m\u00e9tricas",
+      "action": "analyze_code"
+    },
+    "yara_panel": {
+      "description": "Abrir panel comercial HTML con verificaci\u00f3n de localhost y YARA API",
+      "action": "open_yara_panel"
+    },
+    "yara_optimized": {
+      "description": "Sistema optimizado: inicia localhost, abre panel y verifica YARA API",
+      "action": "run_yara_optimized_system"
+    },
+    "create_file": {
+      "description": "Crear nuevo archivo",
+      "action": "create_file"
+    },
+    "list_files": {
+      "description": "Listar archivos del proyecto",
+      "action": "list_files"
+    }
+  }
+}
