@@ -1,0 +1,41 @@
+{
+  "title": "Quantum Bot Commands",
+  "commands": [
+    {
+      "command": "quantum-bot.hello",
+      "title": "Quantum Bot: Hello World",
+      "category": "Quantum Bot",
+      "description": "Crear Hello World cu\u00e1ntico"
+    },
+    {
+      "command": "quantum-bot.entangle",
+      "title": "Quantum Bot: Entrelazamiento",
+      "category": "Quantum Bot",
+      "description": "Crear circuito de entrelazamiento cu\u00e1ntico"
+    },
+    {
+      "command": "quantum-bot.grover",
+      "title": "Quantum Bot: Algoritmo de Grover",
+      "category": "Quantum Bot",
+      "description": "Crear algoritmo de Grover"
+    },
+    {
+      "command": "quantum-bot.simulate",
+      "title": "Quantum Bot: Simular Circuito",
+      "category": "Quantum Bot",
+      "description": "Simular circuito cu\u00e1ntico"
+    },
+    {
+      "command": "quantum-bot.generate",
+      "title": "Quantum Bot: Generar C\u00f3digo",
+      "category": "Quantum Bot",
+      "description": "Generar c\u00f3digo en lenguaje espec\u00edfico"
+    },
+    {
+      "command": "quantum-bot.analyze",
+      "title": "Quantum Bot: Analizar C\u00f3digo",
+      "category": "Quantum Bot",
+      "description": "Analizar c\u00f3digo y obtener m\u00e9tricas"
+    }
+  ]
+}

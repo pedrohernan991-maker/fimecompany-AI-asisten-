@@ -1,0 +1,49 @@
+{
+  "Quantum Bot Commands": {
+    "scope": "python,javascript,java",
+    "prefix": "qbot",
+    "body": [
+      "# Quantum Bot Command",
+      "python3 cursor_quantum_bot_extension.py ${1:command}",
+      "",
+      "# Comandos disponibles:",
+      "# quantum_hello - Crear Hello World cu\u00e1ntico",
+      "# quantum_entangle - Crear entrelazamiento cu\u00e1ntico",
+      "# quantum_grover - Crear algoritmo de Grover",
+      "# quantum_simulate - Simular circuito cu\u00e1ntico",
+      "# code_generate - Generar c\u00f3digo",
+      "# analyze_code - Analizar c\u00f3digo",
+      "# list_files - Listar archivos"
+    ],
+    "description": "Quantum Bot Command"
+  },
+  "Quantum Hello World": {
+    "scope": "python",
+    "prefix": "qhello",
+    "body": [
+      "# Hello World Cu\u00e1ntico",
+      "from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, execute, Aer",
+      "",
+      "# Crear un circuito cu\u00e1ntico",
+      "qr = QuantumRegister(1)",
+      "cr = ClassicalRegister(1)",
+      "circuit = QuantumCircuit(qr, cr)",
+      "",
+      "# Aplicar una puerta Hadamard",
+      "circuit.h(qr[0])",
+      "",
+      "# Medir el qubit",
+      "circuit.measure(qr[0], cr[0])",
+      "",
+      "# Ejecutar el circuito",
+      "backend = Aer.get_backend('qasm_simulator')",
+      "job = execute(circuit, backend, shots=1000)",
+      "result = job.result()",
+      "counts = result.get_counts(circuit)",
+      "",
+      "print(\"Resultados del Hello World Cu\u00e1ntico:\")",
+      "print(counts)"
+    ],
+    "description": "Hello World Cu\u00e1ntico con Qiskit"
+  }
+}
