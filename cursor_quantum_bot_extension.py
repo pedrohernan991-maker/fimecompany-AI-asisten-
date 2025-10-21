@@ -51,6 +51,10 @@ class CursorQuantumBotExtension:
                     "description": "Analizar código y obtener métricas",
                     "action": "analyze_code"
                 },
+                "yara_panel": {
+                    "description": "Abrir panel comercial HTML con verificación de localhost y YARA API",
+                    "action": "open_yara_panel"
+                },
                 "create_file": {
                     "description": "Crear nuevo archivo",
                     "action": "create_file"
@@ -375,6 +379,36 @@ public class Main {{
             return {
                 "success": False,
                 "message": f"❌ Error al listar archivos: {e}"
+            }
+    
+    def open_yara_panel(self, **kwargs):
+        """Abre el panel comercial HTML con verificación de localhost y YARA API"""
+        try:
+            from yara_commercial_panel import YaraCommercialPanel
+            
+            panel = YaraCommercialPanel()
+            result = panel.open_panel()
+            
+            if result['success']:
+                # Verificar servicios
+                services = panel.verify_services()
+                
+                return {
+                    "success": True,
+                    "message": f"✅ {result['message']}",
+                    "file": result['file'],
+                    "path": result['path'],
+                    "services": services
+                }
+            else:
+                return {
+                    "success": False,
+                    "message": result['message']
+                }
+        except Exception as e:
+            return {
+                "success": False,
+                "message": f"❌ Error abriendo panel YARA: {e}"
             }
     
     def process_command(self, command, **kwargs):

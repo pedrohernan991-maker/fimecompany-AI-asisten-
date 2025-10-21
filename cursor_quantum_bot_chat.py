@@ -74,6 +74,10 @@ class CursorQuantumBotChat:
         if any(word in message_lower for word in ['list', 'listar', 'archivos', 'files']):
             return self.execute_programming_command('list_files')
         
+        # Comandos específicos de YARA
+        if any(word in message_lower for word in ['yara', 'panel', 'comercial', 'html', 'localhost', 'api']):
+            return self.execute_programming_command('yara_panel')
+        
         # Respuesta por defecto
         return {
             "type": "response",
@@ -154,6 +158,11 @@ class CursorQuantumBotChat:
                     "analyze - Analizar código y métricas",
                     "create - Crear nuevo archivo",
                     "list - Listar archivos del proyecto"
+                ],
+                "🌐 YARA & Panel": [
+                    "yara panel - Abrir panel comercial HTML",
+                    "localhost - Verificar localhost",
+                    "yara api - Verificar API de YARA"
                 ],
                 "❓ Ayuda": [
                     "help - Mostrar esta ayuda",
